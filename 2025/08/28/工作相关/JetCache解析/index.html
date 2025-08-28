@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="ArmoredKill">
+    
+    <title>
+        
+            JetCache 解析 |
+        
+        Death Note
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Death Note","author":"ArmoredKill","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"home":"/","archives":"/archives","tags":"/tags","categories":"/categories","about":"/about"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.0"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Death Note
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/tags">
+                                
+                                标签
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/categories">
+                                
+                                分类
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/about">
+                                
+                                关于
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/tags">
+                            
+                            标签
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/categories">
+                            
+                            分类
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/about">
+                            
+                            关于
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        JetCache 解析
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">ArmoredKill</span>
+                                
+                                    <span class="author-badge">Lv3</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2025-08-28 07:32:34</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Thu Aug 28 2025 07:31:21 GMT+0000">2025-08-28 07:31:21</span>
+            </span>
+        
+
+        
+
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h2 id="1-JetCache-多级缓存架构"><a href="#1-JetCache-多级缓存架构" class="headerlink" title="1. JetCache 多级缓存架构"></a>1. JetCache 多级缓存架构</h2><p>JetCache 是一个基于 Java 的缓存抽象框架，其核心目标是提供一个统一、易用且功能强大的缓存 API，让开发者可以轻松地集成和使用各种缓存提供商（如 Redis、Caffeine、Tair 等），而无需关心底层实现的细节。<br><strong>JetCache 的核心特点</strong>：</p>
+<ol>
+<li>统一的 API 和注解：通过简单的 @Cached 等注解即可实现方法缓存，编程方式也保持一致。</li>
+<li>多级缓存支持：可以轻松构建“本地缓存（如 Caffeine） + 分布式缓存（如 Redis）”的多级缓存架构，自动处理数据传播和一致性。</li>
+<li>自动缓存失效：支持通过 @CacheUpdate 和 @CacheInvalidate 注解自动更新或删除缓存。</li>
+<li>丰富的配置选项：支持细粒度的 TTL（生存时间）、缓存穿透/击穿保护、统计监控等。</li>
+<li>Spring Boot 无缝集成：通过 jetcache-starter-redis 等组件，可以几乎零配置地集成到 Spring Boot 项目中。</li>
+<li>序列化：JetCache 默认使用 Kryo 进行序列化，相比 Java 原生序列化或 Jackson，它的速度更快，产生的字节数组更小，非常适合缓存场景。也支持自定义为 JSON 等格式。</li>
+</ol>
+<h3 id="1-1-缓存类型配置"><a href="#1-1-缓存类型配置" class="headerlink" title="1.1 缓存类型配置"></a>1.1 缓存类型配置</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@RequiredArgsConstructor</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JetCacheConfig</span> {</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> Cache&lt;String, String&gt; <span class="title function_">apiAkSkCache</span><span class="params">()</span> {</span><br><span class="line">        <span class="type">QuickConfig</span> <span class="variable">qc</span> <span class="operator">=</span> QuickConfig.newBuilder(API_CACHE_NAME)</span><br><span class="line">                .expire(Duration.ofDays(<span class="number">20</span>))           <span class="comment">// 过期时间20天</span></span><br><span class="line">                .cacheType(CacheType.BOTH)             <span class="comment">// 多级缓存：本地+远程</span></span><br><span class="line">                .syncLocal(<span class="literal">true</span>)                       <span class="comment">// 本地缓存同步</span></span><br><span class="line">                .build();</span><br><span class="line">        <span class="keyword">return</span> cacheManager.getOrCreateCache(qc);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p><strong>关键配置说明：</strong></p>
+<ul>
+<li><strong><code>CacheType.BOTH</code></strong>: 启用多级缓存，同时使用本地缓存和远程缓存</li>
+<li><strong><code>syncLocal(true)</code></strong>: 启用本地缓存同步，确保本地缓存与远程缓存的一致性</li>
+<li><strong><code>expire(Duration.ofDays(20))</code></strong>: 设置缓存过期时间，保证数据的时效性<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">jetcache:</span></span><br><span class="line">  <span class="attr">statIntervalMinutes:</span> <span class="number">15</span> <span class="comment"># 统计间隔</span></span><br><span class="line">  <span class="attr">areaInCacheName:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">local:</span></span><br><span class="line">    <span class="attr">default:</span></span><br><span class="line">      <span class="attr">type:</span> <span class="string">caffeine</span> <span class="comment"># 本地缓存类型</span></span><br><span class="line">      <span class="attr">keyConvertor:</span> <span class="string">fastjson</span></span><br><span class="line">  <span class="attr">remote:</span></span><br><span class="line">    <span class="attr">default:</span></span><br><span class="line">      <span class="attr">type:</span> <span class="string">redis</span> <span class="comment"># 远程缓存类型</span></span><br><span class="line">      <span class="attr">keyConvertor:</span> <span class="string">fastjson</span></span><br><span class="line">      <span class="attr">uri:</span> <span class="string">redis://127.0.0.1:6379/</span> <span class="comment"># Redis 连接地址</span></span><br><span class="line">      <span class="comment"># 或者使用 host, port, password, database 等字段单独配置</span></span><br><span class="line">      <span class="comment"># poolConfig:</span></span><br><span class="line">      <span class="comment">#   maxTotal: 50</span></span><br><span class="line">  <span class="attr">enableMethodCache:</span> <span class="literal">true</span> <span class="comment"># 启用方法缓存</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="1-2-多级缓存工作原理"><a href="#1-2-多级缓存工作原理" class="headerlink" title="1.2 多级缓存工作原理"></a>1.2 多级缓存工作原理</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// JetCache多级缓存架构</span></span><br><span class="line">本地缓存 (Caffeine) ←→ 远程缓存 (Redis)</span><br><span class="line">     ↑                      ↑</span><br><span class="line">     └── 自动同步机制 ──────┘</span><br></pre></td></tr></table></figure>
+<p><strong>缓存层级：</strong></p>
+<ol>
+<li><strong>L1缓存（本地缓存）</strong>: 使用Caffeine实现，提供最快的访问速度</li>
+<li><strong>L2缓存（远程缓存）</strong>: 使用Redis实现，提供分布式共享能力</li>
+</ol>
+<h2 id="2-会话持久性保障机制"><a href="#2-会话持久性保障机制" class="headerlink" title="2. 会话持久性保障机制"></a>2. 会话持久性保障机制</h2><p><strong>会话持久化策略：</strong></p>
+<ul>
+<li><strong>命名空间隔离</strong>: 使用<code>key</code>前缀区分会话数据</li>
+<li><strong>过期时间管理</strong>: 设置合理的过期时间，避免内存泄漏</li>
+<li><strong>UUID模式识别</strong>: 自动识别会话ID并添加命名空间</li>
+</ul>
+<h3 id="2-2-会话同步机制"><a href="#2-2-会话同步机制" class="headerlink" title="2.2 会话同步机制"></a>2.2 会话同步机制</h3><p><strong>同步策略：</strong></p>
+<ul>
+<li><strong>时间间隔控制</strong>: 避免频繁同步，提高性能</li>
+<li><strong>异步同步</strong>: 使用异步任务进行数据库同步，不阻塞主流程</li>
+<li><strong>增量同步</strong>: 只同步变更的会话数据</li>
+</ul>
+<h2 id="3-缓存一致性保障机制"><a href="#3-缓存一致性保障机制" class="headerlink" title="3. 缓存一致性保障机制"></a>3. 缓存一致性保障机制</h2><h3 id="3-1-本地缓存同步"><a href="#3-1-本地缓存同步" class="headerlink" title="3.1 本地缓存同步"></a>3.1 本地缓存同步</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// JetCache本地缓存同步机制</span></span><br><span class="line">.cacheType(CacheType.BOTH)    <span class="comment">// 启用多级缓存</span></span><br><span class="line">.syncLocal(<span class="literal">true</span>)              <span class="comment">// 启用本地缓存同步</span></span><br></pre></td></tr></table></figure>
+<p><strong>同步机制：</strong></p>
+<ol>
+<li><strong>写操作同步</strong>: 当数据写入时，同时更新本地缓存和远程缓存</li>
+<li><strong>读操作策略</strong>: 优先从本地缓存读取，本地缓存未命中时从远程缓存读取</li>
+<li><strong>失效同步</strong>: 远程缓存失效时，自动清除本地缓存</li>
+</ol>
+<h3 id="3-2-缓存失效策略"><a href="#3-2-缓存失效策略" class="headerlink" title="3.2 缓存失效策略"></a>3.2 缓存失效策略</h3><p><strong>失效策略：</strong></p>
+<ul>
+<li><strong>精确失效</strong>: 根据具体键值进行失效</li>
+<li><strong>模式失效</strong>: 支持通配符模式批量失效</li>
+<li><strong>级联失效</strong>: 本地缓存和远程缓存同时失效</li>
+</ul>
+<h3 id="3-3-会话状态一致性"><a href="#3-3-会话状态一致性" class="headerlink" title="3.3 会话状态一致性"></a>3.3 会话状态一致性</h3><p><strong>一致性保障：</strong></p>
+<ul>
+<li><strong>变更标记</strong>: 会话属性变更时自动标记</li>
+<li><strong>选择性同步</strong>: 只同步业务相关的属性变更</li>
+<li><strong>状态追踪</strong>: 实时追踪会话状态变化</li>
+</ul>
+<h2 id="4-高可用性保障"><a href="#4-高可用性保障" class="headerlink" title="4. 高可用性保障"></a>4. 高可用性保障</h2><h3 id="4-1-缓存降级策略"><a href="#4-1-缓存降级策略" class="headerlink" title="4.1 缓存降级策略"></a>4.1 缓存降级策略</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="keyword">public</span> CacheManager <span class="title function_">CacheManager</span><span class="params">()</span> {</span><br><span class="line">    <span class="comment">// 根据配置选择缓存策略</span></span><br><span class="line">    <span class="keyword">return</span> redisEnabled ? getRedisCacheManager() : getEhCacheManager();</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p><strong>降级机制：</strong></p>
+<ul>
+<li><strong>Redis可用</strong>: 使用Redis作为远程缓存</li>
+<li><strong>Redis不可用</strong>: 自动降级到EhCache本地缓存</li>
+<li><strong>配置切换</strong>: 通过配置动态切换缓存策略</li>
+</ul>
+<h3 id="4-2-会话恢复机制"><a href="#4-2-会话恢复机制" class="headerlink" title="4.2 会话恢复机制"></a>4.2 会话恢复机制</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> Session <span class="title function_">doReadSession</span><span class="params">(Serializable sessionId)</span> {</span><br><span class="line">    <span class="comment">// 从数据库恢复会话</span></span><br><span class="line">    <span class="keyword">return</span> sysShiroService.getSession(sessionId);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doDelete</span><span class="params">(Session session)</span> {</span><br><span class="line">    <span class="type">OnlineSession</span> <span class="variable">onlineSession</span> <span class="operator">=</span> (OnlineSession) session;</span><br><span class="line">    <span class="keyword">if</span> (<span class="literal">null</span> == onlineSession) {</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    }</span><br><span class="line">    onlineSession.setStatus(OnlineStatus.off_line);</span><br><span class="line">    <span class="comment">// 从数据库删除会话</span></span><br><span class="line">    sysShiroService.deleteSession(onlineSession);</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p><strong>恢复策略：</strong></p>
+<ul>
+<li><strong>数据库备份</strong>: 会话数据持久化到数据库</li>
+<li><strong>自动恢复</strong>: 缓存失效时从数据库恢复会话</li>
+<li><strong>状态同步</strong>: 确保会话状态的一致性</li>
+</ul>
+<h2 id="5-性能优化策略"><a href="#5-性能优化策略" class="headerlink" title="5. 性能优化策略"></a>5. 性能优化策略</h2><h3 id="5-1-缓存预热"><a href="#5-1-缓存预热" class="headerlink" title="5.1 缓存预热"></a>5.1 缓存预热</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 应用启动时预热缓存</span></span><br><span class="line"><span class="meta">@PostConstruct</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">warmUpCache</span><span class="params">()</span> {</span><br><span class="line">    <span class="comment">// 预加载常用数据到缓存</span></span><br><span class="line">    List&lt;ApiClient&gt; clients = apiClientService.getAllClients();</span><br><span class="line">    clients.forEach(client -&gt; {</span><br><span class="line">        apiAccessTokenCache.put(client.getClientId(), client);</span><br><span class="line">    });</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="5-2-缓存压缩"><a href="#5-2-缓存压缩" class="headerlink" title="5.2 缓存压缩"></a>5.2 缓存压缩</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用压缩减少网络传输</span></span><br><span class="line">.cacheType(CacheType.BOTH)</span><br><span class="line">.syncLocal(<span class="literal">true</span>)</span><br><span class="line"><span class="comment">// 启用压缩</span></span><br><span class="line">.compress(<span class="literal">true</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="5-3-批量操作优化"><a href="#5-3-批量操作优化" class="headerlink" title="5.3 批量操作优化"></a>5.3 批量操作优化</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 批量缓存操作</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">batchPut</span><span class="params">(Map&lt;String, Object&gt; data)</span> {</span><br><span class="line">    <span class="comment">// 批量写入缓存，减少网络开销</span></span><br><span class="line">    cache.putAll(data);</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h2 id="6-监控和告警"><a href="#6-监控和告警" class="headerlink" title="6. 监控和告警"></a>6. 监控和告警</h2><h3 id="6-1-缓存监控"><a href="#6-1-缓存监控" class="headerlink" title="6.1 缓存监控"></a>6.1 缓存监控</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 缓存命中率监控</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="6-2-会话监控"><a href="#6-2-会话监控" class="headerlink" title="6.2 会话监控"></a>6.2 会话监控</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 会话状态监控</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="7-最佳实践建议"><a href="#7-最佳实践建议" class="headerlink" title="7. 最佳实践建议"></a>7. 最佳实践建议</h2><h3 id="7-1-配置优化"><a href="#7-1-配置优化" class="headerlink" title="7.1 配置优化"></a>7.1 配置优化</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># JetCache配置优化</span></span><br><span class="line"><span class="attr">jetcache:</span></span><br><span class="line">  <span class="attr">statIntervalMinutes:</span> <span class="number">15</span>  <span class="comment"># 统计间隔</span></span><br><span class="line">  <span class="attr">areaInCacheName:</span> <span class="literal">false</span>   <span class="comment"># 不在缓存名中使用area</span></span><br><span class="line">  <span class="attr">hidePackages:</span> <span class="string">com.ruoyi</span>  <span class="comment"># 隐藏包名</span></span><br><span class="line">  <span class="attr">local:</span></span><br><span class="line">    <span class="attr">default:</span></span><br><span class="line">      <span class="attr">type:</span> <span class="string">caffeine</span></span><br><span class="line">      <span class="attr">keyConvertor:</span> <span class="string">fastjson</span></span><br><span class="line">      <span class="attr">valueEncoder:</span> <span class="string">java</span></span><br><span class="line">      <span class="attr">valueDecoder:</span> <span class="string">java</span></span><br><span class="line">      <span class="attr">limit:</span> <span class="number">100</span></span><br><span class="line">      <span class="attr">expireAfterWriteInMillis:</span> <span class="number">100000</span></span><br><span class="line">  <span class="attr">remote:</span></span><br><span class="line">    <span class="attr">default:</span></span><br><span class="line">      <span class="attr">type:</span> <span class="string">redis.lettuce</span></span><br><span class="line">      <span class="attr">keyConvertor:</span> <span class="string">fastjson</span></span><br><span class="line">      <span class="attr">valueEncoder:</span> <span class="string">java</span></span><br><span class="line">      <span class="attr">valueDecoder:</span> <span class="string">java</span></span><br><span class="line">      <span class="attr">poolConfig:</span></span><br><span class="line">        <span class="attr">maxTotal:</span> <span class="number">50</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="7-2-会话配置优化"><a href="#7-2-会话配置优化" class="headerlink" title="7.2 会话配置优化"></a>7.2 会话配置优化</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 会话配置优化</span></span><br><span class="line"><span class="attr">shiro:</span></span><br><span class="line">  <span class="attr">session:</span></span><br><span class="line">    <span class="attr">expireTime:</span> <span class="number">30</span>        <span class="comment"># 会话超时时间（分钟）</span></span><br><span class="line">    <span class="attr">validationInterval:</span> <span class="number">10</span> <span class="comment"># 会话验证间隔（分钟）</span></span><br><span class="line">    <span class="attr">maxSession:</span> <span class="number">1</span>         <span class="comment"># 最大会话数</span></span><br><span class="line">    <span class="attr">dbSyncPeriod:</span> <span class="number">1</span>       <span class="comment"># 数据库同步周期（分钟）</span></span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>JetCache在若依项目中通过以下机制保证会话持久性和缓存一致性：<br><strong>会话持久性保障：</strong></p>
+<ol>
+<li><strong>多级缓存架构</strong>: 本地缓存+远程缓存的双重保障</li>
+<li><strong>数据库持久化</strong>: 会话数据同步到数据库作为备份</li>
+<li><strong>异步同步机制</strong>: 避免同步操作影响性能</li>
+</ol>
+<p><strong>缓存一致性保障：</strong></p>
+<ol>
+<li><strong>自动同步机制</strong>: 本地缓存与远程缓存自动同步</li>
+<li><strong>失效传播</strong>: 缓存失效时级联清除相关缓存</li>
+<li><strong>状态追踪</strong>: 实时追踪会话状态变化</li>
+</ol>
+<p><strong>高可用性保障：</strong></p>
+<ol>
+<li><strong>降级策略</strong>: Redis不可用时自动降级到本地缓存</li>
+<li><strong>恢复机制</strong>: 缓存失效时从数据库恢复数据</li>
+<li><strong>监控告警</strong>: 实时监控缓存和会话状态</li>
+</ol>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2025/08/28/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/CAS%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/"
+                                   title="cas深度解析"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">cas深度解析</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2025/08/28/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/MongDB%E5%BA%94%E7%94%A8%E8%A7%A3%E6%9E%90/"
+                                   title=""
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis"></span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-JetCache-%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98%E6%9E%B6%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">1. JetCache 多级缓存架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E7%BC%93%E5%AD%98%E7%B1%BB%E5%9E%8B%E9%85%8D%E7%BD%AE"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 缓存类型配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 多级缓存工作原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E4%BC%9A%E8%AF%9D%E6%8C%81%E4%B9%85%E6%80%A7%E4%BF%9D%E9%9A%9C%E6%9C%BA%E5%88%B6"><span class="nav-number">2.</span> <span class="nav-text">2. 会话持久性保障机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E4%BC%9A%E8%AF%9D%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6"><span class="nav-number">2.1.</span> <span class="nav-text">2.2 会话同步机制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E7%BC%93%E5%AD%98%E4%B8%80%E8%87%B4%E6%80%A7%E4%BF%9D%E9%9A%9C%E6%9C%BA%E5%88%B6"><span class="nav-number">3.</span> <span class="nav-text">3. 缓存一致性保障机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E5%90%8C%E6%AD%A5"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 本地缓存同步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E7%BC%93%E5%AD%98%E5%A4%B1%E6%95%88%E7%AD%96%E7%95%A5"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 缓存失效策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-%E4%BC%9A%E8%AF%9D%E7%8A%B6%E6%80%81%E4%B8%80%E8%87%B4%E6%80%A7"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 会话状态一致性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7%E4%BF%9D%E9%9A%9C"><span class="nav-number">4.</span> <span class="nav-text">4. 高可用性保障</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E7%BC%93%E5%AD%98%E9%99%8D%E7%BA%A7%E7%AD%96%E7%95%A5"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 缓存降级策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E4%BC%9A%E8%AF%9D%E6%81%A2%E5%A4%8D%E6%9C%BA%E5%88%B6"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 会话恢复机制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%AD%96%E7%95%A5"><span class="nav-number">5.</span> <span class="nav-text">5. 性能优化策略</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-%E7%BC%93%E5%AD%98%E9%A2%84%E7%83%AD"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 缓存预热</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-%E7%BC%93%E5%AD%98%E5%8E%8B%E7%BC%A9"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 缓存压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-%E6%89%B9%E9%87%8F%E6%93%8D%E4%BD%9C%E4%BC%98%E5%8C%96"><span class="nav-number">5.3.</span> <span class="nav-text">5.3 批量操作优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E7%9B%91%E6%8E%A7%E5%92%8C%E5%91%8A%E8%AD%A6"><span class="nav-number">6.</span> <span class="nav-text">6. 监控和告警</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-%E7%BC%93%E5%AD%98%E7%9B%91%E6%8E%A7"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 缓存监控</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-%E4%BC%9A%E8%AF%9D%E7%9B%91%E6%8E%A7"><span class="nav-number">6.2.</span> <span class="nav-text">6.2 会话监控</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E5%BB%BA%E8%AE%AE"><span class="nav-number">7.</span> <span class="nav-text">7. 最佳实践建议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-%E9%85%8D%E7%BD%AE%E4%BC%98%E5%8C%96"><span class="nav-number">7.1.</span> <span class="nav-text">7.1 配置优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-%E4%BC%9A%E8%AF%9D%E9%85%8D%E7%BD%AE%E4%BC%98%E5%8C%96"><span class="nav-number">7.2.</span> <span class="nav-text">7.2 会话配置优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+        &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2025
+        
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">ArmoredKill</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-JetCache-%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98%E6%9E%B6%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">1. JetCache 多级缓存架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E7%BC%93%E5%AD%98%E7%B1%BB%E5%9E%8B%E9%85%8D%E7%BD%AE"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 缓存类型配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 多级缓存工作原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E4%BC%9A%E8%AF%9D%E6%8C%81%E4%B9%85%E6%80%A7%E4%BF%9D%E9%9A%9C%E6%9C%BA%E5%88%B6"><span class="nav-number">2.</span> <span class="nav-text">2. 会话持久性保障机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E4%BC%9A%E8%AF%9D%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6"><span class="nav-number">2.1.</span> <span class="nav-text">2.2 会话同步机制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E7%BC%93%E5%AD%98%E4%B8%80%E8%87%B4%E6%80%A7%E4%BF%9D%E9%9A%9C%E6%9C%BA%E5%88%B6"><span class="nav-number">3.</span> <span class="nav-text">3. 缓存一致性保障机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E5%90%8C%E6%AD%A5"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 本地缓存同步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E7%BC%93%E5%AD%98%E5%A4%B1%E6%95%88%E7%AD%96%E7%95%A5"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 缓存失效策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-%E4%BC%9A%E8%AF%9D%E7%8A%B6%E6%80%81%E4%B8%80%E8%87%B4%E6%80%A7"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 会话状态一致性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E9%AB%98%E5%8F%AF%E7%94%A8%E6%80%A7%E4%BF%9D%E9%9A%9C"><span class="nav-number">4.</span> <span class="nav-text">4. 高可用性保障</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E7%BC%93%E5%AD%98%E9%99%8D%E7%BA%A7%E7%AD%96%E7%95%A5"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 缓存降级策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E4%BC%9A%E8%AF%9D%E6%81%A2%E5%A4%8D%E6%9C%BA%E5%88%B6"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 会话恢复机制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%AD%96%E7%95%A5"><span class="nav-number">5.</span> <span class="nav-text">5. 性能优化策略</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-%E7%BC%93%E5%AD%98%E9%A2%84%E7%83%AD"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 缓存预热</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-%E7%BC%93%E5%AD%98%E5%8E%8B%E7%BC%A9"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 缓存压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-%E6%89%B9%E9%87%8F%E6%93%8D%E4%BD%9C%E4%BC%98%E5%8C%96"><span class="nav-number">5.3.</span> <span class="nav-text">5.3 批量操作优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E7%9B%91%E6%8E%A7%E5%92%8C%E5%91%8A%E8%AD%A6"><span class="nav-number">6.</span> <span class="nav-text">6. 监控和告警</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-%E7%BC%93%E5%AD%98%E7%9B%91%E6%8E%A7"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 缓存监控</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-%E4%BC%9A%E8%AF%9D%E7%9B%91%E6%8E%A7"><span class="nav-number">6.2.</span> <span class="nav-text">6.2 会话监控</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E5%BB%BA%E8%AE%AE"><span class="nav-number">7.</span> <span class="nav-text">7. 最佳实践建议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-%E9%85%8D%E7%BD%AE%E4%BC%98%E5%8C%96"><span class="nav-number">7.1.</span> <span class="nav-text">7.1 配置优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-%E4%BC%9A%E8%AF%9D%E9%85%8D%E7%BD%AE%E4%BC%98%E5%8C%96"><span class="nav-number">7.2.</span> <span class="nav-text">7.2 会话配置优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+    
+<script src="//cdn.jsdelivr.net/npm/mermaid@7.1.2/dist/mermaid.min.js"></script>
+
+
+
+
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>

@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="ArmoredKill">
+    
+    <title>
+        
+            Java Language UpdatesJava 语言更新 |
+        
+        Death Note
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Death Note","author":"ArmoredKill","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"home":"/","archives":"/archives","tags":"/tags","categories":"/categories","about":"/about"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.0"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Death Note
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/tags">
+                                
+                                标签
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/categories">
+                                
+                                分类
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/about">
+                                
+                                关于
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/tags">
+                            
+                            标签
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/categories">
+                            
+                            分类
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/about">
+                            
+                            关于
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+                <div class="post-content-top border-box"
+                     style="height: 13.8rem"
+                >
+                    <div class="cover-post-title">
+                        Java Language UpdatesJava 语言更新
+                    </div>
+                    <img class="post-cover" src="/images/0.png"
+                         onerror="this.style.display='none'"
+                    >
+                </div>
+            
+
+            <div class="post-content-bottom border-box has-cover">
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">ArmoredKill</span>
+                                
+                                    <span class="author-badge">Lv3</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2025-08-28 07:32:34</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Thu Aug 28 2025 05:34:35 GMT+0000">2025-08-28 05:34:35</span>
+            </span>
+        
+
+        
+
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h1 id="Java-语言的变化"><a href="#Java-语言的变化" class="headerlink" title="Java 语言的变化"></a>Java 语言的变化</h1><p>Java SE 9 及后续版本中更新的语言功能。</p>
+<table>
+<thead>
+<tr>
+<th>版本</th>
+<th>功能</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Java SE 9</td>
+<td>Java 平台模块系统</td>
+<td>在此版本中引入。Java 平台模块系统引入了一种新的 Java 编程组件，即模块，它是一个命名的、自描述的代码和数据的集合。它的代码被组织为一组包含类型的包，即Java类和接口；其数据包括资源和其他类型的静态信息。模块可以导出或封装包，并且它们显式地表达对其他模块的依赖关系。</td>
+</tr>
+<tr>
+<td>Java SE 9</td>
+<td>try-with-resources 语句</td>
+<td>如果您已经将资源作为变量<code>final</code>或有效<code>final</code>变量，则可以在<code>try-with-resources</code>语句中使用该变量，而无需声明新变量。“有效最终”变量是指其值在初始化后永远不会更改的变量。</td>
+</tr>
+<tr>
+<td>Java SE 9</td>
+<td>@SafeVarargs注释</td>
+<td>私有实例方法允许使用@SafeVarargs注释</td>
+</tr>
+<tr>
+<td>Java SE 9</td>
+<td>Diamond 语法和匿名内部类</td>
+<td></td>
+</tr>
+<tr>
+<td>Java SE 9</td>
+<td>下划线字符不是合法名称</td>
+<td>如果使用下划线字符（“_”）作为标识符，则无法再编译源代码。</td>
+</tr>
+<tr>
+<td>Java SE 9</td>
+<td>支持私有接口方法</td>
+<td>支持私有接口方法。这种支持允许接口的非抽象方法在它们之间共享代码。</td>
+</tr>
+<tr>
+<td>Java SE 10</td>
+<td>局部变量类型推断</td>
+<td>局部变量类型推断将类型推断扩展到带有初始值设定项的局部变量的声明。</td>
+</tr>
+<tr>
+<td>Java SE 11</td>
+<td>局部变量类型推断</td>
+<td>在Java SE 10中引入。在这个版本中，它得到了增强，支持在声明隐式类型lambda表达式的形式参数时使用var。局部变量类型推理将类型推理扩展到具有初始值设定项的局部变量的声明。</td>
+</tr>
+<tr>
+<td>Java SE 12</td>
+<td>Switch 表达式</td>
+<td>此功能扩展了switch语句，使其既可以用作语句也可以用作表达式，并且这两种形式都可以使用“传统”或“简化”的作用域和控制流行为。</td>
+</tr>
+<tr>
+<td>Java SE 13</td>
+<td>Text Blocks</td>
+<td>文本块是一个多行字符串文字，它避免了大多数转义序列的需要，以可预测的方式自动格式化字符串，并在需要时让开发人员控制格式。</td>
+</tr>
+<tr>
+<td>Java SE 13</td>
+<td>Switch Expressions</td>
+<td>此功能扩展了switch，使其可以用作语句或表达式，并且使两种形式都可以使用传统的大小写…：标签（有故障）或新案例…-&gt;标签（没有失败），还有一个用于从开关表达式中生成值的新语句。</td>
+</tr>
+<tr>
+<td>Java SE 15</td>
+<td>Sealed Classes</td>
+<td>密封类或接口限制哪些类或接口可以扩展或实现它。</td>
+</tr>
+<tr>
+<td>Java SE 17</td>
+<td>Sealed Classes</td>
+<td>在此版本中是永久性的</td>
+</tr>
+<tr>
+<td>Java SE 17</td>
+<td>switch 表达式和语句的模式匹配</td>
+<td>作为此版本的预览功能引入。</td>
+</tr>
+</tbody></table>
+<h1 id="Java-平台模块系统"><a href="#Java-平台模块系统" class="headerlink" title="Java 平台模块系统"></a>Java 平台模块系统</h1><p>官方的定义是 ：*A uniquely named, reusable group of related packages, as well as resources (such as images and XML files) and a module descriptor.*（一组唯一命名、可重复使用的相关包，以及资源（如图像和XML文件）和模块描述符。）模块的载体是 jar 文件，一个模块就是一个 jar 文件，但相比于传统的 jar 文件，模块的根目录下多了一个 <strong><code>module-info.class</code></strong> 文件，也即 <code>module descriptor</code>。 <code>module descriptor</code> 包含以下信息：</p>
+<ul>
+<li>模块名称</li>
+<li>依赖哪些模块</li>
+<li>导出模块内的哪些包（允许直接 <code>import</code> 使用）</li>
+<li>开放模块内的哪些包（允许通过 Java 反射访问）</li>
+<li>提供哪些服务</li>
+<li>依赖哪些服务<br><img src="/2025/08/28/Java%E5%9F%BA%E7%A1%80/Java%20Language%20UpdatesJava%20%E8%AF%AD%E8%A8%80%E6%9B%B4%E6%96%B0/%E6%A8%A1%E5%9D%97%E4%B8%8Ejar%E5%AF%B9%E6%AF%94.png" alt="img"><br>也就是说，任意一个 jar 文件，只要加上一个合法的 <code>module descriptor</code>，就可以升级为一个模块。其中的优势在于：</li>
+</ul>
+<ol>
+<li>原生的依赖管理。有了模块系统，Java 可以根据 <code>module descriptor</code> 计算出各个模块间的依赖关系，一旦发现循环依赖，启动就会终止。同时，由于模块系统不允许不同模块导出相同的包（即 <code>split package</code>，分裂包），所以在查找包时，Java 可以精准的定位到一个模块，从而获得更好的性能。</li>
+<li>精简 JRE。引入模块系统之后，JDK 自身被划分为 94 个模块（参见<em>图-2</em>）。通过 Java 9 新增的 <code>jlink</code> 工具，开发者可以根据实际应用场景随意组合这些模块，去除不需要的模块，生成自定义 JRE，从而有效缩小 JRE 大小。得益于此，JRE 11 的大小仅为 JRE 8 的 53%，从 218.4 MB缩减为 116.3 MB，JRE 中广为诟病的巨型 jar 文件 <code>rt.jar</code> 也被移除。更小的 JRE 意味着更少的内存占用，这让 Java 对嵌入式应用开发变得更友好。</li>
+<li>更好的兼容性。自打 Java 出生以来，就只有 4 种包可见性，Java 9 之后，利用 <code>module descriptor</code> 中的 <code>exports</code> 关键词，模块维护者就精准控制哪些类可以对外开放使用，哪些类只能内部使用，换句话说就是不再依赖文档，而是由编译器来保证。类可见性的细化，除了带来更好的兼容性，也带来了更好的安全性。<br><img src="/2025/08/28/Java%E5%9F%BA%E7%A1%80/Java%20Language%20UpdatesJava%20%E8%AF%AD%E8%A8%80%E6%9B%B4%E6%96%B0/%E5%8C%85%E5%8F%AF%E8%A7%81%E6%80%A7.png" alt="img"></li>
+<li>提升 Java 语言开发效率。Java 9 之后，严格遵循每半年一个大版本的发布策略，从 2017 年 9 月到 2020 年 3 月，从 Java 9 到 Java 14，三年时间相继发布了 6 个版本，无一延期。Java 9 之后，JDK 被拆分为 94 个模块，每个模块有清晰的边界（<code>module descriptor</code>）和独立的单元测试，对于每个 Java 语言的开发者而言，每个人只需要关注其所负责的模块，开发效率因此大幅提升。</li>
+</ol>
+<h2 id="module-descriptor"><a href="#module-descriptor" class="headerlink" title="module descriptor"></a>module descriptor</h2><p>模块的核心在于 <code>module descriptor</code>，对应根目录下的 <code>module-info.class</code> 文件，而这个 class 文件是由源代码根目录下的 <code>module-info.java</code> 编译生成。Java 为 <code>module-info.java</code> 设计了专用的语法，包含 <code>module</code>、 <code>requires</code>、<code>exports</code> 等多个关键词。<br><img src="/2025/08/28/Java%E5%9F%BA%E7%A1%80/Java%20Language%20UpdatesJava%20%E8%AF%AD%E8%A8%80%E6%9B%B4%E6%96%B0/module%20descriptor%E4%BE%8B%E5%AD%90.png" alt="img"><br>语法解读：</p>
+<ul>
+<li><code>[open] module &lt;module&gt;</code>: 声明一个模块，模块名称应全局唯一，不可重复。加上 <code>open</code> 关键词表示模块内的所有包都允许通过 Java 反射访问，模块声明体内不再允许使用 <code>opens</code> 语句；<ul>
+<li>模块名和包名可以完全相同，如 java.sql 模块包含 java.sql、javax.sql 和 javax.transaction.xa 这三个包；</li>
+<li>模块之间无任何层次关系，如 com.horstmann 和 com.horstmann.corejava 没有关系；</li>
+</ul>
+</li>
+<li><code>requires [transitive] &lt;module&gt;</code>: 声明模块依赖，一次只能声明一个依赖，如果依赖多个模块，需要多次声明。加上 <code>transitive</code> 关键词表示传递依赖，比如模块 A 依赖模块 B，模块 B 传递依赖模块 C，那么模块 A 就会自动依赖模块 C，类似于 Maven；</li>
+<li><code>exports &lt;package&gt; [to &lt;module1&gt;[, &lt;module2&gt;...]]</code>: 导出模块内的包（允许直接 <code>import</code> 使用），一次导出一个包，如果需要导出多个包，需要多次声明。如果需要定向导出，可以使用 <code>to</code> 关键词，后面加上模块列表（逗号分隔）；<ul>
+<li>包被导出：public 和 protected 的类和接口，以及 public 和 protected 的成员，在模块外部可以访问	（protected 的类型和成员只有在子类中是可访问的）；</li>
+<li>没有导出的包：模块外不可访问（这与模块化之前很不相同）；</li>
+</ul>
+</li>
+<li><code>opens &lt;package&gt; [to &lt;module&gt;[, &lt;module2&gt;...]]</code>: 开放模块内的包（允许通过 Java 反射访问），一次开放一个包，如果需要开放多个包，需要多次声明。如果需要定向开放，可以使用 <code>to</code> 关键词，后面加上模块列表（逗号分隔）；</li>
+<li><code>provides &lt;interface | abstract class&gt; with &lt;class1&gt;[, &lt;class2&gt; ...]</code>: 声明模块提供的 Java SPI 服务，一次可以声明多个服务实现类（逗号分隔）；</li>
+<li><code>uses &lt;interface | abstract class&gt;</code>: 声明模块依赖的 Java SPI 服务，加上之后模块内的代码就可以通过 <code>ServiceLoader.load(Class)</code> 一次性加载所声明的 SPI 服务的所有实现类；</li>
+</ul>
+<p>Java 9 引入了一系列新的参数用于编译和运行模块，其中最重要的两个参数是 <code>-p</code> 和 <code>-m</code>。</p>
+<ul>
+<li><code>-p</code> 参数指定模块路径，多个模块之间用 “:”（Mac, Linux）或者 “;”（Windows）分隔，同时适用于 <code>javac</code> 命令和 <code>java</code> 命令，用法和Java 8 中的 <code>-cp</code> 非常类似。</li>
+<li><code>-m</code> 参数指定待运行的模块主函数，输入格式为<code>模块名/主函数所在的类名</code>，仅适用于 <code>java</code> 命令。两个参数的基本用法如下：<ul>
+<li><code>javac -p &lt;module_path&gt; &lt;source&gt;</code></li>
+<li><code>java -p &lt;module_path&gt; -m &lt;module&gt;**/**&lt;main_class&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h2><p>设计了一个示例工程，其内包含了 5 个模块：</p>
+<ul>
+<li>mod1 模块: 主模块，展示了使用服务实现类的两种方式。</li>
+<li>mod2a 模块: 分别导出和开放了一个包，并声明了两个服务实现类。</li>
+<li>mod2b 模块: 声明了一个未公开的服务实现类。</li>
+<li>mod3 模块: 定义 SPI 服务（<code>IEventListener</code>），并声明了一个未公开的服务实现类。</li>
+<li>mod4 模块: 导出公共模型类。</li>
+</ul>
+<p><img src="/2025/08/28/Java%E5%9F%BA%E7%A1%80/Java%20Language%20UpdatesJava%20%E8%AF%AD%E8%A8%80%E6%9B%B4%E6%96%B0/Demo%20%E7%A4%BA%E4%BE%8B.png" alt="img"></p>
+<p>模块代码结构<br><img src="/2025/08/28/Java%E5%9F%BA%E7%A1%80/Java%20Language%20UpdatesJava%20%E8%AF%AD%E8%A8%80%E6%9B%B4%E6%96%B0/Demo%20%E7%A4%BA%E4%BE%8B%202.png" alt="image-20230918140351503"></p>
+<h1 id="try-with-resources"><a href="#try-with-resources" class="headerlink" title="try-with-resources"></a>try-with-resources</h1><p>使用try-with-resources可以确保代码块执行完毕后，系统会自动关闭资源，从而避免资源泄漏和错误。常规try-catch示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> {    <span class="comment">// 执行语句    </span></span><br><span class="line">    resource1;</span><br><span class="line">} <span class="keyword">catch</span> (exceptionType1 e1) {    </span><br><span class="line">    <span class="comment">// 处理异常</span></span><br><span class="line">} <span class="keyword">finally</span> {    </span><br><span class="line">    <span class="comment">// 执行清理操作</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>在try块中，如果发生异常，会被传递到相应的catch块进行处理。finally块中的语句无论如何都会被执行，用于执行清理操作，例如关闭打开的流、释放占用的资源等。<br>try-with-resources示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String <span class="title function_">readFirstLineFromFile</span><span class="params">(String path)</span> <span class="keyword">throws</span> IOException {    </span><br><span class="line">    <span class="keyword">try</span> (<span class="type">BufferedReader</span> <span class="variable">br</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">FileReader</span>(path))) {        </span><br><span class="line">        <span class="keyword">return</span> br.readLine();    </span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>使用try-with-resources语法糖来打开文件并读取它的第一行。在try-with-resources语句块中，我们创建一个BufferedReader对象并将其包装在try语句的括号中，这样在try块执行结束后，它会自动关闭资源。由于BufferedReader实现了AutoCloseable接口，因此它可以作为try-with-resources语句的一部分。</p>
+<h1 id="SafeVarargs注释"><a href="#SafeVarargs注释" class="headerlink" title="@SafeVarargs注释"></a>@SafeVarargs注释</h1><p>在声明具有模糊类型（比如：泛型）的可变参数的构造函数或方法时，Java编译器会报unchecked警告。鉴于这些情况，如果程序员断定声明的构造函数和方法的主体不会对其varargs参数执行潜在的不安全的操作，可使用@SafeVarargs进行标记，这样的话，Java编译器就不会报unchecked警告。在 JDK 9 中，JDK 开发人员扩展了@ safevarags 注释的使用，现在除了 final 或 static 方法之外，我们还可以在 private 方法中使用@ safevarags 注释。这是因为不能重写私有方法。</p>
+<h2 id="不安全操作警告"><a href="#不安全操作警告" class="headerlink" title="不安全操作警告"></a><strong>不安全操作警告</strong></h2><p>Java 5 引入了 <a class="link" target="_blank" rel="noopener" href="https://www.moonapi.com/go?url=https://www.geeksforgeeks.org/variable-arguments-varargs-in-java/">Varargs<i class="fas fa-external-link-alt"></i></a> 的概念，或者说是一个可变长度的方法参数，以及 <a class="link" target="_blank" rel="noopener" href="https://www.moonapi.com/go?url=https://www.geeksforgeeks.org/generics-in-java/">Generics<i class="fas fa-external-link-alt"></i></a> ，这次只增加了未检查或者不安全操作的警告。现在的问题是，为什么当将方法与 varargs 一起使用或使用泛型时，编译器会抛出警告？当编译器抛出不安全操作警告时，编译器通常会以某种方式要求您更明确地说明类型。</p>
+<h1 id="Diamond-语法和匿名内部类"><a href="#Diamond-语法和匿名内部类" class="headerlink" title="Diamond 语法和匿名内部类"></a>Diamond 语法和匿名内部类</h1><p>可以将菱形语法与匿名内部类结合使用。可以在 Java 程序中编写的类型（例如<code>int</code>或 <code>String</code>）称为可指示类型。无法在 Java 程序中编写的编译器内部类型称为不可表示类型。不可表示类型可以作为菱形运算符使用的推理结果而出现。由于使用 Diamond 和匿名类构造函数推断的类型可能超出类文件中签名属性支持的类型集，因此 Java SE 7 中不允许将 Diamond 与匿名类一起使用。</p>
+<h1 id="局部变量类型推断"><a href="#局部变量类型推断" class="headerlink" title="局部变量类型推断"></a>局部变量类型推断</h1><p>在Java 10中，引入了一项新的功能——局部变量类型推断（Local Variable Type Inference）。这个功能允许我们在声明变量时不显式地指定变量的类型，而是使用var关键字进行推断。局部变量类型推断在提高代码的可读性和简洁性方面具有很大的优势。它可以减少冗长的类型声明，并使代码更加清晰明了。在Java 10中，var关键字只能在局部变量中使用，而不能用于类的成员变量、接口方法或构造函数参数。</p>
+<h1 id="Sealed-Classes"><a href="#Sealed-Classes" class="headerlink" title="Sealed Classes"></a>Sealed Classes</h1><p>密封类和接口限制其他类或接口可以扩展或实现它们。在面向对象语言中，我们可以通过继承（extend）来实现类的能力复用、扩展与增强。但有的时候，有些能力我们不希望被继承了去做一些不可预知的扩展。所以，我们需要对继承关系有一些限制的控制手段。而密封类的作用就是<strong>限制类的继承</strong>。<br>为了进一步增强限制能力，Java 17中的密封类增加了几个重要关键词：</p>
+<ul>
+<li>sealed：修饰类/接口，用来描述这个类/接口为密封类/接口</li>
+<li>non-sealed：修饰类/接口，用来描述这个类/接口为非密封类/接口</li>
+<li>permits：用在extends和implements之后，指定可以继承或实现的类</li>
+</ul>
+<p>每个被允许的子类都需要添加修饰符来说明该类如何把父类的密封行为传递下去，一共有3种情况：</p>
+<ul>
+<li>声明为 <strong>final</strong> ，禁止继续往下继承。</li>
+<li>声明为 <strong>sealed</strong> ，允许继续往下进行受限继承。</li>
+<li>声明为 <strong>non-sealed</strong> ，允许继续往下进行不受限的继承。<br><strong>final、sealed 和 non-sealed 这3个修饰符必须且只能出现一次</strong> ，否则会出现编译错误。</li>
+</ul>
+<p>在密封类引入之后，Java 的反射API也进行了修改。 java.lang .Class 类增加了两个新的方法：</p>
+<ul>
+<li>boolean isSealed() 判断当前 Class 对象是否表示密封类或接口。</li>
+<li>Class&lt;?&gt;[] getPermittedSubclasses() 返回包含了密封类或接口所允许的子类或子接口的数组。</li>
+</ul>
+<p>在 JVM 方面，字节代码中在 Class File 结构中新增了一个 PermittedSubclasses 属性，用来记录允许的子类。PermittedSubclasses 属性的格式如下所示，其中记录了全部允许的类。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> PermittedSubclasses_attribute {</span><br><span class="line">    u2 attribute_name_index;</span><br><span class="line">    u4 attribute_length;</span><br><span class="line">    u2  number _of_classes;</span><br><span class="line">    u2 classes[number_of_classes];</span><br><span class="line">}  </span><br></pre></td></tr></table></figure>
+<p>当 JVM 尝试加载一个类时，如果它的父类或父接口的定义中包含了 PermittedSubclasses 属性，那么当前类必须出现在 PermittedSubclasses 属性的数组中，否则 JVM 会抛出 IncompatibleClassChangeError 错误。</p>
+<h1 id="Java-模块化与强封装"><a href="#Java-模块化与强封装" class="headerlink" title="Java 模块化与强封装"></a>Java 模块化与强封装</h1><p>在 Java 9 之前，应用程序可以通过反射自由访问 JDK 内部的 API（sun.*、com.sun.<em>、jdk.internal.</em> 等包）。Java 9 的模块化系统将 JDK 拆分成了多个模块，并默认禁止外部代码通过反射访问这些模块的非公开（非导出）部分。这打破了大量现有库的兼容性。<br><strong>–add-opens 参数族</strong>：–add-opens 的语法是：–add-opens &lt;模块&gt;/&lt;包&gt;=&lt;目标模块&gt;<br>其意义是：允许 &lt;目标模块&gt; 的代码通过反射访问 &lt;模块&gt; 下的 &lt;包&gt; 中的所有类型和成员（包括私有成员）。ALL-UNNAMED 是一个特殊值，代表所有未命名模块（通常就是你应用程序的所有代码和那些尚未模块化的第三方库）。</p>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2025/08/28/AI%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"
+                                   title="深度学习基础知识"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">深度学习基础知识</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2025/08/28/AI%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"
+                                   title="机器学习"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">机器学习</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-%E8%AF%AD%E8%A8%80%E7%9A%84%E5%8F%98%E5%8C%96"><span class="nav-number">1.</span> <span class="nav-text">Java 语言的变化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-%E5%B9%B3%E5%8F%B0%E6%A8%A1%E5%9D%97%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.</span> <span class="nav-text">Java 平台模块系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#module-descriptor"><span class="nav-number">2.1.</span> <span class="nav-text">module descriptor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B"><span class="nav-number">2.2.</span> <span class="nav-text">代码示例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#try-with-resources"><span class="nav-number">3.</span> <span class="nav-text">try-with-resources</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SafeVarargs%E6%B3%A8%E9%87%8A"><span class="nav-number">4.</span> <span class="nav-text">@SafeVarargs注释</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E5%AE%89%E5%85%A8%E6%93%8D%E4%BD%9C%E8%AD%A6%E5%91%8A"><span class="nav-number">4.1.</span> <span class="nav-text">不安全操作警告</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Diamond-%E8%AF%AD%E6%B3%95%E5%92%8C%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">5.</span> <span class="nav-text">Diamond 语法和匿名内部类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E6%8E%A8%E6%96%AD"><span class="nav-number">6.</span> <span class="nav-text">局部变量类型推断</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sealed-Classes"><span class="nav-number">7.</span> <span class="nav-text">Sealed Classes</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-%E6%A8%A1%E5%9D%97%E5%8C%96%E4%B8%8E%E5%BC%BA%E5%B0%81%E8%A3%85"><span class="nav-number">8.</span> <span class="nav-text">Java 模块化与强封装</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+        &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2025
+        
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">ArmoredKill</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-%E8%AF%AD%E8%A8%80%E7%9A%84%E5%8F%98%E5%8C%96"><span class="nav-number">1.</span> <span class="nav-text">Java 语言的变化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-%E5%B9%B3%E5%8F%B0%E6%A8%A1%E5%9D%97%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.</span> <span class="nav-text">Java 平台模块系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#module-descriptor"><span class="nav-number">2.1.</span> <span class="nav-text">module descriptor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B"><span class="nav-number">2.2.</span> <span class="nav-text">代码示例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#try-with-resources"><span class="nav-number">3.</span> <span class="nav-text">try-with-resources</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SafeVarargs%E6%B3%A8%E9%87%8A"><span class="nav-number">4.</span> <span class="nav-text">@SafeVarargs注释</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E5%AE%89%E5%85%A8%E6%93%8D%E4%BD%9C%E8%AD%A6%E5%91%8A"><span class="nav-number">4.1.</span> <span class="nav-text">不安全操作警告</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Diamond-%E8%AF%AD%E6%B3%95%E5%92%8C%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">5.</span> <span class="nav-text">Diamond 语法和匿名内部类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E6%8E%A8%E6%96%AD"><span class="nav-number">6.</span> <span class="nav-text">局部变量类型推断</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sealed-Classes"><span class="nav-number">7.</span> <span class="nav-text">Sealed Classes</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-%E6%A8%A1%E5%9D%97%E5%8C%96%E4%B8%8E%E5%BC%BA%E5%B0%81%E8%A3%85"><span class="nav-number">8.</span> <span class="nav-text">Java 模块化与强封装</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+    
+<script src="//cdn.jsdelivr.net/npm/mermaid@7.1.2/dist/mermaid.min.js"></script>
+
+
+
+
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>

@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="ArmoredKill">
+    
+    <title>
+        
+            408-计算机基础知识 |
+        
+        Death Note
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Death Note","author":"ArmoredKill","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"home":"/","archives":"/archives","tags":"/tags","categories":"/categories","about":"/about"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.0"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Death Note
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/tags">
+                                
+                                标签
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/categories">
+                                
+                                分类
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/about">
+                                
+                                关于
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/tags">
+                            
+                            标签
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/categories">
+                            
+                            分类
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/about">
+                            
+                            关于
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        408-计算机基础知识
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">ArmoredKill</span>
+                                
+                                    <span class="author-badge">Lv3</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2025-08-28 07:32:34</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Wed Apr 23 2025 11:55:02 GMT+0000">2025-04-23 11:55:02</span>
+            </span>
+        
+
+        
+
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h1 id="计算机组成原理"><a href="#计算机组成原理" class="headerlink" title="计算机组成原理"></a>计算机组成原理</h1><h2 id="计算机系统概述"><a href="#计算机系统概述" class="headerlink" title="计算机系统概述"></a>计算机系统概述</h2><h3 id="计算机系统层次结构"><a href="#计算机系统层次结构" class="headerlink" title="计算机系统层次结构"></a>计算机系统层次结构</h3><ol>
+<li>计算机系统基本组成：计算机系统由硬件和软件组成，硬件是计算机的物理部分，包括中央处理器（CPU）、内存、输入输出设备等；软件是计算机的指令和程序，包括操作系统、应用程序等。</li>
+<li>计算机硬件的基本组成：计算机系统硬件的基本组成包括中央处理器（CPU）、内存、输入输出设备等。中央处理器（CPU）是计算机系统的核心，负责执行计算机指令；内存是计算机系统的存储器，用于存储数据和程序；输入输出设备是计算机系统与外界进行交互的接口，包括键盘、鼠标、显示器等。</li>
+<li>计算机软件和硬件的关系：计算机软件和硬件是相互依存的，软件依赖于硬件才能运行，硬件也需要软件才能发挥其功能。软件和硬件的关系是相互促进、相互制约的，硬件的发展推动了软件的发展，软件的发展也推动了硬件的发展。</li>
+<li>计算机系统的工作原理：计算机系统的工作原理是通过硬件和软件的相互配合，实现数据的输入、处理、输出等功能。计算机系统的工作过程可以分为以下几个步骤：<ul>
+<li>输入：计算机系统通过输入设备将数据输入到计算机中。</li>
+<li>存储：计算机系统将输入的数据存储在内存中。</li>
+<li>处理：计算机系统通过中央处理器（CPU）对存储在内存中的数据进行处理。</li>
+<li>输出：计算机系统通过输出设备将处理后的数据输出到外部设备中。</li>
+</ul>
+</li>
+<li>冯诺依曼体系结构：它将计算机分为五个部分，输入设备、运算器、控制器、存储器和输出设备。冯诺依曼体系结构的主要特点包括：<ul>
+<li>采用二进制表示数据和指令。</li>
+<li>存储程序原理：将程序和数据存储在同一个存储器中，通过指令控制程序的执行。</li>
+<li>存储器采用随机存取存储器（RAM），可以随时读取和修改存储在其中的数据。</li>
+<li>采用运算器-控制器-存储器结构，运算器负责处理数据，控制器负责控制程序的执行，存储器负责存储数据和程序。<br> 采用总线结构，将各个部分连接起来，实现数据传输和通信。</li>
+</ul>
+</li>
+<li>CISC（复杂指令集计算机）<ul>
+<li>指令系统规模庞大，一般具有几十条到几百条指令，其中多数是复杂的指令</li>
+<li>指令长度不固定，一般采用变长格式</li>
+<li>支持多种寻址方式</li>
+<li>指令执行周期固定，指令执行时间短</li>
+</ul>
+</li>
+<li>RISC（精简指令集计算机）<ul>
+<li>指令系统规模较小，一般只有几十条指令，其中多数是简单的指令</li>
+<li>指令长度固定，一般采用定长格式</li>
+<li>支持较少的寻址方式</li>
+<li>指令执行周期可变，指令执行时间长</li>
+</ul>
+</li>
+</ol>
+<h3 id="计算机性能指标"><a href="#计算机性能指标" class="headerlink" title="计算机性能指标"></a>计算机性能指标</h3><ol>
+<li>主频：主频是指CPU的工作频率，单位是赫兹（Hz）。主频越高，CPU的处理速度越快。</li>
+<li>字长：字长是指CPU一次能处理的数据位数，单位是位（bit）。字长越大，CPU的处理能力越强。</li>
+<li>CPI：CPI是指执行一条指令所需的时钟周期数。CPI越小，CPU的处理速度越快。</li>
+<li>MIPS：MIPS是指每秒执行百万条指令数，单位是MIPS。MIPS越高，CPU的处理能力越强。<ul>
+<li>GFLOPS：GFLOPS是指每秒执行十亿次浮点运算次数，单位是GFLOPS。GFLOPS越高，计算机的浮点运算能力越强。</li>
+<li>TFLOPS：TFLOPS是指每秒执行万亿次浮点运算次数，单位是TFLOPS。TFLOPS越高，计算机的浮点运算能力越强。</li>
+<li>PFLOPS：PFLOPS是指每秒执行千万亿次浮点运算次数，单位是PFLOPS。PFLOPS越高，计算机的浮点运算能力越强。</li>
+<li>EFLOPS：EFLOPS是指每秒执行亿亿次浮点运算次数，单位是EFLOPS。EFLOPS越高，计算机的浮点运算能力越强。</li>
+<li>ZFLOPS：ZFLOPS是指每秒执行百亿亿次浮点运算次数，单位是ZFLOPS。ZFLOPS越高，计算机的浮点运算能力越强。</li>
+<li>YFLOPS：YFLOPS是指每秒执行十万亿亿次浮点运算次数，单位是YFLOPS。YFLOPS越高，计算机的浮点运算能力越强。</li>
+</ul>
+</li>
+<li>FLOPS：FLOPS是指每秒执行浮点运算次数，单位是MFLOPS。FLOPS越高，CPU的浮点运算能力越强。</li>
+<li>响应时间：响应时间是指从输入到输出所需的时间，单位是秒。响应时间越短，计算机的性能越好。</li>
+<li>吞吐量：吞吐量是指单位时间内计算机处理的数据量，单位是字节/秒。吞吐量越大，计算机的处理能力越强。</li>
+<li>延迟：延迟是指从输入到输出所需的时间，单位是秒。延迟越短，计算机的性能越好。</li>
+<li>cpu时钟周期：cpu时钟周期是指CPU在执行指令时，每个时钟周期所需要的时间。CPU时钟周期越短，CPU的处理速度越快。</li>
+</ol>
+<h2 id="数据的表示与运算"><a href="#数据的表示与运算" class="headerlink" title="数据的表示与运算"></a>数据的表示与运算</h2><h3 id="数制"><a href="#数制" class="headerlink" title="数制"></a>数制</h3><ol>
+<li>二进制：二进制是一种只有0和1两种状态的数制，是计算机中数据表示的基础。二进制数的每一位称为一个位，每个位可以是0或1。二进制数的运算规则是：0+0=0，0+1=1，1+0=1，1+1=10。</li>
+<li>十进制：十进制是一种有10种状态的数制，是我们日常生活中最常用的数制。十进制数的每一位可以是0到9之间的任意一个数字。十进制数的运算规则是：0+0=0，0+1=1，1+0=1，1+1=2，2+1=3，3+1=4，4+1=5，5+1=6，6+1=7，7+1=8，8+1=9，9+1=10。</li>
+<li>八进制：八进制是一种有8种状态的数制，常用于表示文件权限等。八进制数的每一位可以是0到7之间的任意一个数字。八进制数的运算规则与二进制数相同。</li>
+<li>十六进制：十六进制是一种有16种状态的数制，常用于表示颜色值等。十六进制数的每一位可以是0到9之间的任意一个数字，或者A到F之间的任意一个字母（A代表10，B代表11，C代表12，D代表13，E代表14，F代表15）。十六进制数的运算规则与二进制数相同。</li>
+<li>进制转换：<ul>
+<li>二进制转十进制：将二进制数从右到左，依次乘以2的幂次方，然后将结果相加。例如，二进制数1011转换为十进制数为$1<em>2^3+0</em>2^2+1<em>2^1+1</em>2^0=11$。</li>
+<li>十进制转二进制：将十进制数不断除以2，直到商为0，然后将余数倒序排列。例如，十进制数11转换为二进制数为11/2=5余1，5/2=2余1，2/2=1余0，1/2=0余1，所以11的二进制数为1011。</li>
+<li>十进制转八进制：将十进制数不断除以8，直到商为0，然后将余数倒序排列。例如，十进制数11转换为八进制数为11/8=1余3，1/8=0余1，所以11的八进制数为13。</li>
+<li>八进制转十进制：将八进制数从右到左，依次乘以8的幂次方，然后将结果相加。例如，八进制数13转换为十进制数为$1<em>8^1+3</em>8^0=11$。</li>
+<li>十进制转十六进制：将十进制数不断除以16，直到商为0，然后将余数倒序排列。例如，十进制数11转换为十六进制数为11/16=0余11，所以11的十六进制数为B。</li>
+<li>十六进制转十进制：将十六进制数从右到左，依次乘以16的幂次方，然后将结果相加。例如，十六进制数B转换为十进制数为<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.186ex;" xmlns="http://www.w3.org/2000/svg" width="12.929ex" height="2.14ex" role="img" focusable="false" viewbox="0 -864 5714.6 946"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" transform="translate(500,0)"/></g><g data-mml-node="mo" transform="translate(1222.2,0)"><path data-c="2217" d="M229 286Q216 420 216 436Q216 454 240 464Q241 464 245 464T251 465Q263 464 273 456T283 436Q283 419 277 356T270 286L328 328Q384 369 389 372T399 375Q412 375 423 365T435 338Q435 325 425 315Q420 312 357 282T289 250L355 219L425 184Q434 175 434 161Q434 146 425 136T401 125Q393 125 383 131T328 171L270 213Q283 79 283 63Q283 53 276 44T250 35Q231 35 224 44T216 63Q216 80 222 143T229 213L171 171Q115 130 110 127Q106 124 100 124Q87 124 76 134T64 161Q64 166 64 169T67 175T72 181T81 188T94 195T113 204T138 215T170 230T210 250L74 315Q65 324 65 338Q65 353 74 363T98 374Q106 374 116 368T171 328L229 286Z"/></g><g data-mml-node="msup" transform="translate(1944.4,0)"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/><path data-c="36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z" transform="translate(500,0)"/></g><g data-mml-node="mn" transform="translate(1033,393.1) scale(0.707)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/></g></g><g data-mml-node="mo" transform="translate(3658.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/></g><g data-mml-node="mn" transform="translate(4714.6,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" transform="translate(500,0)"/></g></g></g></svg></mjx-container>。</li>
+</ul>
+</li>
+</ol>
+<h3 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h3><ol>
+<li>机器码：机器码是指计算机中指令的二进制表示形式，它可以直接被计算机硬件执行。机器码的长度和格式取决于计算机的架构。</li>
+<li>字符编码：字符编码是指将字符转换为二进制数的过程，它可以将字符表示为计算机可以处理的数据。常见的字符编码有ASCII码、Unicode码等。</li>
+<li>汇编码：汇编码是指将汇编语言中的指令转换为机器码的过程，它可以将汇编语言中的指令表示为计算机可以执行的操作。</li>
+<li>Unicode码：Unicode码是一种字符编码标准，它可以将世界上所有的字符表示为二进制数。Unicode码的长度为16位，可以表示65536个字符。</li>
+<li>ASCII码：ASCII码是一种字符编码标准，它可以将英文字符、数字和一些特殊符号表示为二进制数。ASCII码的长度为7位，可以表示128个字符。</li>
+<li>定点数的编码表示：定点数的编码表示是指将定点数表示为二进制数的过程，它可以将定点数表示为计算机可以处理的数据。定点数的编码表示包括定点小数和定点整数两种形式。<ul>
+<li>原码：原码是指将一个数的符号位和数值位直接表示为二进制数的过程。例如，将数-5表示为二进制数为10000101。</li>
+<li>移码：每一个数值加上一个偏置常数，便于浮点数加减运算时的对阶操作。</li>
+<li>补码：补码是指将一个数的符号位不变，数值位取反后加1的过程。例如，将数-5表示为二进制数为11111011。<ul>
+<li>一个负数的补码等于模减该负数的绝对值。</li>
+<li>对于某一确定的模，某数减去小于模的另一数，总可以用该数加上另一数负数的补码来替代。</li>
+</ul>
+</li>
+<li>反码：反码是指将一个数的符号位不变，数值位取反的过程。例如，将数-5表示为二进制数为11111010。</li>
+<li>移位表示法：移位表示法是指将定点数的小数点位置固定，然后将整数部分和小数部分分别转换为二进制数表示。例如，将小数点固定在第一位，那么一个定点数可以表示为：整数部分 + 小数部分。其中，整数部分和小数部分都可以用二进制数表示。例如，将小数点固定在第一位，那么数1.25可以表示为：1.25 = 1 + 0.25。</li>
+<li>浮点表示法：浮点表示法是指将定点数的小数点位置浮动，然后将整数部分和小数部分分别转换为二进制数表示。浮点表示法通常使用科学计数法表示，即将一个小数点后的数字转换为二进制数表示，然后乘以相应的倍数。例如，将小数点固定在第一位，那么数1.25可以表示为：</li>
+</ul>
+</li>
+</ol>
+<h3 id="运算方法和运算电路"><a href="#运算方法和运算电路" class="headerlink" title="运算方法和运算电路"></a>运算方法和运算电路</h3><ol>
+<li>基本运算部件：<ul>
+<li>算术逻辑单元（ALU）：ALU是计算机中用于执行算术和逻辑运算的部件。它包括加法器、减法器、乘法器和除法器等。</li>
+<li>加法器：加法器是ALU中的一个重要部件，用于执行加法运算。它包括全加器和半加器等。</li>
+<li>减法器：减法器是ALU中的一个重要部件，用于执行减法运算。它包括全减器和半减器等。</li>
+<li>乘法器：乘法器是ALU中的一个重要部件，用于执行乘法运算。它包括串行乘法器和并行乘法器等。</li>
+</ul>
+</li>
+<li>补码加/减运算器：用于执行补码加法和减法运算。补码是一种表示有符号数的编码方式，它将正数的二进制数表示为原码，将负数的二进制数表示为原码的反码加1。</li>
+</ol>
+<ul>
+<li>加法：将两个补码相加，如果结果超出了表示范围，则需要进行溢出处理。</li>
+<li>减法：将一个补码减去另一个补码，相当于加上被减数的补码全部按位取反，然后末位加1。</li>
+<li>例子：<br>  <img src="/2025/08/28/plan/408/408-1.png" alt="例1"><br>  <img src="/2025/08/28/plan/408/408-2.png" alt="例2"></li>
+<li>标志位OF（Overflow Flag）：溢出标志，用于指示运算结果是否溢出，且在有符号数加减才有意义。<strong>通过最高位产生的进位与次高位产生的进位进行异或来确定</strong>。</li>
+<li>标志位SF（Sign Flag）：符号标志，取最高位的本位和就可以，用于指示运算结果的符号，0表示正数，1表示负数。只对有符号数的加减运算有意义。</li>
+<li>标志位CF（Carry Flag）：进位借位标志，用于指示运算结果是否产生了进位借位，0表示没有，1表示有，只对无符号数的加减法有意义，用最高位产生的进位，和 次高位进行一个异或得到的。</li>
+<li>标志位ZF（Zero Flag）：零标志，用于指示运算结果是否为零，0表示不为零，1表示为零。<br>  <img src="/2025/08/28/plan/408/408-3.png" alt="标志位生成"></li>
+</ul>
+<ol start="3">
+<li>乘/除运算：乘积的符号位由两数的符号位按异或运算得到，乘积数值部分为两个正数相乘之积。乘积符号运算法则是：同号相乘为正，异号相乘为负。正好可以符号位按“异或”运算得到。<ul>
+<li>乘法：乘法运算可以通过把被乘数进行移位累加，乘积的位数，是两个乘数的位数之和。</li>
+<li>除法：是把除数进行移位连减。<br><img src="/2025/08/28/plan/408/408-4.png" alt="乘法与除法"></li>
+</ul>
+</li>
+</ol>
+<h3 id="整数的表示和运算"><a href="#整数的表示和运算" class="headerlink" title="整数的表示和运算"></a>整数的表示和运算</h3><ol>
+<li>无符号整数：机器字长决定了计算机能处理多少位的运算以及通用寄存器能存储的位数。<ul>
+<li>加法：无符号数的二进制运算和十进制类似，产生进位就进位即可。</li>
+<li>减法：无符号数的减法，可以转换为加法，被减数取反加1，然后加上减数。</li>
+</ul>
+</li>
+<li>有符号整数：有符号整数通常使用补码表示，原码不能进行加法运算，因为符号位不能参与运算。所以需要补码表示法，补码的加法运算和减法运算与无符号数类似，但是需要考虑符号位。<ul>
+<li>加法：<br> <img src="/2025/08/28/plan/408/408-5.png" alt="补码加法"></li>
+<li>减法：<br> <img src="/2025/08/28/plan/408/408-6.png" alt="补码减法">!</li>
+</ul>
+</li>
+<li>原码、反码和补码特性对比：<br><img src="/2025/08/28/plan/408/408-7.png" alt="对比图"></li>
+</ol>
+<h3 id="浮点数的表示和运算"><a href="#浮点数的表示和运算" class="headerlink" title="浮点数的表示和运算"></a>浮点数的表示和运算</h3><ol>
+<li>浮点数表示：浮点数分为阶码和尾数两个部分，以科学计数法为例<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.186ex;" xmlns="http://www.w3.org/2000/svg" width="13.101ex" height="2.14ex" role="img" focusable="false" viewbox="0 -864 5790.6 946"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"/></g><g data-mml-node="mn" transform="translate(778,0)"><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"/><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z" transform="translate(500,0)"/><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(778,0)"/><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" transform="translate(1278,0)"/><path data-c="36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z" transform="translate(1778,0)"/></g><g data-mml-node="mo" transform="translate(3278.2,0)"><path data-c="2217" d="M229 286Q216 420 216 436Q216 454 240 464Q241 464 245 464T251 465Q263 464 273 456T283 436Q283 419 277 356T270 286L328 328Q384 369 389 372T399 375Q412 375 423 365T435 338Q435 325 425 315Q420 312 357 282T289 250L355 219L425 184Q434 175 434 161Q434 146 425 136T401 125Q393 125 383 131T328 171L270 213Q283 79 283 63Q283 53 276 44T250 35Q231 35 224 44T216 63Q216 80 222 143T229 213L171 171Q115 130 110 127Q106 124 100 124Q87 124 76 134T64 161Q64 166 64 169T67 175T72 181T81 188T94 195T113 204T138 215T170 230T210 250L74 315Q65 324 65 338Q65 353 74 363T98 374Q106 374 116 368T171 328L229 286Z"/></g><g data-mml-node="msup" transform="translate(4000.4,0)"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500,0)"/></g><g data-mml-node="TeXAtom" transform="translate(1033,393.1) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" transform="translate(500,0)"/></g></g></g></g></g></svg></mjx-container>，11为阶码，表示10的11次方，+3.026是尾数。<br><img src="/2025/08/28/plan/408/408-8.png" alt="浮点数表示"></li>
+<li>IEEE 754 标准: IEEE 754 标准是一种用于表示浮点数的标准，它定义了浮点数的格式和运算规则。IEEE 754 标准包括单精度浮点数和双精度浮点数两种格式，其中单精度浮点数使用32位表示，双精度浮点数使用64位表示。<ul>
+<li>单精度浮点数：单精度浮点数使用32位表示，其中1位表示符号位，8位表示指数位，23位表示尾数位。</li>
+<li>双精度浮点数：双精度浮点数使用64位表示，其中1位表示符号位，11位表示指数位，52位表示尾数位。<br> <img src="/2025/08/28/plan/408/408-9.png" alt="IEEE 754 标准"></li>
+<li>加减运算<br> <img src="/2025/08/28/plan/408/408-10.png" alt="加减运算"></li>
+</ul>
+</li>
+</ol>
+<h2 id="存储器的层次结构"><a href="#存储器的层次结构" class="headerlink" title="存储器的层次结构"></a>存储器的层次结构</h2><p>计算机的存储系统包括cpu内部寄存器，Cache，主存和外存。存储器层次结构的主要思想就是上一层的存储器作为低一层存储器的缓存。<br><img src="/2025/08/28/plan/408/408-11.png" alt="存储器层次结构"></p>
+<h3 id="存储器的分类"><a href="#存储器的分类" class="headerlink" title="存储器的分类"></a>存储器的分类</h3><ol>
+<li>按存储介质分类：<ul>
+<li>半导体存储器：如 DRAM（动态随机存取存储器）和 SRAM（静态随机存取存储器）。</li>
+<li>磁存储器：如硬盘（HDD）和固态硬盘（SSD）。</li>
+<li>光存储器：如光盘（CD）和蓝光光盘（BD）。</li>
+</ul>
+</li>
+<li>按存取方式分类：<ul>
+<li>随机存取存储器（Random Access Memory，RAM）：如 DRAM 和 SRAM，可以随机访问任意位置的存储单元。</li>
+<li>只读存储器（Read-Only Memory，ROM）：如 EPROM 和 EEPROM，只能读取不能写入。</li>
+<li>直接存取存储器（Direct Access Memory，DAM）：如硬盘和固态硬盘，可以随机访问任意位置的存储单元，但访问速度比 RAM 慢。</li>
+</ul>
+</li>
+<li>按存储单元的连接方式分类：<ul>
+<li>阵列存储器：如 DRAM 和 SRAM，存储单元按阵列形式连接，可以随机访问任意位置的存储单元。</li>
+<li>线性存储器：如 ROM，存储单元按线性方式连接，只能顺序访问存储单元。</li>
+</ul>
+</li>
+<li>按作用分类：<ul>
+<li>主存储器：用于存储计算机运行时的程序和数据，是计算机的核心存储器。</li>
+<li>辅助存储器：用于存储计算机运行时的程序和数据，但容量较大，访问速度较慢，通常用于存储长期保存的数据。</li>
+<li>高速缓冲存储器：用于存储计算机运行时的程序和数据，但容量较小，访问速度较快，通常用于缓存频繁访问的数据。</li>
+</ul>
+</li>
+<li>按信息可保存性分类：<ul>
+<li>易失性存储器：断电后数据消失（RAM，主存，Cache）</li>
+<li>非易失性存储器：断电依然保存（磁盘、光盘）</li>
+<li>破坏性读出：读出数据后要进行重写（如DRAM芯片）</li>
+<li>非破坏性读出：读出数据后原数据没被破坏（如SRAM芯片、磁盘、光盘）</li>
+</ul>
+</li>
+</ol>
+<p><img src="/2025/08/28/plan/408/408-14.png" alt="存储器分类"></p>
+<h3 id="半导体随机存储器"><a href="#半导体随机存储器" class="headerlink" title="半导体随机存储器"></a>半导体随机存储器</h3><p><img src="/2025/08/28/plan/408/408-12.png" alt="半导体随机存储器"></p>
+<ol>
+<li>SRAM 存储器：SRAM（Static Random-Access Memory）是一种静态随机存取存储器，它的存储单元由晶体管组成，每个存储单元由一个晶体管和一个电容组成，电容存储电荷，晶体管控制电荷的读写。SRAM 的优点是速度快，但功耗较大，容量较小，通常用于高速缓存。<br><img src="/2025/08/28/plan/408/408-17.png" alt="SRAM读周期"><br><img src="/2025/08/28/plan/408/408-18.png" alt="SRAM写周期"></li>
+<li>DRAM 存储器：DRAM（Dynamic Random-Access Memory）是一种动态随机存取存储器，它的存储单元由晶体管和一个电容组成，电容存储电荷，晶体管控制电荷的读写。DRAM 的优点是容量大，功耗低，但需要定期刷新电容中的电荷，以保持数据不丢失。DRAM 通常用于主存储器和图形卡等需要大容量存储的设备。<br><img src="/2025/08/28/plan/408/408-16.png" alt="DRAM刷新"><br><img src="/2025/08/28/plan/408/408-15.png" alt="半导体随机存储器详细"></li>
+<li>Flash 存储器：Flash 存储器是一种非易失性存储器，它使用浮栅晶体管存储电荷，电荷的保持时间较长，因此即使断电后数据也不会丢失。Flash 存储器的优点是容量大，功耗低，但写入速度较慢，通常用于存储系统固件、操作系统和用户数据等。</li>
+</ol>
+<h3 id="主存储器"><a href="#主存储器" class="headerlink" title="主存储器"></a>主存储器</h3><p><img src="/2025/08/28/plan/408/408-19.png" alt="主存储基本结构"><br><img src="/2025/08/28/plan/408/408-20.png" alt="主存储简单模型"></p>
+<ol>
+<li>主存储器与CPU的连接：主存储器与 CPU 的连接通常通过总线来实现。总线是计算机内部各个部件之间进行数据传输的通道，包括数据总线、地址总线和控制总线。数据总线用于传输数据，地址总线用于传输地址，控制总线用于传输控制信号。</li>
+<li>双端口RAM和多模块存储器：<ul>
+<li>双端口 RAM：双端口 RAM 具有两个独立的端口，每个端口都可以独立地读写数据。双端口 RAM 的优点是可以同时进行读写操作，提高存储器的读写效率。<br> <img src="/2025/08/28/plan/408/408-21.png" alt="双端口 RAM"></li>
+<li>多模块存储器：多模块存储器是将多个存储模块组合在一起，形成一个更大的存储器。每个存储模块可以独立地读写数据，多个存储模块可以并行工作，提高存储器的读写效率。<br> <img src="/2025/08/28/plan/408/408-22.png" alt="多模块存储器"></li>
+</ul>
+</li>
+</ol>
+<h3 id="外部存储器"><a href="#外部存储器" class="headerlink" title="外部存储器"></a>外部存储器</h3><ol>
+<li>磁盘存储器：磁盘存储器是一种常见的存储设备，它使用磁性材料存储数据。磁盘存储器具有容量大、可靠性高、价格低等优点，广泛应用于计算机系统和数据中心。</li>
+<li>固态硬盘：固态硬盘（Solid State Drive，SSD）是一种使用闪存存储器的存储设备。固态硬盘具有速度快、功耗低、无机械运动等优点，但价格较高，容量较小。</li>
+</ol>
+<h3 id="高速缓冲存储器"><a href="#高速缓冲存储器" class="headerlink" title="高速缓冲存储器"></a>高速缓冲存储器</h3><ol>
+<li>Cache：Cache（高速缓冲存储器）是一种用于提高计算机系统性能的存储器。Cache 是一种高速的、容量较小的存储器，它位于 CPU 和主存储器之间，用于存储 CPU 常常访问的数据和指令。当 CPU 需要访问数据或指令时，它首先会检查 Cache，如果 Cache 中有需要的数据或指令，则直接从 Cache 中读取，否则会从主存储器中读取，并将数据或指令存入 Cache 中。Cache 的优点是读写速度快，可以大大提高计算机系统的性能。</li>
+<li>基本原理：Cache 的基本原理是利用局部性原理，即 CPU 常常访问的数据和指令在一段时间内会集中在某个区域。Cache 通过将 CPU 常常访问的数据和指令存入高速存储器中，从而提高 CPU 的访问速度。Cache 的容量通常较小，但访问速度比主存储器快得多，因此可以大大提高计算机系统的性能。<br><img src="/2025/08/28/plan/408/408-23.png" alt="局部性原理"><br><img src="/2025/08/28/plan/408/408-24.png" alt="性能分析"></li>
+<li>映射方式：Cache 的映射方式是指将主存储器的地址映射到 Cache 的地址。常见的映射方式有全相联映射、直接映射和组相联映射。<ul>
+<li>全相联映射：全相联映射是指主存储器的每个地址都可以映射到 Cache 的任意一个存储单元。全相联映射的优点是 Cache 的利用率高，但需要更多的硬件支持。<br> <img src="/2025/08/28/plan/408/408-25.png" alt="全相联映射"></li>
+<li>直接映射：直接映射是指主存储器的每个地址只能映射到 Cache 的特定存储单元。直接映射的优点是硬件实现简单，但 Cache 的利用率较低。<br> <img src="/2025/08/28/plan/408/408-26.png" alt="直接映射"></li>
+<li>组相联映射：组相联映射是指主存储器的地址被分为两部分，一部分用于确定地址属于哪个组，另一部分用于确定地址在组内的位置。组相联映射的优点是 Cache 的利用率较高，但需要更多的硬件支持。<br> <img src="/2025/08/28/plan/408/408-27.png" alt="组相联映射"></li>
+</ul>
+</li>
+<li>替换算法：当 Cache 已满，需要替换掉一些数据时，需要使用替换算法来决定替换哪个数据。<br>随机算法(RAND):随机地确定替换的 Cache块。它的实现比较简单，但没有依据程序访问的局部性原理，故可能命中率较低<ul>
+<li>先进先出算法(FIFO):选择最早调入的行进行替换。它比较容易实现，但也没有依据程序访问的局部性原理，可能会把一些需要经常使用的程序块（如循环程序）也作为最早进入 Cache的块替换掉。</li>
+<li>近期最少使用算法（LRU）:依据程序访问的局部性原理选择近期内长久未访问过的存储行作为替换的行，平均命中率要比FFO要高，是堆栈类算法。</li>
+<li>LRU算法对每行设置一个计数器， Cache每命中一次，命中行计数器清0,而其他各行计数器均加1,需要替换时比较各特定行的计数值，将计数值最大的行换出。</li>
+<li>最不经常使用算法(LFU):将一段时间内被访问次数最少的存储行换出。每行也设置一个计数器，新行建立后从0开始计数，每访问一次，被访问的行计数器加1,需要替换时比较各特定行的计数值，将计数值最小的行换出。</li>
+</ul>
+</li>
+<li>写策略：Cache 的写策略是指当 CPU 写入数据时，如何将数据写入 Cache 和主存储器。<ul>
+<li>命中-全写法：当 Cache 命中时，将数据写入 Cache，同时将数据写入主存储器。这种写策略的优点是可以保证 Cache 和主存储器中的数据一致性，但写操作的速度较慢。</li>
+<li>命中-写回法：当 Cache 命中时，将数据写入 Cache，但不立即将数据写入主存储器。只有当 Cache 行被替换时，才会将数据写入主存储器。这种写策略的优点是写操作的速度较快，但可能会出现 Cache 和主存储器中的数据不一致的情况。</li>
+<li>未命中-写分配写法：当 Cache 未命中时，将数据写入 Cache，同时将数据写入主存储器。这种写策略的优点是可以保证 Cache 和主存储器中的数据一致性，但写操作的速度较慢。搭配写全法。</li>
+<li>未命中-写不分配写法：当 Cache 未命中时，只将数据写入主存储器，不写入 Cache。这种写策略的优点是写操作的速度较快，但可能会出现 Cache 和主存储器中的数据不一致的情况。搭配写回法。</li>
+</ul>
+</li>
+</ol>
+<h3 id="虚拟存储器"><a href="#虚拟存储器" class="headerlink" title="虚拟存储器"></a>虚拟存储器</h3><ol>
+<li>基本概念：虚拟存储器是一种将主存储器和外部存储器（如磁盘）结合起来的存储器系统。它通过将主存储器中的部分数据移到外部存储器中，从而实现更大的存储空间和更快的访问速度。虚拟存储器的基本原理是将主存储器中的部分数据移到外部存储器中，从而实现更大的存储空间和更快的访问速度。<br><img src="/2025/08/28/plan/408/408-28.png" alt="虚拟存储器"></li>
+<li>页式虚拟存储器：页式虚拟存储器是一种将主存储器划分为固定大小的页，并将页映射到外部存储器中的存储器系统。<br><img src="/2025/08/28/plan/408/408-29.png" alt="页式虚拟存储器"></li>
+<li>段式虚拟存储器：段式虚拟存储器是一种将主存储器划分为固定大小的段，并将段映射到外部存储器中的存储器系统。<br><img src="/2025/08/28/plan/408/408-30.png" alt="段式虚拟存储器"></li>
+<li>快表（TLB）：快表是一种用于提高虚拟存储器访问速度的存储器。页表、段表存放在主存中，收到虚拟地址后要先访问主存，査询页表、段表，进行虚实地址转换。放在主存中的页表称为慢表(Page)<br>提高变换速度→用高速绥沖存储器存放常用的页表项 → 快表(TLB)<br><img src="/2025/08/28/plan/408/408-31.png" alt="快表"></li>
+</ol>
+<h2 id="指令系统"><a href="#指令系统" class="headerlink" title="指令系统"></a>指令系统</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ol>
+<li>指令（又称机器指令）：是指计算机执行某种操作指令，是计算机最小的功能单位。一台计算机所有指令的集合构成该计算机的指令系统。也称为指令集。</li>
+<li>基本格式：指令由操作码和地址码两部分组成。操作码指出指令要完成的操作，地址码指出参与操作的操作数在存储器中的位置。<br><img src="/2025/08/28/plan/408/408-32.png" alt="指令格式"><br><img src="/2025/08/28/plan/408/408-33.png" alt="指令格式"><br><img src="/2025/08/28/plan/408/408-34.png" alt="指令格式"></li>
+<li>指令的寻址方式：指令的寻址方式是指指令中地址码的寻址方式。常见的寻址方式有立即寻址、直接寻址、间接寻址、寄存器寻址、基址寻址、变址寻址等。<br><img src="/2025/08/28/plan/408/408-35.png" alt="指令寻址方式"><ul>
+<li>隐含寻址：隐含寻址是指指令中不包含地址码，操作数隐含在操作码中。<br> <img src="/2025/08/28/plan/408/408-36.png" alt="隐含寻址"></li>
+<li>立即寻址：立即寻址是指指令中的地址码表示的是操作数的值，而不是操作数的地址。<br> <img src="/2025/08/28/plan/408/408-37.png" alt="立即寻址"></li>
+<li>直接寻址：直接寻址是指指令中的地址码表示的是操作数的地址。<br> <img src="/2025/08/28/plan/408/408-38.png" alt="直接寻址"></li>
+<li>间接寻址：间接寻址是指指令中的地址码表示的是操作数的地址的地址，而不是操作数的地址。<br> <img src="/2025/08/28/plan/408/408-39.png" alt="间接寻址"></li>
+<li>寄存器寻址：寄存器寻址是指指令中的地址码表示的是操作数的值所在的寄存器的编号。<br> <img src="/2025/08/28/plan/408/408-40.png" alt="寄存器寻址"></li>
+<li>偏移寻址：偏移寻址是指指令中的地址码表示的是操作数的地址相对于某个基址的偏移量。<br> <img src="/2025/08/28/plan/408/408-41.png" alt="偏移寻址"></li>
+<li>基址寻址：基址寻址是指指令中的地址码表示的是操作数的地址相对于某个基址的偏移量。<br> <img src="/2025/08/28/plan/408/408-42.png" alt="基址寻址"></li>
+<li>变址寻址：变址寻址是指指令中的地址码表示的是操作数的地址相对于某个变址寄存器的值的偏移量。<br> <img src="/2025/08/28/plan/408/408-43.png" alt="变址寻址"></li>
+<li>相对寻址：相对寻址是指指令中的地址码表示的是操作数的地址相对于指令本身的地址的偏移量。<br> <img src="/2025/08/28/plan/408/408-44.png" alt="相对寻址"></li>
+<li>堆栈寻址：堆栈寻址是指指令中的地址码表示的是操作数的地址相对于堆栈指针的偏移量。<br> <img src="/2025/08/28/plan/408/408-45.png" alt="堆栈寻址"></li>
+</ul>
+</li>
+<li>指令的执行过程：指令的执行过程是指计算机执行指令的过程。指令的执行过程通常包括取指、译指和执行三个步骤。</li>
+<li>RISC (Reduced Instruction Set Computer)：<ul>
+<li>RISC 的优点是执行速度更快，指令数量少，指令集更精简，指令执行时间更长。但缺点是指令数量少，指令集更精简，指令执行时间更长，指令执行速度更快。</li>
+<li>例如：MIPS、ARM、PowerPC、SPARC、M68K、M88K、M32R、MIPS64、ARM64、PowerPC64、SPARC64、M68K64、M32R64、MIPS64R6、ARM64-A32、ARM64-A64、PowerPC64-E500、SPARC64-V9、M68K64-68040、M32R64-RSPC、MIPS64R6-RSPC、ARM64-A32-RSPC、ARM64-A64-RSPC、PowerPC64-E500-RSPC、SPARC64-V9-RSPC、M68K64-68040-RSPC、M32R64-RSPC</li>
+</ul>
+</li>
+<li>CISC (Complex Instruction Set Computer)：<ul>
+<li>CISC 的优点是执行速度更快，指令数量多，指令集更丰富，指令执行时间更短。但缺点是指令数量多，指令集更丰富，指令执行时间更短，指令执行速度更快。</li>
+<li>例如：x86、x86-64、x86-32、x86-16、x86-8、x86-4、x86-2、x86-1、x86-0、x86-9、x86-8、x86-7、x86-6、x86-5、x86-4、x86-3、x86-2、x86-1、x86-0、x86-9、x86-8、x86-7、x86-6、x86-5、x86-4、x86-3、x86-2、x86-1、x86-0、x86-9、x86-8、x86-7、x86-6、x86-5、x86-4、x86-3</li>
+</ul>
+</li>
+</ol>
+<h2 id="中央处理器"><a href="#中央处理器" class="headerlink" title="中央处理器"></a>中央处理器</h2>
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2025/08/28/plan/advanced_mathematics/"
+                                   title="高等数学"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">高等数学</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2025/08/28/Java%E5%9F%BA%E7%A1%80/Java%20%E4%BC%98%E5%8C%96/"
+                                   title="Java 优化"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Java 优化</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">计算机组成原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">计算机系统概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.1.</span> <span class="nav-text">计算机系统层次结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="nav-number">1.1.2.</span> <span class="nav-text">计算机性能指标</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E4%B8%8E%E8%BF%90%E7%AE%97"><span class="nav-number">1.2.</span> <span class="nav-text">数据的表示与运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%88%B6"><span class="nav-number">1.2.1.</span> <span class="nav-text">数制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E7%A0%81"><span class="nav-number">1.2.2.</span> <span class="nav-text">编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%94%B5%E8%B7%AF"><span class="nav-number">1.2.3.</span> <span class="nav-text">运算方法和运算电路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B4%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97"><span class="nav-number">1.2.4.</span> <span class="nav-text">整数的表示和运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97"><span class="nav-number">1.2.5.</span> <span class="nav-text">浮点数的表示和运算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="nav-number">1.3.</span> <span class="nav-text">存储器的层次结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-number">1.3.1.</span> <span class="nav-text">存储器的分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%8A%E5%AF%BC%E4%BD%93%E9%9A%8F%E6%9C%BA%E5%AD%98%E5%82%A8%E5%99%A8"><span class="nav-number">1.3.2.</span> <span class="nav-text">半导体随机存储器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8"><span class="nav-number">1.3.3.</span> <span class="nav-text">主存储器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%96%E9%83%A8%E5%AD%98%E5%82%A8%E5%99%A8"><span class="nav-number">1.3.4.</span> <span class="nav-text">外部存储器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E9%80%9F%E7%BC%93%E5%86%B2%E5%AD%98%E5%82%A8%E5%99%A8"><span class="nav-number">1.3.5.</span> <span class="nav-text">高速缓冲存储器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E5%99%A8"><span class="nav-number">1.3.6.</span> <span class="nav-text">虚拟存储器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.4.</span> <span class="nav-text">指令系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.4.1.</span> <span class="nav-text">基本概念</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8"><span class="nav-number">1.5.</span> <span class="nav-text">中央处理器</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+        &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2025
+        
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">ArmoredKill</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">计算机组成原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">计算机系统概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.1.</span> <span class="nav-text">计算机系统层次结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="nav-number">1.1.2.</span> <span class="nav-text">计算机性能指标</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E4%B8%8E%E8%BF%90%E7%AE%97"><span class="nav-number">1.2.</span> <span class="nav-text">数据的表示与运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%88%B6"><span class="nav-number">1.2.1.</span> <span class="nav-text">数制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E7%A0%81"><span class="nav-number">1.2.2.</span> <span class="nav-text">编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%94%B5%E8%B7%AF"><span class="nav-number">1.2.3.</span> <span class="nav-text">运算方法和运算电路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B4%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97"><span class="nav-number">1.2.4.</span> <span class="nav-text">整数的表示和运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97"><span class="nav-number">1.2.5.</span> <span class="nav-text">浮点数的表示和运算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="nav-number">1.3.</span> <span class="nav-text">存储器的层次结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-number">1.3.1.</span> <span class="nav-text">存储器的分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%8A%E5%AF%BC%E4%BD%93%E9%9A%8F%E6%9C%BA%E5%AD%98%E5%82%A8%E5%99%A8"><span class="nav-number">1.3.2.</span> <span class="nav-text">半导体随机存储器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8"><span class="nav-number">1.3.3.</span> <span class="nav-text">主存储器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%96%E9%83%A8%E5%AD%98%E5%82%A8%E5%99%A8"><span class="nav-number">1.3.4.</span> <span class="nav-text">外部存储器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E9%80%9F%E7%BC%93%E5%86%B2%E5%AD%98%E5%82%A8%E5%99%A8"><span class="nav-number">1.3.5.</span> <span class="nav-text">高速缓冲存储器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E5%99%A8"><span class="nav-number">1.3.6.</span> <span class="nav-text">虚拟存储器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.4.</span> <span class="nav-text">指令系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.4.1.</span> <span class="nav-text">基本概念</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8"><span class="nav-number">1.5.</span> <span class="nav-text">中央处理器</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+    
+<script src="//cdn.jsdelivr.net/npm/mermaid@7.1.2/dist/mermaid.min.js"></script>
+
+
+
+
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>

@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="ArmoredKill">
+    
+    <title>
+        
+        Death Note
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Death Note","author":"ArmoredKill","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"home":"/","archives":"/archives","tags":"/tags","categories":"/categories","about":"/about"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.0"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Death Note
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/tags">
+                                
+                                标签
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/categories">
+                                
+                                分类
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/about">
+                                
+                                关于
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/tags">
+                            
+                            标签
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/categories">
+                            
+                            分类
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/about">
+                            
+                            关于
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">ArmoredKill</span>
+                                
+                                    <span class="author-badge">Lv3</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2025-08-28 07:32:34</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Thu Aug 28 2025 07:31:21 GMT+0000">2025-08-28 07:31:21</span>
+            </span>
+        
+
+        
+
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h1 id="1-核心技术框架"><a href="#1-核心技术框架" class="headerlink" title="1. 核心技术框架"></a>1. 核心技术框架</h1><p><strong>Activiti核心组件</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Activiti工作流依赖 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.activiti<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>activiti-spring-boot-starter-basic<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>6.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.activiti<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>activiti-json-converter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>6.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>流程编辑器支持</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 流程编辑器静态文件依赖 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.xmlgraphics<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>batik-codec<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.7<span class="tag">&lt;/<span class="name">version</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="工作流流程实现详解"><a href="#工作流流程实现详解" class="headerlink" title="工作流流程实现详解"></a>工作流流程实现详解</h1><h2 id="1-工作流引擎配置"><a href="#1-工作流引擎配置" class="headerlink" title="1. 工作流引擎配置"></a>1. 工作流引擎配置</h2><p><strong>Activiti配置类</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableAutoConfiguration(exclude=&#123;DataSourceProcessEngineAutoConfiguration.class, SecurityAutoConfiguration.class&#125;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ActivitiConfig</span> <span class="keyword">extends</span> <span class="title class_">AbstractProcessEngineAutoConfiguration</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> ProcessEngineConfiguration <span class="title function_">processEngineConfiguration</span><span class="params">(SqlSessionFactory sqlSessionFactory, PlatformTransactionManager annotationDrivenTransactionManager)</span> &#123;</span><br><span class="line">        <span class="type">SpringProcessEngineConfiguration</span> <span class="variable">processEngineConfiguration</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SpringProcessEngineConfiguration</span>();</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 指定数据源</span></span><br><span class="line">        processEngineConfiguration.setDataSource(sqlSessionFactory.getConfiguration().getEnvironment().getDataSource());</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 数据库模式更新策略</span></span><br><span class="line">        processEngineConfiguration.setDatabaseSchemaUpdate(ProcessEngineConfiguration.DB_SCHEMA_UPDATE_FALSE);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 事务管理器</span></span><br><span class="line">        processEngineConfiguration.setTransactionManager(annotationDrivenTransactionManager);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 设置流程图字体，防止中文乱码</span></span><br><span class="line">        processEngineConfiguration.setActivityFontName(<span class="string">&quot;宋体&quot;</span>);</span><br><span class="line">        processEngineConfiguration.setAnnotationFontName(<span class="string">&quot;宋体&quot;</span>);</span><br><span class="line">        processEngineConfiguration.setLabelFontName(<span class="string">&quot;宋体&quot;</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 开启全局事件日志功能</span></span><br><span class="line">        processEngineConfiguration.setEnableDatabaseEventLogging(<span class="literal">true</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 添加全局监听器</span></span><br><span class="line">        List&lt;ActivitiEventListener&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        list.add(<span class="keyword">new</span> <span class="title class_">GlobalEventListener</span>());</span><br><span class="line">        list.add(<span class="keyword">new</span> <span class="title class_">WorkflowBillStateManager</span>());</span><br><span class="line">        list.add(<span class="keyword">new</span> <span class="title class_">MailNotificationListener</span>());</span><br><span class="line">        list.add(<span class="keyword">new</span> <span class="title class_">ProcessCompletedListener</span>());</span><br><span class="line">        processEngineConfiguration.setEventListeners(list);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 禁用默认的用户验证表，使用应用系统自身的用户管理</span></span><br><span class="line">        processEngineConfiguration.setDbIdentityUsed(<span class="literal">false</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> processEngineConfiguration;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="工作流执行过程分析"><a href="#工作流执行过程分析" class="headerlink" title="工作流执行过程分析"></a>工作流执行过程分析</h2><h3 id="工作流概述"><a href="#工作流概述" class="headerlink" title="工作流概述"></a>工作流概述</h3><p>基于项目代码分析，这是一个基于RocketMQ的分布式工作流系统，主要用于处理业务流程的异步执行和状态管理。</p>
+<h3 id="工作流架构图"><a href="#工作流架构图" class="headerlink" title="工作流架构图"></a>工作流架构图</h3><pre class="mermaid">graph TB
+    subgraph "前端应用"
+        A[用户操作界面]
+        B[工作流表单]
+    end
+    
+    subgraph "工作流引擎"
+        C[WorkflowService]
+        D[WorkflowEntitySupport]
+        E[BeanMapper映射器]
+    end
+    
+    subgraph "消息队列"
+        F[RocketMQ Producer]
+        G[RocketMQ Consumer]
+        H[消息持久化]
+    end
+    
+    subgraph "数据存储"
+        I[业务数据表]
+        J[工作流状态表]
+        K[消息日志表]
+    end
+    
+    A --> B
+    B --> C
+    C --> D
+    C --> E
+    C --> F
+    F --> G
+    G --> C
+    C --> I
+    C --> J
+    G --> K</pre>
+<h3 id="工作流执行流程"><a href="#工作流执行流程" class="headerlink" title="工作流执行流程"></a>工作流执行流程</h3><h4 id="工作流启动流程"><a href="#工作流启动流程" class="headerlink" title="工作流启动流程"></a>工作流启动流程</h4><pre class="mermaid">sequenceDiagram
+    participant U as 用户
+    participant F as 前端
+    participant WS as WorkflowService
+    participant ES as EntitySupport
+    participant MP as MessageProducer
+    participant MQ as RocketMQ
+    
+    U->>F: 提交工作流申请
+    F->>WS: 调用startWorkflow()
+    WS->>ES: 获取工作流实体
+    ES-->>WS: 返回实体对象
+    WS->>WS: populateEntityDatas() 数据映射
+    WS->>MP: 发送启动消息
+    MP->>MQ: 投递消息到队列
+    MQ-->>MP: 确认消息发送
+    MP-->>WS: 返回发送结果
+    WS-->>F: 返回启动结果
+    F-->>U: 显示启动成功</pre>
+<h4 id="数据映射处理流程"><a href="#数据映射处理流程" class="headerlink" title="数据映射处理流程"></a>数据映射处理流程</h4><pre class="mermaid">graph TD
+    A[接收表单数据] --> B[日期格式处理]
+    B --> C[多级属性解析]
+    C --> D{是否包含点号?}
+    D -->|是| E[分割属性名]
+    D -->|否| F[直接映射]
+    E --> G[构建嵌套Map]
+    F --> H[BeanMapper映射]
+    G --> H
+    H --> I{映射是否成功?}
+    I -->|成功| J[继续处理]
+    I -->|失败| K[异常处理]
+    K --> L[记录错误日志]
+    L --> M[使用备用方案]
+    M --> J
+    J --> N[集合属性处理]
+    N --> O[附件处理]
+    O --> P[数据映射完成]</pre>
+<h4 id="数据映射流程图"><a href="#数据映射流程图" class="headerlink" title="数据映射流程图"></a>数据映射流程图</h4><pre class="mermaid">graph LR
+    subgraph "输入数据"
+        A1[user.name=张三]
+        A2[user.age=25]
+        A3[user.address.city=北京]
+        A4[user.address.street=朝阳区]
+    end
+    
+    subgraph "映射处理"
+        B1[user.name → 直接映射]
+        B2[user.age → 直接映射]
+        B3[user.address.city → 嵌套映射]
+        B4[user.address.street → 嵌套映射]
+    end
+    
+    subgraph "输出结构"
+        C1["user: {name: 张三, age: 25}"]
+        C2["address: {city: 北京, street: 朝阳区}"]
+    end
+    
+    A1 --> B1 --> C1
+    A2 --> B2 --> C1
+    A3 --> B3 --> C2
+    A4 --> B4 --> C2</pre>
+
+<h2 id="5-消息处理流程"><a href="#5-消息处理流程" class="headerlink" title="5. 消息处理流程"></a>5. 消息处理流程</h2><h3 id="5-1-消息发送流程"><a href="#5-1-消息发送流程" class="headerlink" title="5.1 消息发送流程"></a>5.1 消息发送流程</h3><pre class="mermaid">graph TD
+    A[工作流启动] --> B[构建消息对象]
+    B --> C[设置消息属性]
+    C --> D[选择消息类型]
+    D --> E{消息类型}
+    E -->|普通消息| F[同步发送]
+    E -->|延迟消息| G[延迟发送]
+    E -->|顺序消息| H[顺序发送]
+    E -->|事务消息| I[事务发送]
+    F --> J[消息确认]
+    G --> J
+    H --> J
+    I --> J
+    J --> K[记录发送日志]
+    K --> L[消息发送完成]</pre>
+
+<h3 id="5-2-消息消费流程"><a href="#5-2-消息消费流程" class="headerlink" title="5.2 消息消费流程"></a>5.2 消息消费流程</h3><pre class="mermaid">graph TD
+    A[接收消息] --> B[消息解析]
+    B --> C{消费者类型}
+    C -->|普通消费者| D[直接处理]
+    C -->|幂等消费者| E[幂等性校验]
+    E --> F{是否已消费?}
+    F -->|是| G[跳过处理]
+    F -->|否| H[执行业务逻辑]
+    D --> H
+    H --> I[更新工作流状态]
+    I --> J[记录处理日志]
+    J --> K[提交事务]
+    K --> L[消费完成]
+    E --> M[记录消费状态]
+    M --> L</pre>
+<h4 id="状态转换图"><a href="#状态转换图" class="headerlink" title="状态转换图"></a>状态转换图</h4><pre class="mermaid">stateDiagram-v2
+    [*] --> 草稿
+    草稿 --> 待审核: 提交申请
+    待审核 --> 审核中: 分配审核人
+    审核中 --> 已通过: 审核通过
+    审核中 --> 已驳回: 审核不通过
+    已通过 --> 执行中: 开始执行
+    执行中 --> 已完成: 执行完成
+    执行中 --> 已暂停: 暂停执行
+    已暂停 --> 执行中: 恢复执行
+    已驳回 --> 待审核: 重新提交
+    已完成 --> [*]</pre>
+<h4 id="异常处理流程图"><a href="#异常处理流程图" class="headerlink" title="异常处理流程图"></a>异常处理流程图</h4><pre class="mermaid">graph TD
+    A[业务执行] --> B{是否发生异常?}
+    B -->|否| C[正常处理]
+    B -->|是| D[异常捕获]
+    D --> E[记录异常日志]
+    E --> F{异常类型}
+    F -->|业务异常| G[回滚事务]
+    F -->|系统异常| H[重试机制]
+    F -->|网络异常| I[消息重发]
+    G --> J[更新状态为失败]
+    H --> K[延迟重试]
+    I --> L[重新投递消息]
+    J --> M[通知相关人员]
+    K --> N[等待重试]
+    L --> O[消息重新处理]
+    M --> P[异常处理完成]
+    N --> P
+    O --> P</pre>
+<h4 id="监控体系"><a href="#监控体系" class="headerlink" title="监控体系"></a>监控体系</h4><pre class="mermaid">graph TB
+    subgraph "监控层"
+        A[性能监控]
+        B[状态监控]
+        C[异常监控]
+        D[业务监控]
+    end
+    
+    subgraph "数据层"
+        E[工作流日志]
+        F[消息日志]
+        G[异常日志]
+        H[性能指标]
+    end
+    
+    subgraph "展示层"
+        I[监控面板]
+        J[告警通知]
+        K[报表统计]
+    end
+    
+    A --> E
+    B --> F
+    C --> G
+    D --> H
+    E --> I
+    F --> I
+    G --> J
+    H --> K</pre>
+<h4 id="性能优化策略"><a href="#性能优化策略" class="headerlink" title="性能优化策略"></a>性能优化策略</h4><pre class="mermaid">graph LR
+    subgraph "优化策略"
+        A[异步处理]
+        B[批量操作]
+        C[缓存机制]
+        D[连接池]
+    end
+    
+    subgraph "优化效果"
+        E[提高吞吐量]
+        F[减少响应时间]
+        G[降低资源消耗]
+        H[提升用户体验]
+    end
+    
+    A --> E
+    B --> F
+    C --> G
+    D --> H</pre>
+<h4 id="核心特性"><a href="#核心特性" class="headerlink" title="核心特性"></a>核心特性</h4><ul>
+<li><strong>异步处理</strong>: 基于RocketMQ实现异步消息处理</li>
+<li><strong>状态管理</strong>: 完整的工作流状态转换机制</li>
+<li><strong>数据映射</strong>: 灵活的多级属性映射处理</li>
+<li><strong>幂等性</strong>: 防止重复处理的消息机制</li>
+<li><strong>监控体系</strong>: 全面的日志记录和监控</li>
+</ul>
+<h4 id="技术优势"><a href="#技术优势" class="headerlink" title="技术优势"></a>技术优势</h4><ul>
+<li><strong>高可用</strong>: 分布式架构保证系统高可用</li>
+<li><strong>可扩展</strong>: 模块化设计便于功能扩展</li>
+<li><strong>易维护</strong>: 完善的日志和监控体系</li>
+<li><strong>高性能</strong>: 异步处理和缓存机制提升性能</li>
+</ul>
+<h2 id="技术难点和重点"><a href="#技术难点和重点" class="headerlink" title="技术难点和重点"></a>技术难点和重点</h2><h3 id="1-工作流引擎集成难点"><a href="#1-工作流引擎集成难点" class="headerlink" title="1. 工作流引擎集成难点"></a>1. 工作流引擎集成难点</h3><p><strong>事务管理</strong>：</p>
+<ul>
+<li><strong>问题</strong>：Activiti引擎与业务系统的事务一致性</li>
+<li><strong>解决</strong>：使用Spring事务管理器，确保流程操作与业务操作在同一事务中<br><strong>用户集成</strong>：</li>
+<li><strong>问题</strong>：Activiti默认用户表与业务系统用户管理的冲突</li>
+<li><strong>解决</strong>：禁用默认用户表(<code>setDbIdentityUsed(false)</code>)，使用业务系统用户管理<br><strong>中文支持</strong>：</li>
+<li><strong>问题</strong>：流程图生成时的中文乱码</li>
+<li><strong>解决</strong>：设置字体配置(<code>setActivityFontName(&quot;宋体&quot;)</code>)</li>
+</ul>
+<h3 id="2-任务分配难点"><a href="#2-任务分配难点" class="headerlink" title="2. 任务分配难点"></a>2. 任务分配难点</h3><p><strong>动态分配</strong>：</p>
+<ul>
+<li><strong>问题</strong>：根据业务规则动态分配任务处理人</li>
+<li><strong>解决</strong>：实现多种分配策略(组、用户、变量、自定义)，支持表达式计算<br><strong>会签处理</strong>：</li>
+<li><strong>问题</strong>：多人会签的并行&#x2F;串行处理</li>
+<li><strong>解决</strong>：实现会签逻辑<br><strong>代理机制</strong>：</li>
+<li><strong>问题</strong>：任务代理和权限继承</li>
+<li><strong>解决</strong>：实现代理关系管理，支持权限传递</li>
+</ul>
+<h3 id="3-流程状态管理难点"><a href="#3-流程状态管理难点" class="headerlink" title="3. 流程状态管理难点"></a>3. 流程状态管理难点</h3><p><strong>状态同步</strong>：</p>
+<ul>
+<li><strong>问题</strong>：流程状态与业务状态的同步</li>
+<li><strong>解决</strong>：通过事件监听器自动更新业务实体状态<br><strong>异常处理</strong>：</li>
+<li><strong>问题</strong>：流程异常时的状态回滚</li>
+<li><strong>解决</strong>：事务回滚机制，确保状态一致性</li>
+</ul>
+<h3 id="4-性能优化重点"><a href="#4-性能优化重点" class="headerlink" title="4. 性能优化重点"></a>4. 性能优化重点</h3><p><strong>查询优化</strong>：</p>
+<ul>
+<li><strong>问题</strong>：大量流程实例的查询性能</li>
+<li><strong>解决</strong>：分页查询，索引优化，缓存机制<br><strong>内存管理</strong>：</li>
+<li><strong>问题</strong>：长时间运行的流程实例内存占用</li>
+<li><strong>解决</strong>：定期清理历史数据，内存监控</li>
+</ul>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2025/08/28/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/%E5%A4%8D%E6%9D%82%E7%9A%84%E6%95%B0%E6%8D%AE%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E4%BD%93%E7%B3%BB/"
+                                   title=""
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis"></span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2025/08/28/plan/linear_algebra/"
+                                   title="线性代数"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">线性代数</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6"><span class="nav-number">1.</span> <span class="nav-text">1. 核心技术框架</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E6%B5%81%E7%A8%8B%E5%AE%9E%E7%8E%B0%E8%AF%A6%E8%A7%A3"><span class="nav-number">2.</span> <span class="nav-text">工作流流程实现详解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%BC%95%E6%93%8E%E9%85%8D%E7%BD%AE"><span class="nav-number">2.1.</span> <span class="nav-text">1. 工作流引擎配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B%E5%88%86%E6%9E%90"><span class="nav-number">2.2.</span> <span class="nav-text">工作流执行过程分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E6%A6%82%E8%BF%B0"><span class="nav-number">2.2.1.</span> <span class="nav-text">工作流概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E6%9E%B6%E6%9E%84%E5%9B%BE"><span class="nav-number">2.2.2.</span> <span class="nav-text">工作流架构图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B"><span class="nav-number">2.2.3.</span> <span class="nav-text">工作流执行流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B"><span class="nav-number">2.2.3.1.</span> <span class="nav-text">工作流启动流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%98%A0%E5%B0%84%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B"><span class="nav-number">2.2.3.2.</span> <span class="nav-text">数据映射处理流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%98%A0%E5%B0%84%E6%B5%81%E7%A8%8B%E5%9B%BE"><span class="nav-number">2.2.3.3.</span> <span class="nav-text">数据映射流程图</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%B6%88%E6%81%AF%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B"><span class="nav-number">2.3.</span> <span class="nav-text">5. 消息处理流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-%E6%B6%88%E6%81%AF%E5%8F%91%E9%80%81%E6%B5%81%E7%A8%8B"><span class="nav-number">2.3.1.</span> <span class="nav-text">5.1 消息发送流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-%E6%B6%88%E6%81%AF%E6%B6%88%E8%B4%B9%E6%B5%81%E7%A8%8B"><span class="nav-number">2.3.2.</span> <span class="nav-text">5.2 消息消费流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2%E5%9B%BE"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">状态转换图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B%E5%9B%BE"><span class="nav-number">2.3.2.2.</span> <span class="nav-text">异常处理流程图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%91%E6%8E%A7%E4%BD%93%E7%B3%BB"><span class="nav-number">2.3.2.3.</span> <span class="nav-text">监控体系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%AD%96%E7%95%A5"><span class="nav-number">2.3.2.4.</span> <span class="nav-text">性能优化策略</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E7%89%B9%E6%80%A7"><span class="nav-number">2.3.2.5.</span> <span class="nav-text">核心特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E4%BC%98%E5%8A%BF"><span class="nav-number">2.3.2.6.</span> <span class="nav-text">技术优势</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E9%9A%BE%E7%82%B9%E5%92%8C%E9%87%8D%E7%82%B9"><span class="nav-number">2.4.</span> <span class="nav-text">技术难点和重点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%BC%95%E6%93%8E%E9%9B%86%E6%88%90%E9%9A%BE%E7%82%B9"><span class="nav-number">2.4.1.</span> <span class="nav-text">1. 工作流引擎集成难点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BB%BB%E5%8A%A1%E5%88%86%E9%85%8D%E9%9A%BE%E7%82%B9"><span class="nav-number">2.4.2.</span> <span class="nav-text">2. 任务分配难点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%B5%81%E7%A8%8B%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E9%9A%BE%E7%82%B9"><span class="nav-number">2.4.3.</span> <span class="nav-text">3. 流程状态管理难点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E9%87%8D%E7%82%B9"><span class="nav-number">2.4.4.</span> <span class="nav-text">4. 性能优化重点</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+        &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2025
+        
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">ArmoredKill</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E6%A1%86%E6%9E%B6"><span class="nav-number">1.</span> <span class="nav-text">1. 核心技术框架</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E6%B5%81%E7%A8%8B%E5%AE%9E%E7%8E%B0%E8%AF%A6%E8%A7%A3"><span class="nav-number">2.</span> <span class="nav-text">工作流流程实现详解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%BC%95%E6%93%8E%E9%85%8D%E7%BD%AE"><span class="nav-number">2.1.</span> <span class="nav-text">1. 工作流引擎配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B%E5%88%86%E6%9E%90"><span class="nav-number">2.2.</span> <span class="nav-text">工作流执行过程分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E6%A6%82%E8%BF%B0"><span class="nav-number">2.2.1.</span> <span class="nav-text">工作流概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E6%9E%B6%E6%9E%84%E5%9B%BE"><span class="nav-number">2.2.2.</span> <span class="nav-text">工作流架构图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B"><span class="nav-number">2.2.3.</span> <span class="nav-text">工作流执行流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B"><span class="nav-number">2.2.3.1.</span> <span class="nav-text">工作流启动流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%98%A0%E5%B0%84%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B"><span class="nav-number">2.2.3.2.</span> <span class="nav-text">数据映射处理流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%98%A0%E5%B0%84%E6%B5%81%E7%A8%8B%E5%9B%BE"><span class="nav-number">2.2.3.3.</span> <span class="nav-text">数据映射流程图</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%B6%88%E6%81%AF%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B"><span class="nav-number">2.3.</span> <span class="nav-text">5. 消息处理流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-%E6%B6%88%E6%81%AF%E5%8F%91%E9%80%81%E6%B5%81%E7%A8%8B"><span class="nav-number">2.3.1.</span> <span class="nav-text">5.1 消息发送流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-%E6%B6%88%E6%81%AF%E6%B6%88%E8%B4%B9%E6%B5%81%E7%A8%8B"><span class="nav-number">2.3.2.</span> <span class="nav-text">5.2 消息消费流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2%E5%9B%BE"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">状态转换图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B%E5%9B%BE"><span class="nav-number">2.3.2.2.</span> <span class="nav-text">异常处理流程图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%91%E6%8E%A7%E4%BD%93%E7%B3%BB"><span class="nav-number">2.3.2.3.</span> <span class="nav-text">监控体系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%AD%96%E7%95%A5"><span class="nav-number">2.3.2.4.</span> <span class="nav-text">性能优化策略</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E7%89%B9%E6%80%A7"><span class="nav-number">2.3.2.5.</span> <span class="nav-text">核心特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E4%BC%98%E5%8A%BF"><span class="nav-number">2.3.2.6.</span> <span class="nav-text">技术优势</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E9%9A%BE%E7%82%B9%E5%92%8C%E9%87%8D%E7%82%B9"><span class="nav-number">2.4.</span> <span class="nav-text">技术难点和重点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%BC%95%E6%93%8E%E9%9B%86%E6%88%90%E9%9A%BE%E7%82%B9"><span class="nav-number">2.4.1.</span> <span class="nav-text">1. 工作流引擎集成难点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BB%BB%E5%8A%A1%E5%88%86%E9%85%8D%E9%9A%BE%E7%82%B9"><span class="nav-number">2.4.2.</span> <span class="nav-text">2. 任务分配难点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%B5%81%E7%A8%8B%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E9%9A%BE%E7%82%B9"><span class="nav-number">2.4.3.</span> <span class="nav-text">3. 流程状态管理难点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E9%87%8D%E7%82%B9"><span class="nav-number">2.4.4.</span> <span class="nav-text">4. 性能优化重点</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+    
+<script src="//cdn.jsdelivr.net/npm/mermaid@7.1.2/dist/mermaid.min.js"></script>
+
+
+
+
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>

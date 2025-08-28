@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="ArmoredKill">
+    
+    <title>
+        
+            cas深度解析 |
+        
+        Death Note
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Death Note","author":"ArmoredKill","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"home":"/","archives":"/archives","tags":"/tags","categories":"/categories","about":"/about"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.0"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Death Note
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/tags">
+                                
+                                标签
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/categories">
+                                
+                                分类
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/about">
+                                
+                                关于
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/tags">
+                            
+                            标签
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/categories">
+                            
+                            分类
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/about">
+                            
+                            关于
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        cas深度解析
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">ArmoredKill</span>
+                                
+                                    <span class="author-badge">Lv3</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2025-08-28 07:32:34</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Thu Aug 28 2025 05:51:52 GMT+0000">2025-08-28 05:51:52</span>
+            </span>
+        
+
+        
+
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h1 id="Spring-WebFlow"><a href="#Spring-WebFlow" class="headerlink" title="Spring WebFlow"></a>Spring WebFlow</h1><p>Spring Web Flow (SWF) 是 Spring Framework 的一个扩展模块，它的核心目的是将复杂的业务流程封装成一个个独立、可重用、可管理的单元，称为“流”。你可以把它想象成一个向导或状态机。它非常适合管理那些需要多个步骤、有特定顺序、并且需要记住之前步骤数据的用户交互。</p>
+<h2 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h2><ol>
+<li>Flow (流)</li>
+</ol>
+<ul>
+<li>定义: 一个完整的业务流程单元</li>
+<li>组成: 包含状态、转换、动作等元素</li>
+<li>存储: 通常定义为XML文件或Java配置</li>
+</ul>
+<ol start="2">
+<li><p>State (状态) 流程中的各个步骤节点：</p>
+<table>
+<thead>
+<tr>
+<th>状态类型</th>
+<th>描述</th>
+<th>使用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>View State</td>
+<td>显示视图，等待用户输入</td>
+<td>表单页面、信息展示页</td>
+</tr>
+<tr>
+<td>Action State</td>
+<td>执行业务逻辑，无界面</td>
+<td>数据验证、服务调用</td>
+</tr>
+<tr>
+<td>Decision State</td>
+<td>基于条件进行路由</td>
+<td>分支判断、流程控制</td>
+</tr>
+<tr>
+<td>End State</td>
+<td>结束流程</td>
+<td>成功或失败结束</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Transition (转换)</p>
+</li>
+</ol>
+<ul>
+<li>触发: 由用户事件（如表单提交）触发</li>
+<li>作用: 在不同状态间导航</li>
+<li>语法: on=”eventName” to=”nextState”</li>
+</ul>
+<ol start="4">
+<li><p>Scope (作用域)</p>
+<table>
+<thead>
+<tr>
+<th>作用域</th>
+<th>生命周期</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Request</td>
+<td>单个请求</td>
+<td>临时数据传递</td>
+</tr>
+<tr>
+<td>Flash</td>
+<td>请求间短暂保持</td>
+<td>重定向时的数据传递</td>
+</tr>
+<tr>
+<td>View</td>
+<td>视图状态期间</td>
+<td>视图特定的数据</td>
+</tr>
+<tr>
+<td>Flow</td>
+<td>整个流程期间</td>
+<td>流程核心业务数据</td>
+</tr>
+<tr>
+<td>Conversation</td>
+<td>多个相关流程间</td>
+<td>跨流程数据共享</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h2 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h2><pre class="mermaid">graph TD
+    A[用户访问URL] --&gt; B[创建流执行实例]
+    B --&gt; C[进入初始View State]
+    C --&gt; D[渲染视图给用户]
+    D --&gt; E[用户触发事件]
+    E --&gt; F[执行Transition]
+    F --&gt; G[执行Action状态]
+    G --&gt; H{进入新状态}
+    H --&gt;|View State| C
+    H --&gt;|End State| I[流程结束]</pre>
+<h2 id="优势与劣势"><a href="#优势与劣势" class="headerlink" title="优势与劣势"></a>优势与劣势</h2><h3 id="优势："><a href="#优势：" class="headerlink" title="优势："></a>优势：</h3><ul>
+<li>模块化：将复杂的流程封装成独立的、可重用的单元。<br>可维护性：流程逻辑清晰可见，都在一个配置文件中，易于理解和修改。</li>
+<li>状态管理：自动管理会话和流程状态，开发者无需手动处理 HttpSession。</li>
+<li>可测试性：流定义本身可以独立于Web环境进行单元测试。</li>
+</ul>
+<h3 id="劣势："><a href="#劣势：" class="headerlink" title="劣势："></a>劣势：</h3><ul>
+<li>学习曲线：需要学习新的概念和配置方式。</li>
+<li>复杂性：对于简单的CRUD应用，引入SWF显得过于沉重，增加了复杂度。</li>
+<li>XML 配置：传统上大量使用XML配置，虽然现在支持Java配置，但生态仍以XML为主。</li>
+<li>热度下降：随着前后端分离架构和单页面应用（SPA）的兴起，复杂的业务流程更多由前端框架（如 React, Vue）来管理，SWF 在新项目中的使用已经大大减少。</li>
+</ul>
+<h1 id="多认证方式协调的复杂性"><a href="#多认证方式协调的复杂性" class="headerlink" title="多认证方式协调的复杂性"></a>多认证方式协调的复杂性</h1><ul>
+<li>需要协调LDAP、数据库、OAuth2等多种认证方式</li>
+<li>业务规则与认证逻辑混合，增加了复杂度</li>
+<li>一次一密的RSA密钥管理，需要精确的会话管理</li>
+</ul>
+<h2 id="LDAP域认证"><a href="#LDAP域认证" class="headerlink" title="LDAP域认证"></a>LDAP域认证</h2><p>LDAP（Lightweight Directory Access Protocol）是一种开放的、跨平台的目录服务访问协议，用于访问和维护分布式目录信息服务。</p>
+<pre class="mermaid">sequenceDiagram
+    participant Client
+    participant Application
+    participant LDAP Server
+
+    Client-&gt;&gt;Application: 提交凭据 (username/password)
+    Application-&gt;&gt;LDAP Server: 绑定查询 (Bind Request)
+    LDAP Server-&gt;&gt;Application: 绑定响应 (Bind Response)
+    Application-&gt;&gt;LDAP Server: 搜索用户 (Search Request)
+    LDAP Server-&gt;&gt;Application: 返回用户信息 (Search Response)
+    Application-&gt;&gt;Client: 认证结果</pre>
+<h3 id="LDAP认证实现过程详解"><a href="#LDAP认证实现过程详解" class="headerlink" title="LDAP认证实现过程详解"></a>LDAP认证实现过程详解</h3><p>LDAP认证在这个CAS项目中采用了<strong>双重认证</strong>的方式：</p>
+<ul>
+<li>管理员认证：使用管理员账号连接LDAP服务器</li>
+<li>用户认证：使用用户凭据进行身份验证</li>
+</ul>
+<h3 id="核心认证方法分析"><a href="#核心认证方法分析" class="headerlink" title="核心认证方法分析"></a><strong>核心认证方法分析</strong></h3><h4 id="主要认证入口"><a href="#主要认证入口" class="headerlink" title="主要认证入口"></a>主要认证入口</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> String <span class="title function_">getLoginContext</span><span class="params">(String username, String password, String domain, Hashtable htADUserInfo)</span> <span class="keyword">throws</span> NamingException {</span><br><span class="line">    <span class="comment">// 步骤1：参数验证</span></span><br><span class="line">    <span class="comment">// 步骤2：根据域名获取LDAP配置</span></span><br><span class="line">    <span class="comment">// 步骤3：管理员连接LDAP</span></span><br><span class="line">    <span class="comment">// 步骤4：获取用户DN</span></span><br><span class="line">    <span class="comment">// 步骤5：用户身份验证</span></span><br><span class="line">    <span class="keyword">return</span> hremployeeid;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="关键步骤详解"><a href="#关键步骤详解" class="headerlink" title="关键步骤详解"></a>关键步骤详解</h3><h4 id="用户名和域名解析"><a href="#用户名和域名解析" class="headerlink" title="用户名和域名解析"></a>用户名和域名解析</h4><p><strong>技术要点</strong>：</p>
+<ul>
+<li>支持各种格式的用户名</li>
+<li>自动提取域名信息用于后续LDAP服务器选择</li>
+</ul>
+<h4 id="LDAP配置动态获取"><a href="#LDAP配置动态获取" class="headerlink" title="LDAP配置动态获取"></a>LDAP配置动态获取</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableWebSecurity</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LdapSecurityConfig</span> <span class="keyword">extends</span> <span class="title class_">WebSecurityConfigurerAdapter</span> {</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">configure</span><span class="params">(AuthenticationManagerBuilder auth)</span> <span class="keyword">throws</span> Exception {</span><br><span class="line">        <span class="comment">// 可更改为动态</span></span><br><span class="line">        auth.ldapAuthentication()</span><br><span class="line">            .userSearchFilter(<span class="string">"(sAMAccountName={0})"</span>)</span><br><span class="line">            .userSearchBase(<span class="string">"ou=users"</span>)</span><br><span class="line">            .groupSearchBase(<span class="string">"ou=groups"</span>)</span><br><span class="line">            .groupSearchFilter(<span class="string">"(member={0})"</span>)</span><br><span class="line">            .contextSource()</span><br><span class="line">                .url(<span class="string">"ldap://ldap.example.com:389/dc=example,dc=com"</span>)</span><br><span class="line">                .managerDn(<span class="string">"cn=admin,dc=example,dc=com"</span>)</span><br><span class="line">                .managerPassword(<span class="string">"adminpassword"</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">configure</span><span class="params">(HttpSecurity http)</span> <span class="keyword">throws</span> Exception {</span><br><span class="line">        http.authorizeRequests()</span><br><span class="line">            .antMatchers(<span class="string">"/admin/**"</span>).hasRole(<span class="string">"ADMIN"</span>)</span><br><span class="line">            .antMatchers(<span class="string">"/user/**"</span>).hasRole(<span class="string">"USER"</span>)</span><br><span class="line">            .anyRequest().authenticated()</span><br><span class="line">            .and()</span><br><span class="line">            .formLogin();</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p><strong>配置字段</strong>：</p>
+<ul>
+<li><code>LDAP_URL</code>：LDAP服务器地址</li>
+<li><code>LDAP_PRINCIPAL</code>：基础DN</li>
+<li><code>LDAP_PRINCIPAL_ADMIN</code>：管理员DN</li>
+<li><code>CREDENTIALS_ADMIN</code>：管理员密码（加密存储）</li>
+<li><code>LDAP_FACTORY</code>：LDAP工厂类<br><strong>技术要点</strong>：</li>
+<li>使用管理员权限连接LDAP，用于后续用户信息查询</li>
+<li>管理员密码在数据库中加密存储，使用时自动解密</li>
+</ul>
+<h4 id="用户DN获取"><a href="#用户DN获取" class="headerlink" title="用户DN获取"></a>用户DN获取</h4><p><strong>技术要点</strong>：</p>
+<ul>
+<li>使用<code>sAMAccountName</code>属性查找用户</li>
+<li>搜索范围为子树（<code>SUBTREE_SCOPE</code>）</li>
+<li>返回用户的相对DN（RDN）</li>
+</ul>
+<h4 id="用户身份验证"><a href="#用户身份验证" class="headerlink" title="用户身份验证"></a>用户身份验证</h4><p><strong>技术要点</strong>：</p>
+<ul>
+<li>使用完整的用户DN进行身份验证</li>
+<li>如果连接成功，说明密码正确</li>
+<li>认证成功后获取用户详细信息</li>
+</ul>
+<h3 id="异常处理机制"><a href="#异常处理机制" class="headerlink" title="异常处理机制"></a>异常处理机制</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 预定义的异常类型</span></span><br><span class="line"><span class="comment">// 异常处理</span></span><br><span class="line"><span class="keyword">try</span> {</span><br><span class="line">    <span class="comment">// LDAP操作</span></span><br><span class="line">} <span class="keyword">catch</span> (javax.naming.AuthenticationException ex) {</span><br><span class="line">    <span class="keyword">if</span> (LdapUtil.ERR0R_NOT_FOUNT_ADUSER.equals(ex.getMessage())) {</span><br><span class="line">        <span class="comment">// 用户不存在</span></span><br><span class="line">    } <span class="keyword">else</span> <span class="keyword">if</span> (LdapUtil.ERR0R_PASSWORD_INCORRECT.equals(ex.getMessage())) {</span><br><span class="line">        <span class="comment">// 密码错误</span></span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        <span class="comment">// 其他认证错误</span></span><br><span class="line">    }</span><br><span class="line">} <span class="keyword">catch</span> (NamingException e) {</span><br><span class="line">    <span class="comment">// LDAP连接或查询异常</span></span><br><span class="line">} <span class="keyword">catch</span> (GeneralSecurityException | IllegalArgumentException error) {</span><br><span class="line">    <span class="comment">// 密码解密异常</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="安全特性"><a href="#安全特性" class="headerlink" title="安全特性"></a>安全特性</h3><p>密码加密存储，并使用一次一密机制；</p>
+<h4 id="一次一密机制实现详解"><a href="#一次一密机制实现详解" class="headerlink" title="一次一密机制实现详解"></a>一次一密机制实现详解</h4><ol>
+<li>一次一密机制概述<br>一次一密（One-Time Pad）在这个指的是<strong>每次登录会话都生成新的RSA密钥对</strong>，用于加密传输用户密码，确保密码在传输过程中的安全性。</li>
+<li>核心实现流程，密钥生成阶段：<ul>
+<li>使用时间戳作为随机种子生成密钥对（RSA密钥生成）<ul>
+<li>使用512位RSA密钥（性能与安全性平衡）</li>
+<li>时间戳作为种子增加随机性</li>
+</ul>
+</li>
+<li>公钥返回给前端用于加密</li>
+<li>私钥存储在服务器session中用于解密</li>
+</ul>
+</li>
+<li>密码解密阶段：从session中获取私钥，一次一密：解密完立刻清除密钥。<ul>
+<li>使用私钥解密前端传来的加密密码</li>
+<li><strong>关键安全措施</strong>：解密后立即清除session中的密钥</li>
+<li>完整的异常处理和日志记录<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.crypto;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.security.*;</span><br><span class="line"><span class="keyword">import</span> java.security.spec.PKCS8EncodedKeySpec;</span><br><span class="line"><span class="keyword">import</span> java.security.spec.X509EncodedKeySpec;</span><br><span class="line"><span class="keyword">import</span> java.time.Instant;</span><br><span class="line"><span class="keyword">import</span> java.util.Base64;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 基于时间戳和随机数的RSA密钥对生成器</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TimestampRandomKeyGenerator</span> {</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">RSA_ALGORITHM</span> <span class="operator">=</span> <span class="string">"RSA"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">DEFAULT_KEY_SIZE</span> <span class="operator">=</span> <span class="number">2048</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 生成带时间戳和随机数种子的RSA密钥对</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> KeyGenerationResult <span class="title function_">generateKeyPairWithTimestamp</span><span class="params">()</span> {</span><br><span class="line">        <span class="keyword">return</span> generateKeyPairWithTimestamp(DEFAULT_KEY_SIZE);</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> KeyGenerationResult <span class="title function_">generateKeyPairWithTimestamp</span><span class="params">(<span class="type">int</span> keySize)</span> {</span><br><span class="line">        <span class="keyword">try</span> {</span><br><span class="line">            <span class="comment">// 生成随机种子</span></span><br><span class="line">            <span class="type">String</span> <span class="variable">randomSeed</span> <span class="operator">=</span> SecureRandomProvider.generateRandomHex(<span class="number">32</span>);</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 创建安全随机数生成器</span></span><br><span class="line">            <span class="type">SecureRandom</span> <span class="variable">secureRandom</span> <span class="operator">=</span> SecureRandomProvider.createEnhancedSecureRandom();</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 生成密钥对</span></span><br><span class="line">            <span class="type">KeyPairGenerator</span> <span class="variable">keyPairGenerator</span> <span class="operator">=</span> KeyPairGenerator.getInstance(RSA_ALGORITHM);</span><br><span class="line">            keyPairGenerator.initialize(keySize, secureRandom);</span><br><span class="line">            <span class="type">KeyPair</span> <span class="variable">keyPair</span> <span class="operator">=</span> keyPairGenerator.generateKeyPair();</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 创建元数据</span></span><br><span class="line">            <span class="type">KeyMetadata</span> <span class="variable">metadata</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">KeyMetadata</span>(keySize, RSA_ALGORITHM, randomSeed);</span><br><span class="line">            metadata.addInfo(<span class="string">"randomSeedHex"</span>, randomSeed);</span><br><span class="line">            metadata.addInfo(<span class="string">"secureRandomAlgorithm"</span>, secureRandom.getAlgorithm());</span><br><span class="line">            metadata.addInfo(<span class="string">"provider"</span>, keyPairGenerator.getProvider().getName());</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">KeyGenerationResult</span>(keyPair, metadata);</span><br><span class="line">            </span><br><span class="line">        } <span class="keyword">catch</span> (Exception e) {</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(<span class="string">"Failed to generate RSA key pair"</span>, e);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 生成密钥对并返回Base64编码的字符串</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Map&lt;String, String&gt; <span class="title function_">generateKeyPairBase64</span><span class="params">()</span> {</span><br><span class="line">        <span class="type">KeyGenerationResult</span> <span class="variable">result</span> <span class="operator">=</span> generateKeyPairWithTimestamp();</span><br><span class="line">        </span><br><span class="line">        Map&lt;String, String&gt; keyMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        keyMap.put(<span class="string">"privateKey"</span>, encodeKey(result.getKeyPair().getPrivate().getEncoded()));</span><br><span class="line">        keyMap.put(<span class="string">"publicKey"</span>, encodeKey(result.getKeyPair().getPublic().getEncoded()));</span><br><span class="line">        keyMap.put(<span class="string">"keyId"</span>, result.getMetadata().getKeyId());</span><br><span class="line">        keyMap.put(<span class="string">"generatedAt"</span>, result.getMetadata().getGenerationTime().toString());</span><br><span class="line">        keyMap.put(<span class="string">"randomSeed"</span>, result.getMetadata().getRandomSeed());</span><br><span class="line">        keyMap.put(<span class="string">"keySize"</span>, String.valueOf(result.getMetadata().getKeySize()));</span><br><span class="line">        keyMap.put(<span class="string">"algorithm"</span>, result.getMetadata().getAlgorithm());</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> keyMap;</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 从Base64字符串加载私钥</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> PrivateKey <span class="title function_">loadPrivateKeyFromBase64</span><span class="params">(String base64PrivateKey)</span> </span><br><span class="line">        <span class="keyword">throws</span> GeneralSecurityException {</span><br><span class="line">        </span><br><span class="line">        <span class="type">byte</span>[] keyBytes = Base64.getDecoder().decode(base64PrivateKey);</span><br><span class="line">        <span class="type">PKCS8EncodedKeySpec</span> <span class="variable">keySpec</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">PKCS8EncodedKeySpec</span>(keyBytes);</span><br><span class="line">        <span class="type">KeyFactory</span> <span class="variable">keyFactory</span> <span class="operator">=</span> KeyFactory.getInstance(RSA_ALGORITHM);</span><br><span class="line">        <span class="keyword">return</span> keyFactory.generatePrivate(keySpec);</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 从Base64字符串加载公钥</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> PublicKey <span class="title function_">loadPublicKeyFromBase64</span><span class="params">(String base64PublicKey)</span> </span><br><span class="line">        <span class="keyword">throws</span> GeneralSecurityException {</span><br><span class="line">        </span><br><span class="line">        <span class="type">byte</span>[] keyBytes = Base64.getDecoder().decode(base64PublicKey);</span><br><span class="line">        <span class="type">X509EncodedKeySpec</span> <span class="variable">keySpec</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">X509EncodedKeySpec</span>(keyBytes);</span><br><span class="line">        <span class="type">KeyFactory</span> <span class="variable">keyFactory</span> <span class="operator">=</span> KeyFactory.getInstance(RSA_ALGORITHM);</span><br><span class="line">        <span class="keyword">return</span> keyFactory.generatePublic(keySpec);</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String <span class="title function_">encodeKey</span><span class="params">(<span class="type">byte</span>[] key)</span> {</span><br><span class="line">        <span class="keyword">return</span> Base64.getEncoder().encodeToString(key);</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 密钥生成结果封装类</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">KeyGenerationResult</span> {</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">final</span> KeyPair keyPair;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">final</span> KeyMetadata metadata;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">public</span> <span class="title function_">KeyGenerationResult</span><span class="params">(KeyPair keyPair, KeyMetadata metadata)</span> {</span><br><span class="line">            <span class="built_in">this</span>.keyPair = keyPair;</span><br><span class="line">            <span class="built_in">this</span>.metadata = metadata;</span><br><span class="line">        }</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">public</span> KeyPair <span class="title function_">getKeyPair</span><span class="params">()</span> { <span class="keyword">return</span> keyPair; }</span><br><span class="line">        <span class="keyword">public</span> KeyMetadata <span class="title function_">getMetadata</span><span class="params">()</span> { <span class="keyword">return</span> metadata; }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h4 id="一次一密特性"><a href="#一次一密特性" class="headerlink" title="一次一密特性"></a>一次一密特性</h4><ol>
+<li><strong>会话级别唯一性</strong>：每个登录会话生成唯一的RSA密钥对</li>
+<li><strong>即时销毁</strong>：解密完成后立即清除密钥</li>
+<li><strong>时间戳种子</strong>：使用时间戳增加密钥生成的随机性</li>
+<li><strong>防重放攻击</strong>：密钥生成时使用时间戳</li>
+<li><strong>密钥长度选择</strong>：512位RSA密钥，平衡性能和安全性</li>
+</ol>
+<h4 id="性能考虑"><a href="#性能考虑" class="headerlink" title="性能考虑"></a>性能考虑</h4><ul>
+<li>密钥长度优化：注释说明：为保障加密性能，数据加密长度限制为512</li>
+<li>密钥缓存策略：检查session中是否已存在公钥，避免重复生成</li>
+</ul>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ol>
+<li><strong>会话级别安全</strong>：每个登录会话使用独立的RSA密钥对</li>
+<li><strong>即时销毁</strong>：解密完成后立即清除密钥，防止密钥泄露</li>
+<li><strong>时间戳随机性</strong>：使用时间戳作为密钥生成种子</li>
+<li><strong>完整异常处理</strong>：解密失败时的完整错误处理和日志记录</li>
+<li><strong>性能优化</strong>：512位RSA密钥平衡安全性和性能</li>
+<li><strong>防重放攻击</strong>：每次会话的密钥都是唯一的</li>
+</ol>
+<h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><ol>
+<li>连接复用</li>
+</ol>
+<ul>
+<li>管理员连接在认证过程中复用</li>
+<li>避免重复建立LDAP连接</li>
+</ul>
+<ol start="2">
+<li>属性过滤</li>
+</ol>
+<ul>
+<li>只获取需要的LDAP属性</li>
+<li>减少网络传输和内存使用</li>
+</ul>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p>这个LDAP认证实现的主要特点：</p>
+<ol>
+<li><strong>双重认证机制</strong>：管理员认证 + 用户认证</li>
+<li><strong>多域名支持</strong>：动态配置不同域名的LDAP服务器</li>
+<li><strong>安全防护</strong>：密码加密、一次一密、异常处理</li>
+<li><strong>性能优化</strong>：连接复用、属性过滤、排序控制</li>
+<li><strong>审计支持</strong>：完整的认证过程审计记录</li>
+</ol>
+<h2 id="OAuth2企业微信集成"><a href="#OAuth2企业微信集成" class="headerlink" title="OAuth2企业微信集成"></a>OAuth2企业微信集成</h2><p><img src="/2025/08/28/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/CAS%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/1.png" alt="img"></p>
+<h2 id="Cookie安全机制"><a href="#Cookie安全机制" class="headerlink" title="Cookie安全机制"></a>Cookie安全机制</h2><p><strong>技术难点</strong>：</p>
+<ul>
+<li>Cookie值的加密和签名机制</li>
+<li>代理环境下真实客户端IP的获取</li>
+<li>User-Agent等信息的验证防篡改</li>
+</ul>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2025/08/28/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/%E7%83%AD%E9%83%A8%E7%BD%B2%E6%9C%BA%E5%88%B6/"
+                                   title=""
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis"></span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2025/08/28/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/JetCache%E8%A7%A3%E6%9E%90/"
+                                   title="JetCache 解析"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">JetCache 解析</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-WebFlow"><span class="nav-number">1.</span> <span class="nav-text">Spring WebFlow</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">核心概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="nav-number">1.2.</span> <span class="nav-text">工作原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8A%BF%E4%B8%8E%E5%8A%A3%E5%8A%BF"><span class="nav-number">1.3.</span> <span class="nav-text">优势与劣势</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E5%8A%BF%EF%BC%9A"><span class="nav-number">1.3.1.</span> <span class="nav-text">优势：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A3%E5%8A%BF%EF%BC%9A"><span class="nav-number">1.3.2.</span> <span class="nav-text">劣势：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E8%AE%A4%E8%AF%81%E6%96%B9%E5%BC%8F%E5%8D%8F%E8%B0%83%E7%9A%84%E5%A4%8D%E6%9D%82%E6%80%A7"><span class="nav-number">2.</span> <span class="nav-text">多认证方式协调的复杂性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#LDAP%E5%9F%9F%E8%AE%A4%E8%AF%81"><span class="nav-number">2.1.</span> <span class="nav-text">LDAP域认证</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LDAP%E8%AE%A4%E8%AF%81%E5%AE%9E%E7%8E%B0%E8%BF%87%E7%A8%8B%E8%AF%A6%E8%A7%A3"><span class="nav-number">2.1.1.</span> <span class="nav-text">LDAP认证实现过程详解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E8%AE%A4%E8%AF%81%E6%96%B9%E6%B3%95%E5%88%86%E6%9E%90"><span class="nav-number">2.1.2.</span> <span class="nav-text">核心认证方法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%A4%E8%AF%81%E5%85%A5%E5%8F%A3"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">主要认证入口</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E6%AD%A5%E9%AA%A4%E8%AF%A6%E8%A7%A3"><span class="nav-number">2.1.3.</span> <span class="nav-text">关键步骤详解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90"><span class="nav-number">2.1.3.1.</span> <span class="nav-text">用户名和域名解析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LDAP%E9%85%8D%E7%BD%AE%E5%8A%A8%E6%80%81%E8%8E%B7%E5%8F%96"><span class="nav-number">2.1.3.2.</span> <span class="nav-text">LDAP配置动态获取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E6%88%B7DN%E8%8E%B7%E5%8F%96"><span class="nav-number">2.1.3.3.</span> <span class="nav-text">用户DN获取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81"><span class="nav-number">2.1.3.4.</span> <span class="nav-text">用户身份验证</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6"><span class="nav-number">2.1.4.</span> <span class="nav-text">异常处理机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E7%89%B9%E6%80%A7"><span class="nav-number">2.1.5.</span> <span class="nav-text">安全特性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E6%AC%A1%E4%B8%80%E5%AF%86%E6%9C%BA%E5%88%B6%E5%AE%9E%E7%8E%B0%E8%AF%A6%E8%A7%A3"><span class="nav-number">2.1.5.1.</span> <span class="nav-text">一次一密机制实现详解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E6%AC%A1%E4%B8%80%E5%AF%86%E7%89%B9%E6%80%A7"><span class="nav-number">2.1.5.2.</span> <span class="nav-text">一次一密特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E8%80%83%E8%99%91"><span class="nav-number">2.1.5.3.</span> <span class="nav-text">性能考虑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">2.1.5.4.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="nav-number">2.1.6.</span> <span class="nav-text">性能优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93-1"><span class="nav-number">2.1.7.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OAuth2%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E9%9B%86%E6%88%90"><span class="nav-number">2.2.</span> <span class="nav-text">OAuth2企业微信集成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6"><span class="nav-number">2.3.</span> <span class="nav-text">Cookie安全机制</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+        &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2025
+        
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">ArmoredKill</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-WebFlow"><span class="nav-number">1.</span> <span class="nav-text">Spring WebFlow</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">核心概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="nav-number">1.2.</span> <span class="nav-text">工作原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8A%BF%E4%B8%8E%E5%8A%A3%E5%8A%BF"><span class="nav-number">1.3.</span> <span class="nav-text">优势与劣势</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E5%8A%BF%EF%BC%9A"><span class="nav-number">1.3.1.</span> <span class="nav-text">优势：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A3%E5%8A%BF%EF%BC%9A"><span class="nav-number">1.3.2.</span> <span class="nav-text">劣势：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E8%AE%A4%E8%AF%81%E6%96%B9%E5%BC%8F%E5%8D%8F%E8%B0%83%E7%9A%84%E5%A4%8D%E6%9D%82%E6%80%A7"><span class="nav-number">2.</span> <span class="nav-text">多认证方式协调的复杂性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#LDAP%E5%9F%9F%E8%AE%A4%E8%AF%81"><span class="nav-number">2.1.</span> <span class="nav-text">LDAP域认证</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LDAP%E8%AE%A4%E8%AF%81%E5%AE%9E%E7%8E%B0%E8%BF%87%E7%A8%8B%E8%AF%A6%E8%A7%A3"><span class="nav-number">2.1.1.</span> <span class="nav-text">LDAP认证实现过程详解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E8%AE%A4%E8%AF%81%E6%96%B9%E6%B3%95%E5%88%86%E6%9E%90"><span class="nav-number">2.1.2.</span> <span class="nav-text">核心认证方法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E8%AE%A4%E8%AF%81%E5%85%A5%E5%8F%A3"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">主要认证入口</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E6%AD%A5%E9%AA%A4%E8%AF%A6%E8%A7%A3"><span class="nav-number">2.1.3.</span> <span class="nav-text">关键步骤详解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90"><span class="nav-number">2.1.3.1.</span> <span class="nav-text">用户名和域名解析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LDAP%E9%85%8D%E7%BD%AE%E5%8A%A8%E6%80%81%E8%8E%B7%E5%8F%96"><span class="nav-number">2.1.3.2.</span> <span class="nav-text">LDAP配置动态获取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E6%88%B7DN%E8%8E%B7%E5%8F%96"><span class="nav-number">2.1.3.3.</span> <span class="nav-text">用户DN获取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81"><span class="nav-number">2.1.3.4.</span> <span class="nav-text">用户身份验证</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6"><span class="nav-number">2.1.4.</span> <span class="nav-text">异常处理机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E7%89%B9%E6%80%A7"><span class="nav-number">2.1.5.</span> <span class="nav-text">安全特性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E6%AC%A1%E4%B8%80%E5%AF%86%E6%9C%BA%E5%88%B6%E5%AE%9E%E7%8E%B0%E8%AF%A6%E8%A7%A3"><span class="nav-number">2.1.5.1.</span> <span class="nav-text">一次一密机制实现详解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E6%AC%A1%E4%B8%80%E5%AF%86%E7%89%B9%E6%80%A7"><span class="nav-number">2.1.5.2.</span> <span class="nav-text">一次一密特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E8%80%83%E8%99%91"><span class="nav-number">2.1.5.3.</span> <span class="nav-text">性能考虑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">2.1.5.4.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="nav-number">2.1.6.</span> <span class="nav-text">性能优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93-1"><span class="nav-number">2.1.7.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OAuth2%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E9%9B%86%E6%88%90"><span class="nav-number">2.2.</span> <span class="nav-text">OAuth2企业微信集成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6"><span class="nav-number">2.3.</span> <span class="nav-text">Cookie安全机制</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+    
+<script src="//cdn.jsdelivr.net/npm/mermaid@7.1.2/dist/mermaid.min.js"></script>
+
+
+
+
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>

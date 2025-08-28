@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="ArmoredKill">
+    
+    <title>
+        
+            Java 基础 |
+        
+        Death Note
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Death Note","author":"ArmoredKill","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"home":"/","archives":"/archives","tags":"/tags","categories":"/categories","about":"/about"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.0"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Death Note
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/tags">
+                                
+                                标签
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/categories">
+                                
+                                分类
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/about">
+                                
+                                关于
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/tags">
+                            
+                            标签
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/categories">
+                            
+                            分类
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/about">
+                            
+                            关于
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+                <div class="post-content-top border-box"
+                     style="height: 13.8rem"
+                >
+                    <div class="cover-post-title">
+                        Java 基础
+                    </div>
+                    <img class="post-cover" src="/images/0.png"
+                         onerror="this.style.display='none'"
+                    >
+                </div>
+            
+
+            <div class="post-content-bottom border-box has-cover">
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">ArmoredKill</span>
+                                
+                                    <span class="author-badge">Lv3</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2025-08-28 07:32:34</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Tue Jun 10 2025 06:31:08 GMT+0000">2025-06-10 06:31:08</span>
+            </span>
+        
+
+        
+
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><h2 id="jdk-internal-ValueBased"><a href="#jdk-internal-ValueBased" class="headerlink" title="@jdk.internal.ValueBased"></a>@jdk.internal.ValueBased</h2><p>如果 <strong>Value-based Classes</strong> 变成值类型，值类型确定在栈上分配后，这个方法目前的机制就会有问题。调用 synchronize(obj) 同步对象，如果 <strong>Value-based Classes</strong> 变成值类型，没有普通对象的对象头，那么无法使用正常的锁膨胀同步机制，同时重量锁 mutex 由于可能值类型对象没有堆上位置也无法使用现有的机制实现。</p>
+<p>在 Java 16 之后，如果有这些用法，就会在编译阶段有报警提醒：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Double</span> <span class="variable">d</span> <span class="operator">=</span> <span class="number">20.0</span>;</span><br><span class="line"><span class="keyword">synchronized</span> (d) { ... } <span class="comment">// javac warning &amp; HotSpot warning</span></span><br><span class="line"><span class="type">Object</span> <span class="variable">o</span> <span class="operator">=</span> d;</span><br><span class="line"><span class="keyword">synchronized</span> (o) { ... } <span class="comment">// HotSpot warning</span></span><br><span class="line"><span class="comment">// -------------------------------------</span></span><br><span class="line"><span class="meta">@jdk</span>.internal.ValueBased</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">class</span> <span class="title class_">SomeVbc</span> {    </span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">SomeVbc</span><span class="params">()</span> {}</span><br><span class="line"></span><br><span class="line">    <span class="keyword">final</span> <span class="type">String</span> <span class="variable">ref</span> <span class="operator">=</span> <span class="string">"String"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">abuseVbc</span><span class="params">()</span> {</span><br><span class="line"></span><br><span class="line">        <span class="keyword">synchronized</span>(ref) {           <span class="comment">// OK</span></span><br><span class="line">            <span class="keyword">synchronized</span> (<span class="built_in">this</span>) {     <span class="comment">// WARN</span></span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>CompactStrings:</p>
+<p>Java 9 对字符串的优化主要集中在字符串存储和处理方面，引入了一项被称为 Compact Strings（紧凑字符串）的改进。Compact Strings 的目标是减少字符串在内存中的占用空间，提高性能和效率。在 Java 8 及之前的版本中，字符串内部使用 char 数组来存储字符数据，并使用额外的 int 型字段记录字符串的偏移量和长度。这种表示方式在包含大量 ASCII 字符的字符串中会造成空间浪费，因为每个字符仍然占用 2 个字节的存储空间。</p>
+<p>Java 9 引入了 Compact Strings 的概念，对于仅包含 Latin-1 字符集（即 Unicode 编码范围在 U+0000 至 U+00FF 之间）的字符串，使用字节数组存储数据，每个字符只占用 1 个字节。这样可以大大减少这类字符串的内存占用。对于包含非 Latin-1 字符的字符串，仍然使用 char 数组存储数据，每个字符占用 2 个字节。</p>
+<p>Compact Strings 的优化带来了两个主要的好处：</p>
+<ol>
+<li>内存占用减少：对于仅包含 Latin-1 字符的字符串，在内存中占用的空间减少一半，从而可以降低内存消耗。</li>
+<li>性能提升：减少了字符串的内存占用，可以减少内存的分配和垃圾回收的频率，从而提高了性能和效率。</li>
+<li>在 Java 命令行启动时，可以通过使用 -XX:+CompactStrings 参数来开启 Compact Strings。该参数告诉 Java 虚拟机在启动时启用紧凑字符串（Compact Strings）优化。</li>
+</ol>
+<p>String的底层实现由char[]改成了byte[]：</p>
+<p>因为 JDK 9 开始采用了新的字符串存储方案，对于能以 Latin-1（ISO/IEC 8859-1）编码表示的字符串就以单  存储， 包含其他字符的字符串再转而像以前那样用 UTF-16 编码来存储，靠这种双编码并存的方式减少内存占用，以及提高性能。在 Java 9 之前，JavaScript 的 V8 就已经用类似的方式存储字符串了。</p>
+<p>这种存储方式一方面内存占用不再比更高（不少场景比 UTF-8 还低），一方面还能享受到 UTF16 的“伪定长”的优势，处理起来更方便，我个人认为这算是目前很优秀的字符串实现方案了。</p>
+<h2 id="Override"><a href="#Override" class="headerlink" title="@Override"></a>@Override</h2><p>表示该方法的声明旨在覆盖父类中的方法声明。如果用此注解类型对方法进行标注，编译器必须生成错误消息，除非至少满足以下条件之一：</p>
+<ul>
+<li>该方法确实重写或实现了父类中声明的方法。</li>
+<li>该方法的签名与Object类中声明的任何公共方法具有可重写等效性。</li>
+</ul>
+<h2 id="Deprecated"><a href="#Deprecated" class="headerlink" title="@Deprecated"></a>@Deprecated</h2><p>被标注为 <strong>@Deprecated</strong> 的程序元素表示不鼓励程序员使用。某个元素被弃用的原因可能包括：其使用可能导致错误；在未来的版本中可能会不兼容地更改或移除；已有更新且通常更优的替代方案；或者该元素已过时。<br>当在非弃用代码中使用或重写已弃用的程序元素时，编译器会发出警告。但在局部变量声明、参数声明或包声明上使用 <strong>@Deprecated</strong> 注解不会影响编译器生成的警告。<br>当一个模块被弃用时，在 <strong>requires</strong> 子句（而非 <strong>exports</strong> 或 <strong>opens</strong> 子句）中使用该模块会触发警告。但模块被弃用并不会导致其内部类型的使用产生警告。<br>该注解类型包含一个字符串类型的 <strong>since</strong> 元素，其值表示被标注的程序元素首次被弃用的版本。<br>此外，该注解类型还包含一个布尔类型的 <strong>forRemoval</strong> 元素：  </p>
+<ul>
+<li><strong>true</strong> 表示计划在未来的版本中移除该程序元素；  </li>
+<li><strong>false</strong> 表示不鼓励使用该程序元素，但在标注时暂无明确的移除计划。  </li>
+<li><strong>API 说明：</strong>  强烈建议在文档中使用 <strong>@deprecated</strong> Javadoc 标签说明弃用原因，并在适用时提供推荐替代 API 的说明及链接。由于替代 API 的语义可能存在细微差异，因此也应讨论相关注意事项。<br>建议所有新标注的弃用元素都提供 <strong>since</strong> 值。但需注意，<strong>since</strong> 并非强制要求，因为现有许多注解可能缺少该元素值。<br>注解元素的顺序没有严格规定，但出于代码风格考虑，<strong>since</strong> 元素应放在首位。<br>如果存在 <strong>@deprecated</strong> Javadoc 标签，则必须同时使用 <strong>@Deprecated</strong> 注解，反之亦然。</li>
+</ul>
+<h2 id="SuppressWarnings"><a href="#SuppressWarnings" class="headerlink" title="@SuppressWarnings"></a>@SuppressWarnings</h2><p>表示在注解的元素（以及该元素内包含的所有程序元素）中应禁止显示指定的编译器警告。需要注意的是，某一元素中被禁止的警告集是其所有外层元素中被禁止警告的超集。例如，若对一个类添加注解以禁止某一种警告，并对其中一个方法添加注解以禁止另一种警告，则该方法内将同时禁止这两种警告。但请注意，如果在 module-info 文件中禁止了某个警告，该禁止仅对文件内的元素生效，而不会作用于模块内包含的类型。<br>作为一种编码风格，程序员应始终将此注解用于能生效的最内层元素。例如，若需禁止特定方法中的警告，应直接注解该方法而非其所属的类。<br>其中的value值：该字段用于指定编译器应在注解元素中禁止显示的警告集合。允许重复的警告名称，但重复项会被忽略。即使存在无法识别的警告名称，也不会报错——编译器必须忽略所有无法识别的警告名称，但允许在注解包含未知警告名称时发出警告（非强制）。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>deprecation</td>
+<td>使用了不赞成使用的类或方法时的警告</td>
+</tr>
+<tr>
+<td>unchecked</td>
+<td>执行了未检查的转换时的警告，例如当使用集合时没有用泛型(Generics)来指定集合保存的类型</td>
+</tr>
+<tr>
+<td>fallthrough</td>
+<td>当Switch程序块直接通往下一种情况而没有Break 时的警告</td>
+</tr>
+<tr>
+<td>path</td>
+<td>在类路径、源文件路径等中有不存在的路径时的警告</td>
+</tr>
+<tr>
+<td>serial</td>
+<td>当在可序列化的类上缺少serialVersionUID定义时的警告</td>
+</tr>
+<tr>
+<td>finally</td>
+<td>任何finally子句不能正常完成时的警告</td>
+</tr>
+<tr>
+<td>all</td>
+<td>所有的警告</td>
+</tr>
+</tbody></table>
+<h2 id="FunctionalInterface"><a href="#FunctionalInterface" class="headerlink" title="@FunctionalInterface"></a>@FunctionalInterface</h2><p>这是一种信息性注解类型，用于表明某个接口类型声明旨在成为《Java语言规范》所定义的函数式接口。从概念上讲，函数式接口有且仅有一个抽象方法。由于默认方法已包含实现，因此不被视为抽象方法。若接口声明的抽象方法重写了java.lang.Object中的某个公共方法，该方法也不会计入接口的抽象方法数量，因为接口的任何实现都会从java.lang.Object或其他地方继承该方法的实现。需注意，函数式接口的实例可通过Lambda表达式、方法引用或构造器引用创建。若某类型被此注解标记，编译器必须生成错误信息，除非满足以下条件：</p>
+<ul>
+<li>该类型是接口类型，而非注解类型、枚举或类；</li>
+<li>被注解类型符合函数式接口的要求。</li>
+</ul>
+<p>但需特别说明：无论接口声明中是否存在@FunctionalInterface注解，编译器都会将任何满足函数式接口定义的接口视为函数式接口。<br><img src="/2025/08/28/Java%E5%9F%BA%E7%A1%80/java%20%E5%9F%BA%E7%A1%80/FunctionalInterface%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B.png" alt="FunctionalInterface测试用例"></p>
+<h2 id="SafeVarargs"><a href="#SafeVarargs" class="headerlink" title="@SafeVarargs"></a>@SafeVarargs</h2><p>该注解用于声明：被注解方法或构造器的实现代码不会对其可变参数（varargs）执行潜在不安全的操作。将此注解应用于方法或构造器时，将抑制两类未检查警告：一是关于不可具体化（non-reifiable）可变参数类型的警告，二是关于调用处创建参数化数组的警告。<br>除了其元注解@Target规定的使用限制外，编译器必须对此注解类型实施额外限制。若出现以下情况，则方法或构造器声明使用@SafeVarargs注解时将引发编译时错误：</p>
+<ul>
+<li>该声明是固定参数数量的方法或构造器；</li>
+<li>该声明是可变参数方法，但既非static也非final也非private。</li>
+</ul>
+<p>在下列场景中，建议编译器发出警告（非强制要求）：</p>
+<ol>
+<li>当可变参数的元素类型为可具体化类型（包括基本类型、Object和String）时（因为此类可具体化类型原本就不会触发该注解要抑制的未检查警告）；</li>
+<li>当方法或构造器实现代码执行潜在不安全操作时（例如对可变参数数组元素进行赋值并触发未检查警告）。但需注意，某些不安全操作不会触发未检查警告。例如以下代码中的别名操作：</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SafeVarargs</span> <span class="comment">// 实际上不安全！</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">m</span><span class="params">(List&lt;String&gt;... stringLists)</span> {</span><br><span class="line">   Object[] array = stringLists;</span><br><span class="line">   List&lt;Integer&gt; tmpList = Arrays.asList(<span class="number">42</span>);</span><br><span class="line">   array[<span class="number">0</span>] = tmpList; <span class="comment">// 语义无效，但编译时无警告</span></span><br><span class="line">   <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> stringLists[<span class="number">0</span>].get(<span class="number">0</span>); <span class="comment">// 运行时抛出ClassCastException！</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>将导致运行时抛出ClassCastException。未来平台版本可能会强制要求编译器将此列不安全操作视为错误。</p>
+<h2 id="元注释"><a href="#元注释" class="headerlink" title="元注释"></a>元注释</h2><p>注解可以描述为元数据，即一种描述数据的数据。所以，可以说注解就是源代码的元数据。<br>所谓元注解其主要作⽤就是负责注解其他注解，为其他注解提供了相关的解释说明。<br>Java中常用的元注解有@Target、@Retention 、@Documented、@Inherited和@Repeatable。</p>
+<h3 id="Target"><a href="#Target" class="headerlink" title="@Target"></a>@Target</h3><p>Indicates the contexts in which an annotation type is applicable. The declaration contexts and type contexts in which an annotation type may be applicable are specified in JLS 9.6.4.1, and denoted in source code by enum constants of {@link ElementType java.lang.annotation.ElementType}.<br><br>指示批注类型适用的上下文。jls9.6.4.1中指定了可以应用注释类型的声明上下文和类型上下文，并在源代码中用{@link ElementType的枚举常量表示java.lang.annotation注释.ElementType}。<br><br>The constants of this enumerated type provide a simple classification of the syntactic locations where annotations may appear in a Java program. These constants are used in {@link Target java.lang.annotation.Target} meta-annotations to specify where it is legal to write annotations of a given type.<br><br>这种枚举类型的常量提供了Java程序中可能出现注释的语法位置的简单分类。这些常量用于{@link Targetjava.lang.annotation注释.Target}元注释，指定在何处写入给定类型的注释是合法的。<br><br>用于指定注解的使用范围或目标：</p>
+<ul>
+<li>ElementType.TYPE：类、接⼝、注解、枚举</li>
+<li>ElementType.FIELD：字段、枚举常量</li>
+<li>ElementType.METHOD：⽅法</li>
+<li>ElementType.PARAMETER：形式参数</li>
+<li>ElementType.CONSTRUCTOR：构造⽅法</li>
+<li>ElementType.LOCAL_VARIABLE：局部变量</li>
+<li>ElementType.ANNOTATION_TYPE：注解</li>
+<li>ElementType.PACKAGE：包</li>
+<li>ElementType.TYPE_PARAMETER：类型参数</li>
+<li>ElementType.TYPE_USE：类型使⽤</li>
+</ul>
+<h3 id="Retention"><a href="#Retention" class="headerlink" title="@Retention"></a>@Retention</h3><p>Indicates how long annotations with the annotated type are to be retained.  If no Retention annotation is present on an annotation type declaration, the retention policy defaults to {@code RetentionPolicy.CLASS}.<br><br>指示带批注类型的批注要保留多长时间。如果批注类型声明上不存在保留批注，则保留策略默认为{@code保留策略.CLASS}.<br>用于指定注解的生命周期：</p>
+<ul>
+<li>RetentionPolicy.SOURCE：注解只保留在源码中，在编译时会被编译器丢弃</li>
+<li>RetentionPolicy.CLASS：(默认的保留策略) 注解会被保留在Class⽂件中，但不会被加载到虚拟机中，运⾏时⽆法获得</li>
+<li>RetentionPolicy.RUNTIME：注解会被保留在Class⽂件中，且会被加载到虚拟机中，可以在运⾏时获得</li>
+</ul>
+<h3 id="Documented"><a href="#Documented" class="headerlink" title="@Documented"></a>@Documented</h3><p>Indicates that annotations with a type are to be documented by Javadoc and similar tools by default. This type should be used to annotate the declarations of types whose annotations affect the use of annotated elements by their clients.  If a type declaration is annotated with Documented, its annotations become part of the public API of the annotated elements. <br><br>⽤于将注解包含在javadoc中，默认情况下，javadoc是不包括注解的，但如果使⽤了@Documented注解，则相关注解类型信息会被包含在⽣成的⽂档中；Documented是一个标记注解，没有成员。</p>
+<h3 id="Native"><a href="#Native" class="headerlink" title="@Native"></a>@Native</h3><p>Indicates that a field defining a constant value may be referenced from native code. The annotation may be used as a hint by tools that generate native header files to determine whether a header file is required, and if so, what declarations it should contain.<br><br>指示定义常量值的字段可以从本机代码引用。生成本机头文件的工具可以使用该注释作为提示，以确定是否需要头文件，如果需要，还应该包含哪些声明。</p>
+<h3 id="Inherited"><a href="#Inherited" class="headerlink" title="@Inherited"></a>@Inherited</h3><p>用于指明父类注解会被子类继承得到。该注解是一个标记注解，阐述了某个被标注的类型是被继承的。</p>
+<h3 id="Repeatable"><a href="#Repeatable" class="headerlink" title="@Repeatable"></a>@Repeatable</h3><p>The annotation type @Repeatable is used to indicate that the annotation type whose declaration it (meta-)annotates is repeatable. The value of @Repeatable indicates the containing annotation type for the repeatable annotation type.<br><br>注释类型Repeatable用于指示注释其声明的注释类型是可重复的。@Repeatable的值表示可重复注释类型的包含注释类型。</p>
+<h1 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h1><h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><p>Java 所有的组成部分都需要名字。类名、变量名以及方法名都被称为标识符。标识符的规则如下：</p>
+<ul>
+<li>所有的标识符都应该以字母（A-Z 或者 a-z）,美元符（$）、或者下划线（_）开始；</li>
+<li>首字符之后可以是字母（A-Z 或者 a-z）,美元符（$）、下划线（_）或数字的任何字符组合；</li>
+<li>关键字不能用作标识符；</li>
+<li>标识符是大小写敏感的；</li>
+<li>合法标识符举例：age、$salary、_value、__1_value；</li>
+<li>非法标识符举例：123abc、-salary；</li>
+</ul>
+<h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><p>Java可以使用修饰符来修饰类中方法和属性。主要有两类修饰符，访问控制修饰符和非访问控制修饰符。</p>
+<h3 id="访问控制符"><a href="#访问控制符" class="headerlink" title="访问控制符"></a>访问控制符</h3><p>Java中，可以使用访问控制符来保护对类、变量、方法和构造方法的访问。Java 支持 4 种不同的访问权限。</p>
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>当前类</th>
+<th>同一包内</th>
+<th>子孙类(同一包)</th>
+<th>子孙类(不同包)</th>
+<th>其他包</th>
+<th>适用对象</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>类、接口、方法、变量</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y/N</td>
+<td>N</td>
+<td>方法、变量</td>
+</tr>
+<tr>
+<td>default</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+<td>类、接口、方法、变量</td>
+</tr>
+<tr>
+<td>private</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>方法、变量</td>
+</tr>
+<tr>
+<td>请注意以下方法继承的规则：</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<ul>
+<li>父类中声明为 public 的方法在子类中也必须为 public。</li>
+<li>父类中声明为 protected 的方法在子类中要么声明为 protected，要么声明为 public，不能声明为 private。</li>
+<li>父类中声明为 private 的方法，不能够被继承。</li>
+</ul>
+<h4 id="默认访问修饰符-default"><a href="#默认访问修饰符-default" class="headerlink" title="默认访问修饰符- default"></a>默认访问修饰符- default</h4><p>使用默认访问修饰符声明的变量和方法，对同一个包内的类是可见的。<span style="color:red">接口里的变量都隐式声明为 public static final</span>,而接口里的方法默认情况下访问权限为 public。</p>
+<h4 id="私有访问修饰符-private"><a href="#私有访问修饰符-private" class="headerlink" title="私有访问修饰符-private"></a>私有访问修饰符-private</h4><p>私有访问修饰符是最严格的访问级别，所以被声明为 private 的方法、变量和构造方法只能被所属类访问，并且类和接口不能声明为 private。声明为私有访问类型的变量只能通过类中公共的 getter 方法被外部类访问。</p>
+<h4 id="公有访问修饰符-public"><a href="#公有访问修饰符-public" class="headerlink" title="公有访问修饰符-public"></a>公有访问修饰符-public</h4><p>被声明为 public 的类、方法、构造方法和接口能够被任何其他类访问。如果几个相互访问的 public 类分布在不同的包中，则需要导入相应 public 类所在的包。由于类的继承性，类所有的公有方法和变量都能被其子类继承。</p>
+<h4 id="受保护的访问修饰符-protected"><a href="#受保护的访问修饰符-protected" class="headerlink" title="受保护的访问修饰符-protected"></a>受保护的访问修饰符-protected</h4><ul>
+<li>子类与基类在同一包中：被声明为 protected 的变量、方法和构造器能被同一个包中的任何其他类访问；</li>
+<li>子类与基类不在同一包中：那么在子类中，子类实例可以访问其从基类继承而来的 protected 方法，而不能访问基类实例的protected方法。</li>
+<li>protected 可以修饰数据成员，构造方法，方法成员，不能修饰类（内部类除外）。</li>
+<li>接口及接口的成员变量和成员方法不能声明为 protected。</li>
+</ul>
+<h2 id="非访问修饰符"><a href="#非访问修饰符" class="headerlink" title="非访问修饰符"></a>非访问修饰符</h2><p>Java 也提供了许多非访问修饰符。</p>
+<ul>
+<li>static 修饰符，用来修饰类方法(在类方法中调用本类的类方法时可直接调用)和类变量。</li>
+<li>final 修饰符，用来修饰类、方法和变量，final 修饰的类不能够被继承，修饰的方法不能被继承类重新定义，修饰的变量为常量，是不可修改的。</li>
+<li>abstract 修饰符，用来创建抽象类和抽象方法。</li>
+<li>synchronized 和 volatile 修饰符，主要用于线程的编程。</li>
+</ul>
+<h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><p>下面列出了 Java 关键字。这些保留字不能用于常量、变量、和任何标识符的名称。</p>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>关键字</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>基本类型</td>
+<td><code>boolean</code> <code>byte</code> <code>char</code> <code>double</code> <code>float</code> <code>int</code> <code>long</code> <code>short</code> <code>void</code></td>
+</tr>
+<tr>
+<td>流程控制</td>
+<td><code>if</code> <code>else</code> <code>switch</code> <code>case</code> <code>default</code> <code>while</code> <code>do</code> <code>for</code> <code>break</code> <code>continue</code> <code>return</code></td>
+</tr>
+<tr>
+<td>面向对象</td>
+<td><code>class</code> <code>interface</code> <code>enum</code> <code>extends</code> <code>implements</code> <code>new</code> <code>super</code> <code>this</code> <code>instanceof</code></td>
+</tr>
+<tr>
+<td>异常处理</td>
+<td><code>try</code> <code>catch</code> <code>finally</code> <code>throw</code> <code>throws</code></td>
+</tr>
+<tr>
+<td>访问修饰符</td>
+<td><code>public</code> <code>protected</code> <code>private</code></td>
+</tr>
+<tr>
+<td>其他修饰符</td>
+<td><code>abstract</code> <code>final</code> <code>static</code> <code>synchronized</code> <code>native</code> <code>transient</code> <code>volatile</code> <code>strictfp</code></td>
+</tr>
+<tr>
+<td>保留未使用</td>
+<td><code>goto</code> <code>const</code></td>
+</tr>
+<tr>
+<td>特殊值</td>
+<td><code>true</code> <code>false</code> <code>null</code></td>
+</tr>
+<tr>
+<td>Java 10+新特性</td>
+<td><code>var</code> <code>_</code></td>
+</tr>
+</tbody></table>
+<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><p>常量在程序运行时是不能被修改的。在 Java 中使用 final 关键字来修饰常量，声明方式和变量类似。字符串常量和字符常量都可以包含任何Unicode字符。Java语言支持一些特殊的转义字符序列：</p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>字符含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\n</td>
+<td>换行 (0x0a)</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>回车 (0x0d)</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>换页符(0x0c)</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>退格 (0x08)</td>
+</tr>
+<tr>
+<td>\0</td>
+<td>空字符 (0x0)</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>空格 (0x20)</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>制表符</td>
+</tr>
+<tr>
+<td>"</td>
+<td>双引号</td>
+</tr>
+<tr>
+<td>'</td>
+<td>单引号</td>
+</tr>
+<tr>
+<td>\</td>
+<td>反斜杠</td>
+</tr>
+<tr>
+<td>\ddd</td>
+<td>八进制字符 (ddd)</td>
+</tr>
+<tr>
+<td>\uxxxx</td>
+<td>16进制Unicode字符 (xxxx)</td>
+</tr>
+</tbody></table>
+<h2 id="对象和类"><a href="#对象和类" class="headerlink" title="对象和类"></a>对象和类</h2><p>一个类可以包含以下类型变量：</p>
+<ul>
+<li>局部变量：在方法、构造方法或者语句块中定义的变量被称为局部变量。变量声明和初始化都是在方法中，方法结束后，变量就会自动销毁。</li>
+<li>成员变量：成员变量是定义在类中，方法体之外的变量。这种变量在创建对象的时候实例化。成员变量可以被类中方法、构造方法和特定类的语句块访问。</li>
+<li>类变量：类变量也声明在类中，方法体之外，但必须声明为 static 类型。</li>
+</ul>
+<h3 id="源文件声明规则"><a href="#源文件声明规则" class="headerlink" title="源文件声明规则"></a>源文件声明规则</h3><p>当在一个源文件中定义多个类，并且还有import语句和package语句时，要特别注意这些规则：</p>
+<ul>
+<li>一个源文件中只能有一个 public 类</li>
+<li>一个源文件可以有多个非 public 类</li>
+<li>源文件的名称应该和 public 类的类名保持一致。例如：源文件中public类的类名是 Employee，那么源文件应该命名为Employee.java。</li>
+<li>如果一个类定义在某个包中，那么 package 语句应该在源文件的首行。</li>
+<li>如果源文件包含 import 语句，那么应该放在 package 语句和类定义之间。如果没有 package 语句，那么 import 语句应该在源文件中最前面。</li>
+<li>import 语句和 package 语句对源文件中定义的所有类都有效。在同一源文件中，不能给不同的类不同的包声明。</li>
+</ul>
+<p>虚拟机规范严格规定了有且只有五种情况必须立即对类进行“初始化”：</p>
+<ul>
+<li>使用new关键字实例化对象，遇到 new、getstatic、putstatic 或 invokestatic 指令时。</li>
+<li>虚拟机启动时，用户指定的主类（包含 main() 方法的类）。</li>
+<li>使用java.lang.reflect包的方法对类进行反射调用的时候，如果类没有初始化，则需要先触发其初始化。</li>
+<li>当初始化一个类的时候，如果发现其父类没有被初始化就会先初始化它的父类。</li>
+<li>当使用 JDK 7+ 的动态语言支持时。</li>
+<li>除了这五种之外，其他的所有引用类的方式都不会触发初始化，称为被动引用</li>
+</ul>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>Java 的两大数据类型:</p>
+<ul>
+<li>基本数据类型</li>
+<li>引用数据类型</li>
+</ul>
+<h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><p>Java中有8种基本数据类型，分别为：</p>
+<table>
+<thead>
+<tr>
+<th>基本类型</th>
+<th>位数</th>
+<th>字节</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int</td>
+<td>32</td>
+<td>4</td>
+<td>0</td>
+</tr>
+<tr>
+<td>short</td>
+<td>16</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>long</td>
+<td>64</td>
+<td>8</td>
+<td>0L</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>8</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>char</td>
+<td>16</td>
+<td>2</td>
+<td>‘u0000’</td>
+</tr>
+<tr>
+<td>float</td>
+<td>32</td>
+<td>4</td>
+<td>0f</td>
+</tr>
+<tr>
+<td>double</td>
+<td>64</td>
+<td>8</td>
+<td>0d</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>1</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>这八种基本类型都有对应的包装类分别为：Byte、Short、Integer、Long、Float、Double、Character、Boolean。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="Integer源码解析"><a href="#Integer源码解析" class="headerlink" title="Integer源码解析"></a>Integer源码解析</h4><p>使用了本地方法注解:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Native</span> <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span>   <span class="variable">MIN_VALUE</span> <span class="operator">=</span> <span class="number">0x80000000</span>;</span><br><span class="line"><span class="meta">@Native</span> <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span>   <span class="variable">MAX_VALUE</span> <span class="operator">=</span> <span class="number">0x7fffffff</span>;</span><br><span class="line"><span class="meta">@Native</span> <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">SIZE</span> <span class="operator">=</span> <span class="number">32</span>;</span><br><span class="line"><span class="comment">// 表示基类型</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Class&lt;Integer&gt;  TYPE = (Class&lt;Integer&gt;) Class.getPrimitiveClass(<span class="string">"int"</span>);</span><br><span class="line"><span class="comment">// 所有chars</span></span><br><span class="line"><span class="keyword">final</span> <span class="keyword">static</span> <span class="type">char</span>[] digits = {</span><br><span class="line">        <span class="string">'0'</span> , <span class="string">'1'</span> , <span class="string">'2'</span> , <span class="string">'3'</span> , <span class="string">'4'</span> , <span class="string">'5'</span> ,</span><br><span class="line">        <span class="string">'6'</span> , <span class="string">'7'</span> , <span class="string">'8'</span> , <span class="string">'9'</span> , <span class="string">'a'</span> , <span class="string">'b'</span> ,</span><br><span class="line">        <span class="string">'c'</span> , <span class="string">'d'</span> , <span class="string">'e'</span> , <span class="string">'f'</span> , <span class="string">'g'</span> , <span class="string">'h'</span> ,</span><br><span class="line">        <span class="string">'i'</span> , <span class="string">'j'</span> , <span class="string">'k'</span> , <span class="string">'l'</span> , <span class="string">'m'</span> , <span class="string">'n'</span> ,</span><br><span class="line">        <span class="string">'o'</span> , <span class="string">'p'</span> , <span class="string">'q'</span> , <span class="string">'r'</span> , <span class="string">'s'</span> , <span class="string">'t'</span> ,</span><br><span class="line">        <span class="string">'u'</span> , <span class="string">'v'</span> , <span class="string">'w'</span> , <span class="string">'x'</span> , <span class="string">'y'</span> , <span class="string">'z'</span></span><br><span class="line">    };</span><br></pre></td></tr></table></figure>
+<p>toString（）方法:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 普通的toString方法，静态可以直接调用</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toString</span><span class="params">(<span class="type">int</span> i)</span> {</span><br><span class="line">    <span class="comment">// 数字长度</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">size</span> <span class="operator">=</span> stringSize(i);</span><br><span class="line">    <span class="comment">//  紧凑的空间布局（COMPACT_STRINGS）,LATIN1单字节编码，UTF16双字节编码</span></span><br><span class="line">    <span class="keyword">if</span> (COMPACT_STRINGS) {</span><br><span class="line">        <span class="type">byte</span>[] buf = <span class="keyword">new</span> <span class="title class_">byte</span>[size]; <span class="comment">// 单字节编码，一个字节存储一个数字</span></span><br><span class="line">        getChars(i, size, buf);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">String</span>(buf, LATIN1);</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        <span class="type">byte</span>[] buf = <span class="keyword">new</span> <span class="title class_">byte</span>[size * <span class="number">2</span>]; <span class="comment">// 双字节编码，两个字节存储一个数字</span></span><br><span class="line">        StringUTF16.getChars(i, size, buf);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">String</span>(buf, UTF16);</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// int类型数字位数</span></span><br><span class="line"><span class="comment">// int类型范围[-2147483648, 2147483647]</span></span><br><span class="line"><span class="comment">// 最高10位数。</span></span><br><span class="line"><span class="comment">// 正数长度最高是10，负数长度最高是11（比正数多一位负号）</span></span><br><span class="line"><span class="keyword">static</span> <span class="type">int</span> <span class="title function_">stringSize</span><span class="params">(<span class="type">int</span> x)</span> {</span><br><span class="line">    <span class="type">int</span> <span class="variable">d</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (x &gt;= <span class="number">0</span>) {</span><br><span class="line">        d = <span class="number">0</span>;</span><br><span class="line">        x = -x;</span><br><span class="line">    }</span><br><span class="line">    <span class="type">int</span> <span class="variable">p</span> <span class="operator">=</span> -<span class="number">10</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; <span class="number">10</span>; i++) {</span><br><span class="line">        <span class="keyword">if</span> (x &gt; p)</span><br><span class="line">            <span class="keyword">return</span> i + d;</span><br><span class="line">        p = <span class="number">10</span> * p;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">10</span> + d;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getChars</span><span class="params">(<span class="type">int</span> i, <span class="type">int</span> index, <span class="type">byte</span>[] buf)</span> {</span><br><span class="line">    <span class="type">int</span> q, r;</span><br><span class="line">    <span class="type">int</span> <span class="variable">charPos</span> <span class="operator">=</span> index;</span><br><span class="line"></span><br><span class="line">    <span class="type">boolean</span> <span class="variable">negative</span> <span class="operator">=</span> i &lt; <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 转为负数参加下面的计算</span></span><br><span class="line">    <span class="keyword">if</span> (!negative) {</span><br><span class="line">        i = -i;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Generate two digits per iteration</span></span><br><span class="line">    <span class="comment">// 每次迭代生成两位数，并通过两个字符数组DigitOnes、DigitTens获取十位数和个位数所对应的字符。</span></span><br><span class="line">    <span class="comment">// 从后到前填充buf。</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt;= -<span class="number">100</span>) {</span><br><span class="line">        q = i / <span class="number">100</span>;</span><br><span class="line">        <span class="comment">// 取出该数字的最低两位</span></span><br><span class="line">        r = (q * <span class="number">100</span>) - i;</span><br><span class="line">        i = q;</span><br><span class="line">        <span class="comment">// 个位对应的字符</span></span><br><span class="line">        buf[--charPos] = DigitOnes[r];</span><br><span class="line">        <span class="comment">// 十位对应的字符</span></span><br><span class="line">        buf[--charPos] = DigitTens[r];</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// We know there are at most two digits left at this point.</span></span><br><span class="line">    <span class="comment">// 经过前面的迭代后，0 &gt; i &gt; -100，</span></span><br><span class="line">    q = i / <span class="number">10</span>;</span><br><span class="line">    <span class="comment">// 取数字i的个位（i可能是两位数或个位数）</span></span><br><span class="line">    r = (q * <span class="number">10</span>) - i;</span><br><span class="line">    <span class="comment">// 通过偏移量r取数字r对应的字符'r'</span></span><br><span class="line">    buf[--charPos] = (<span class="type">byte</span>)(<span class="string">'0'</span> + r);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Whatever left is the remaining digit.</span></span><br><span class="line">    <span class="comment">// 如果前面的i是两位数，则q是i的十位数，且q&lt;0</span></span><br><span class="line">    <span class="comment">// 如果前面的i是一位数，则q==0，q为0则不用将q放入buf</span></span><br><span class="line">    <span class="keyword">if</span> (q &lt; <span class="number">0</span>) {</span><br><span class="line">        buf[--charPos] = (<span class="type">byte</span>)(<span class="string">'0'</span> - q); <span class="comment">//q为负数，计算绝对值|q|对应的'q'时用'0'-q。</span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 若是负数，加上负号</span></span><br><span class="line">    <span class="keyword">if</span> (negative) {</span><br><span class="line">        buf[--charPos] = (<span class="type">byte</span>)<span class="string">'-'</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> charPos;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 十进制转换为其他进制方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">toString</span><span class="params">(<span class="type">int</span> i, <span class="type">int</span> radix)</span> {</span><br><span class="line">    <span class="comment">// 只支持2-36进制，范围之外的指定为10进制</span></span><br><span class="line">    <span class="keyword">if</span> (radix &lt; Character.MIN_RADIX || radix &gt; Character.MAX_RADIX)</span><br><span class="line">        radix = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Use the faster version */</span></span><br><span class="line">    <span class="comment">// 十进制则直接调用public static String toString(int i)方法</span></span><br><span class="line">    <span class="keyword">if</span> (radix == <span class="number">10</span>) {</span><br><span class="line">        <span class="keyword">return</span> toString(i);</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// 单字节Latin1编码</span></span><br><span class="line">    <span class="keyword">if</span> (COMPACT_STRINGS) {</span><br><span class="line">        <span class="comment">// 将int型数据转为其他进制（2-36），只有2进制的结果其长度才最大</span></span><br><span class="line">        <span class="comment">// Integer.MIN_VALUE == -2147483648，2进制为-10000000000000000000000000000000，2进制长度为33</span></span><br><span class="line">        <span class="comment">// Integer.MAX_VALUE == 2147483647，2进制为1111111111111111111111111111111，2进制长度为31</span></span><br><span class="line">        <span class="comment">// 所以33个长度的buf数组足够。</span></span><br><span class="line">        <span class="type">byte</span>[] buf = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">33</span>];</span><br><span class="line">        <span class="comment">// 是否为负数</span></span><br><span class="line">        <span class="type">boolean</span> <span class="variable">negative</span> <span class="operator">=</span> (i &lt; <span class="number">0</span>);</span><br><span class="line">        <span class="type">int</span> <span class="variable">charPos</span> <span class="operator">=</span> <span class="number">32</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 正数转为负数</span></span><br><span class="line">        <span class="keyword">if</span> (!negative) {</span><br><span class="line">            i = -i;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 十进制i转为其他进制</span></span><br><span class="line">        <span class="keyword">while</span> (i &lt;= -radix) {</span><br><span class="line">            buf[charPos--] = (<span class="type">byte</span>)digits[-(i % radix)];</span><br><span class="line">            i = i / radix;</span><br><span class="line">        }</span><br><span class="line">        buf[charPos] = (<span class="type">byte</span>)digits[-i];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 负数则再加上负号</span></span><br><span class="line">        <span class="keyword">if</span> (negative) {</span><br><span class="line">            buf[--charPos] = <span class="string">'-'</span>;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> StringLatin1.newString(buf, charPos, (<span class="number">33</span> - charPos));</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// UTF-16编码</span></span><br><span class="line">    <span class="keyword">return</span> toStringUTF16(i, radix);</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>String转换为int的方法:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">parseInt</span><span class="params">(String s, <span class="type">int</span> radix)</span></span><br><span class="line">                <span class="keyword">throws</span> NumberFormatException</span><br><span class="line">{</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    * WARNING: This method may be invoked early during VM initialization</span></span><br><span class="line"><span class="comment">    * before IntegerCache is initialized. Care must be taken to not use</span></span><br><span class="line"><span class="comment">    * the valueOf method.</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="comment">// 字符串s不能为null</span></span><br><span class="line">    <span class="keyword">if</span> (s == <span class="literal">null</span>) {</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">NumberFormatException</span>(<span class="string">"Cannot parse null string"</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 进制不能小于2</span></span><br><span class="line">    <span class="keyword">if</span> (radix &lt; Character.MIN_RADIX) {</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">NumberFormatException</span>(<span class="string">"radix "</span> + radix + <span class="string">" less than Character.MIN_RADIX"</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 进制不能大于36</span></span><br><span class="line">    <span class="keyword">if</span> (radix &gt; Character.MAX_RADIX) {</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">NumberFormatException</span>(<span class="string">"radix "</span> + radix +  <span class="string">" greater than Character.MAX_RADIX"</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="type">boolean</span> <span class="variable">negative</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>, len = s.length();</span><br><span class="line">    <span class="type">int</span> <span class="variable">limit</span> <span class="operator">=</span> -Integer.MAX_VALUE;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (len &gt; <span class="number">0</span>) {</span><br><span class="line">        <span class="type">char</span> <span class="variable">firstChar</span> <span class="operator">=</span> s.charAt(<span class="number">0</span>);</span><br><span class="line">        <span class="comment">// 若首字符ASCII值小于字符'0', 则可能是正负号</span></span><br><span class="line">        <span class="keyword">if</span> (firstChar &lt; <span class="string">'0'</span>) { <span class="comment">// Possible leading "+" or "-"</span></span><br><span class="line">            <span class="keyword">if</span> (firstChar == <span class="string">'-'</span>) { <span class="comment">// 负号</span></span><br><span class="line">                negative = <span class="literal">true</span>;</span><br><span class="line">                limit = Integer.MIN_VALUE; <span class="comment">// 负数最小值</span></span><br><span class="line">            } <span class="keyword">else</span> <span class="keyword">if</span> (firstChar != <span class="string">'+'</span>) { <span class="comment">// 不是负号又不是正号，则非法，报错</span></span><br><span class="line">                <span class="keyword">throw</span> NumberFormatException.forInputString(s);</span><br><span class="line">            }</span><br><span class="line">            <span class="comment">// 字符串不能只有正负号</span></span><br><span class="line">            <span class="keyword">if</span> (len == <span class="number">1</span>) { <span class="comment">// Cannot have lone "+" or "-"</span></span><br><span class="line">                <span class="keyword">throw</span> NumberFormatException.forInputString(s);</span><br><span class="line">            }</span><br><span class="line">            i++; <span class="comment">// 下标移动到第二个字符</span></span><br><span class="line">        }</span><br><span class="line">        <span class="type">int</span> <span class="variable">multmin</span> <span class="operator">=</span> limit / radix; <span class="comment">// ??????????????</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 计算该radix进制字符串对应的10进制</span></span><br><span class="line">        <span class="comment">// 二进制11010计算十进制：</span></span><br><span class="line">        <span class="comment">// 第一种：1*2^4 + 1*2^3 + 0*2^2 + 1*2^1 + 0*2^0</span></span><br><span class="line">        <span class="comment">// 第二种：((((1*2+1)+0)*2+1)*2+0)*2</span></span><br><span class="line">        <span class="comment">// 下面计算10进制用的是第二种。</span></span><br><span class="line">        <span class="keyword">while</span> (i &lt; len) {</span><br><span class="line">            <span class="comment">// Accumulating negatively avoids surprises near MAX_VALUE</span></span><br><span class="line">            <span class="comment">// 字符对应的十进制数，'0'=&gt;0, '1'=&gt;1, 'a'=&gt;10, 'A'=&gt;10</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">digit</span> <span class="operator">=</span> Character.digit(s.charAt(i++), radix);</span><br><span class="line">            <span class="keyword">if</span> (digit &lt; <span class="number">0</span> || result &lt; multmin) { </span><br><span class="line">                <span class="keyword">throw</span> NumberFormatException.forInputString(s);</span><br><span class="line">            }</span><br><span class="line">            result *= radix;</span><br><span class="line">            <span class="keyword">if</span> (result &lt; limit + digit) {</span><br><span class="line">                <span class="keyword">throw</span> NumberFormatException.forInputString(s);</span><br><span class="line">            }</span><br><span class="line">            result -= digit;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> negative ? result : -result;</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        <span class="keyword">throw</span> NumberFormatException.forInputString(s);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>IntegerCache的缓存内部类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">IntegerCache</span> {</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">low</span> <span class="operator">=</span> -<span class="number">128</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> high;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> Integer cache[];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> {</span><br><span class="line">        <span class="comment">// 高值可以通过属性配置</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">h</span> <span class="operator">=</span> <span class="number">127</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">integerCacheHighPropValue</span> <span class="operator">=</span></span><br><span class="line">            sun.misc.VM.getSavedProperty(<span class="string">"java.lang.Integer.IntegerCache.high"</span>);</span><br><span class="line">        <span class="keyword">if</span> (integerCacheHighPropValue != <span class="literal">null</span>) {</span><br><span class="line">            <span class="keyword">try</span> {</span><br><span class="line">                <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> parseInt(integerCacheHighPropValue);</span><br><span class="line">                i = Math.max(i, <span class="number">127</span>);</span><br><span class="line">                <span class="comment">// Maximum array size is Integer.MAX_VALUE</span></span><br><span class="line">                h = Math.min(i, Integer.MAX_VALUE - (-low) -<span class="number">1</span>);</span><br><span class="line">            } <span class="keyword">catch</span>( NumberFormatException nfe) {</span><br><span class="line">                <span class="comment">// If the property cannot be parsed into an int, ignore it.</span></span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        high = h;</span><br><span class="line"></span><br><span class="line">        cache = <span class="keyword">new</span> <span class="title class_">Integer</span>[(high - low) + <span class="number">1</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> low;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">0</span>; k &lt; cache.length; k++)</span><br><span class="line">            cache[k] = <span class="keyword">new</span> <span class="title class_">Integer</span>(j++);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// range [-128, 127] must be interned (JLS7 5.1.7)</span></span><br><span class="line">        <span class="keyword">assert</span> IntegerCache.high &gt;= <span class="number">127</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">IntegerCache</span><span class="params">()</span> {}</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h4 id="Float源码解析"><a href="#Float源码解析" class="headerlink" title="Float源码解析"></a>Float源码解析</h4><p>重要常量：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 正无穷、负无穷和NaN</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">float</span> <span class="variable">POSITIVE_INFINITY</span> <span class="operator">=</span> <span class="number">1.0f</span> / <span class="number">0.0f</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">float</span> <span class="variable">NEGATIVE_INFINITY</span> <span class="operator">=</span> -<span class="number">1.0f</span> / <span class="number">0.0f</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">float</span> <span class="variable">NaN</span> <span class="operator">=</span> <span class="number">0.0f</span> / <span class="number">0.0f</span>;</span><br><span class="line"><span class="comment">// 最大值</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">float</span> <span class="variable">MAX_VALUE</span> <span class="operator">=</span> <span class="number">0x1.fffffeP+127f</span>;</span><br><span class="line"><span class="comment">// 最小的正常常量</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">float</span> <span class="variable">MIN_NORMAL</span> <span class="operator">=</span> <span class="number">0x1.0p-126f</span>;</span><br><span class="line"><span class="comment">// 最小值</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">float</span> <span class="variable">MIN_VALUE</span> <span class="operator">=</span> <span class="number">0x0.000002P-126f</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h3><p>在Java中，引用类型的变量非常类似于C/C++的指针。引用类型指向一个对象，指向对象的变量是引用变量。这些变量在声明时被指定为一个特定的类型，比如 Employee、Puppy 等。变量一旦声明后，类型就不能被改变了。</p>
+<ul>
+<li>对象、数组都是引用数据类型。</li>
+<li>所有引用类型的默认值都是null。</li>
+<li>一个引用变量可以用来引用任何与之兼容的类型。</li>
+<li>例子：Site site = new Site(“Runoob”)。</li>
+</ul>
+<h3 id="自动装箱与拆箱"><a href="#自动装箱与拆箱" class="headerlink" title="自动装箱与拆箱"></a>自动装箱与拆箱</h3><ul>
+<li>装箱：将基本类型用它们对应的引用类型包装起来；</li>
+<li>拆箱：将包装类型转换为基本数据类型；</li>
+</ul>
+<p>在Java SE5之前，如果要生成一个数值为10的Integer对象，必须这样进行：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+<p>从Java SE5开始就提供了自动装箱的特性，如果要生成一个数值为10的Integer对象，只需要这样就可以了：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+<p>这个过程中会自动根据数值创建对应的 Integer对象(<span style="color:red">Integer、Short、Byte、Character、Long这几个类的valueOf方法的实现是类似的。<br>Double、Float的valueOf方法的实现是类似的<br></span>)，这就是装箱。反过来就是拆箱。下表为基本数据类型对应的包装器类型：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int（4字节）</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>byte（1字节）</td>
+<td>Byte</td>
+<td></td>
+</tr>
+<tr>
+<td>short（2字节）</td>
+<td>Short</td>
+<td></td>
+</tr>
+<tr>
+<td>long（8字节）</td>
+<td>Long</td>
+<td></td>
+</tr>
+<tr>
+<td>float（4字节）</td>
+<td>Float</td>
+<td></td>
+</tr>
+<tr>
+<td>double（8字节）</td>
+<td>Double</td>
+<td></td>
+</tr>
+<tr>
+<td>char（2字节）</td>
+<td>Character</td>
+<td></td>
+</tr>
+<tr>
+<td>boolean（未定）</td>
+<td>Boolean</td>
+<td></td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Double</span> <span class="variable">i1</span> <span class="operator">=</span> <span class="number">100.0</span>;</span><br><span class="line"><span class="type">Double</span> <span class="variable">i2</span> <span class="operator">=</span> <span class="number">100.0</span>;</span><br><span class="line"><span class="type">Double</span> <span class="variable">i3</span> <span class="operator">=</span> <span class="number">200.0</span>;</span><br><span class="line"><span class="type">Double</span> <span class="variable">i4</span> <span class="operator">=</span> <span class="number">200.0</span>;</span><br><span class="line">System.out.println(i1==i2);<span class="comment">//false</span></span><br><span class="line">System.out.println(i3==i4);<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<p>在某个范围内的整型数值的个数是有限的，而浮点数却不是。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i1</span> <span class="operator">=</span> <span class="number">100</span>;</span><br><span class="line"><span class="type">Integer</span> <span class="variable">i2</span> <span class="operator">=</span> <span class="number">100</span>;</span><br><span class="line"><span class="type">Integer</span> <span class="variable">i3</span> <span class="operator">=</span> <span class="number">200</span>;</span><br><span class="line"><span class="type">Integer</span> <span class="variable">i4</span> <span class="operator">=</span> <span class="number">200</span>; </span><br><span class="line">System.out.println(i1==i2);<span class="comment">//true</span></span><br><span class="line">System.out.println(i3==i4);<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<p>在通过valueOf方法创建Integer对象的时候，如果数值在[-128,127]之间，便返回指向IntegerCache.cache中已经存在的对象的引用；否则创建一个新的Integer对象。</p>
+<h4 id="装箱和拆箱的实现"><a href="#装箱和拆箱的实现" class="headerlink" title="装箱和拆箱的实现"></a>装箱和拆箱的实现</h4><p>以Interger类为例，下面看一段代码：double（8字节）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">        <span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> i;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>反编译class文件之后得到如下内容：<br><img src="/2025/08/28/Java%E5%9F%BA%E7%A1%80/java%20%E5%9F%BA%E7%A1%80/%E5%8F%8D%E7%BC%96%E8%AF%91class%E6%96%87%E4%BB%B6.png" alt="反编译class文件"><br>从反编译得到的字节码内容可以看出，在装箱的时候自动调用的是Integer的valueOf(int)方法。而在拆箱的时候自动调用的是Integer的intValue方法。</p>
+<h2 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h2><p>整型、实型（常量）、字符型数据可以混合运算。运算中，不同类型的数据先转化为同一类型，然后进行运算。转换从低级到高级。<br>byte,short,char&lt; int &lt; long &lt; float &lt; double</p>
+<ul>
+<li>数据类型转换必须满足如下规则：</li>
+<li><span style="color:red">不能对boolean类型进行类型转换。</span></li>
+<li>不能把对象类型转换成不相关类的对象。</li>
+<li>在把容量大的类型转换为容量小的类型时必须使用强制类型转换。</li>
+<li>转换过程中可能导致溢出或损失精度，例如：<ul>
+<li>int i =128;</li>
+<li>byte b = (byte)i;</li>
+</ul>
+</li>
+<li>浮点数到整数的转换是通过<span style="color:red">舍弃小数得到，而不是四舍五入</span>，例如：<ul>
+<li>(int)23.7 == 23; </li>
+<li>(int)-45.89f == -45;</li>
+</ul>
+</li>
+</ul>
+<h3 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h3><ul>
+<li>条件是转换的数据类型必须是兼容的。</li>
+<li>格式：(type)value type是要强制类型转换后的数据类型。</li>
+</ul>
+<h3 id="隐含强制类型转换"><a href="#隐含强制类型转换" class="headerlink" title="隐含强制类型转换"></a>隐含强制类型转换</h3><ul>
+<li>整数的默认类型是 int。</li>
+<li>浮点型不存在这种情况，因为在定义 float 类型时必须在数字后面跟上 F 或者 f。</li>
+</ul>
+<h2 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h2><ul>
+<li>类变量：独立于方法之外的变量，用 static 修饰。</li>
+<li>实例变量：独立于方法之外的变量，不过没有 static 修饰。</li>
+<li>局部变量：类的方法中的变量。</li>
+</ul>
+<h3 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h3><ul>
+<li>局部变量声明在方法、构造方法或者语句块中；</li>
+<li>局部变量在方法、构造方法、或者语句块被执行的时候创建，当它们执行完成后，变量将会被销毁；</li>
+<li><span style="color:red">访问修饰符不能用于局部变量<span>；</span></span></li>
+<li><span style="color:red">局部变量只在声明它的方法、构造方法或者语句块中可见</span>；</li>
+<li><span style="color:red">局部变量是在栈上分配的<span>。</span></span></li>
+<li>局部变量没有默认值，所以局部变量被声明后，必须经过初始化，才可以使用。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>定义位置</strong></td>
+<td>方法、构造函数或代码块（<code>{}</code>）内部</td>
+</tr>
+<tr>
+<td><strong>作用域</strong></td>
+<td>从声明处开始，到所属的代码块结束为止</td>
+</tr>
+<tr>
+<td><strong>默认值</strong></td>
+<td><strong>无</strong>（必须显式初始化后才能使用，否则编译错误）</td>
+</tr>
+<tr>
+<td><strong>存储位置</strong></td>
+<td>栈内存（Stack）</td>
+</tr>
+<tr>
+<td><strong>生命周期</strong></td>
+<td>随方法/代码块的执行而创建，执行结束后销毁</td>
+</tr>
+<tr>
+<td><strong>访问修饰符</strong></td>
+<td>不允许使用 <code>public</code>/<code>private</code>/<code>protected</code>/<code>static</code> 等修饰符</td>
+</tr>
+<tr>
+<td><strong>注意事项</strong></td>
+<td>1. 局部变量必须手动初始化<br>2. 不能与同作用域内的其他变量同名</td>
+</tr>
+</tbody></table>
+<h3 id="实例变量"><a href="#实例变量" class="headerlink" title="实例变量"></a>实例变量</h3><ul>
+<li>实例变量声明在一个类中，但在方法、构造方法和语句块之外；</li>
+<li>当一个对象被实例化之后，每个实例变量的值就跟着确定；</li>
+<li>实例变量在对象创建的时候创建，在对象被销毁的时候销毁；</li>
+<li>实例变量的值应该至少被一个方法、构造方法或者语句块引用，使得外部能够通过这些方式获取实例变量信息；</li>
+<li><span style="color:red">实例变量可以声明在使用前或者使用后</span>；</li>
+<li>访问修饰符可以修饰实例变量；</li>
+<li>实例变量对于类中的方法、构造方法或者语句块是可见的。一般情况下应该把实例变量设为私有。通过使用访问修饰符可以使实例变量对子类可见；</li>
+<li>实例变量具有默认值。数值型变量的默认值是0，布尔型变量的默认值是false，引用类型变量的默认值是null。变量的值可以在声明时指定，也可以在构造方法中指定；</li>
+<li>实例变量可以直接通过变量名访问。但在静态方法以及其他类中，就应该使用完全限定名：ObejectReference.VariableName。</li>
+</ul>
+<h3 id="类变量（静态变量）"><a href="#类变量（静态变量）" class="headerlink" title="类变量（静态变量）"></a>类变量（静态变量）</h3><ul>
+<li>类变量也称为静态变量，在类中以 static 关键字声明，但必须在方法之外。</li>
+<li>无论一个类创建了多少个对象，类只拥有类变量的一份拷贝。</li>
+<li>静态变量除了被声明为常量外很少使用，静态变量是指声明为 public/private，final 和 static 类型的变量。静态变量初始化后不可改变。</li>
+<li>静态变量储存在静态存储区。经常被声明为常量，很少单独使用 static 声明变量。</li>
+<li><span style="color:red">静态变量在第一次被访问时创建，在程序结束时销毁。</span></li>
+<li>与实例变量具有相似的可见性。但为了对类的使用者可见，大多数静态变量声明为 public 类型。</li>
+<li>默认值和实例变量相似。数值型变量默认值是 0，布尔型默认值是 false，引用类型默认值是 null。变量的值可以在声明的时候指定，也可以在构造方法中指定。此外，静态变量还可以在静态语句块中初始化。</li>
+<li>静态变量可以通过：ClassName.VariableName的方式访问。</li>
+<li>类变量被声明为 public static final 类型时，类变量名称一般建议使用大写字母。如果静态变量不是 public 和 final 类型，其命名方式与实例变量以及局部变量的命名方式一致。</li>
+</ul>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h3><table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>描述</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+</td>
+<td>加法- 相加运算符两侧的值</td>
+<td>A + B 等于 30</td>
+</tr>
+<tr>
+<td>-</td>
+<td>减法 - 左操作数减去右操作数</td>
+<td>A – B 等于 -10</td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘法 - 相乘操作符两侧的值</td>
+<td>A * B等于200</td>
+</tr>
+<tr>
+<td>/</td>
+<td>除法 - 左操作数除以右操作数</td>
+<td>B / A等于2</td>
+</tr>
+<tr>
+<td>％</td>
+<td>取余 - 左操作数除以右操作数的余数（负数取余还是负数。）</td>
+<td>B%A等于0</td>
+</tr>
+<tr>
+<td>++</td>
+<td>自增: 操作数的值增加1（count = count++ count一直都是0）</td>
+<td>B++ 或 ++B 等于 21（区别详见下文）</td>
+</tr>
+<tr>
+<td>–</td>
+<td>自减: 操作数的值减少1</td>
+<td>B– 或 –B 等于 19（区别详见下文）</td>
+</tr>
+</tbody></table>
+<h3 id="自增自减运算符"><a href="#自增自减运算符" class="headerlink" title="自增自减运算符"></a>自增自减运算符</h3><ul>
+<li>前缀自增自减法(++a,–a): 先进行自增或者自减运算，再进行表达式运算。</li>
+<li>后缀自增自减法(a++,a–): 先进行表达式运算，再进行自增或者自减运算。</li>
+<li>不是原子操作。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">y＋＝z－－/＋＋x，y=？</span><br></pre></td></tr></table></figure>
+y是2，返回的结果是2+（z–/++x），再来看z–/++x，结果应该是3/2，但是因为x,y,z都是int型的，所以最后的返回值只能是int，这时候z–/++x的值就是1，那么最终的结果就是2+1=3。（强制向）</li>
+</ul>
+<h3 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h3><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>==</td>
+<td>检查如果两个操作数的值是否相等，如果相等则条件为真。</td>
+<td>（A == B）为假。</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>检查如果两个操作数的值是否相等，如果值不相等则条件为真。</td>
+<td>(A != B) 为真。</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>检查左操作数的值是否大于右操作数的值，如果是那么条件为真。</td>
+<td>（A&gt; B）为假。</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>检查左操作数的值是否小于右操作数的值，如果是那么条件为真。</td>
+<td>（A &lt;B）为真。</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>检查左操作数的值是否大于或等于右操作数的值，如果是那么条件为真。</td>
+<td>（A&gt; = B）为假。</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>检查左操作数的值是否小于或等于右操作数的值，如果是那么条件为真。</td>
+<td>（A &lt;= B）为真。</td>
+</tr>
+</tbody></table>
+<h3 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h3><p>Java定义了位运算符，应用于整数类型(int)，长整型(long)，短整型(short)，字符型(char)，和字节型(byte)等类型。</p>
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>描述</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>＆</td>
+<td>如果相对应位都是1，则结果为1，否则为0</td>
+<td>（A＆B），得到12，即0000 1100</td>
+</tr>
+<tr>
+<td>|</td>
+<td>如果相对应位都是 0，则结果为 0，否则为 1</td>
+<td>（A | B）得到61，即 0011 1101</td>
+</tr>
+<tr>
+<td>^</td>
+<td>如果相对应位值相同，则结果为0，否则为1</td>
+<td>（A ^ B）得到49，即 0011 0001</td>
+</tr>
+<tr>
+<td>〜</td>
+<td>按位取反运算符翻转操作数的每一位，即0变成1，1变成0。</td>
+<td>（〜A）得到-61，即1100 0011</td>
+</tr>
+<tr>
+<td>&lt;&lt;</td>
+<td>按位左移运算符。左操作数按位左移右操作数指定的位数。</td>
+<td>A &lt;&lt; 2得到240，即 1111 0000</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>按位右移运算符。左操作数按位右移右操作数指定的位数。</td>
+<td>A &gt;&gt; 2得到15即 1111</td>
+</tr>
+<tr>
+<td>&gt;&gt;&gt;</td>
+<td>按位右移补零操作符。左操作数的值按右操作数指定的位数右移，移动得到的空位以零填充。</td>
+<td>A&gt;&gt;&gt;2得到15即0000 1111</td>
+</tr>
+</tbody></table>
+<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><p>下表列出了逻辑运算符的基本运算，假设布尔变量A为真，变量B为假</p>
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>描述</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&amp;&amp;</td>
+<td>称为逻辑与运算符。当且仅当两个操作数都为真，条件才为真。（短路）</td>
+<td>（A &amp;&amp; B）为假。</td>
+</tr>
+<tr>
+<td>||</td>
+<td>称为逻辑或操作符。如果任何两个操作数任何一个为真，条件为真。（短路）</td>
+<td>（A</td>
+</tr>
+<tr>
+<td>！</td>
+<td>称为逻辑非运算符。用来反转操作数的逻辑状态。如果条件为true，则逻辑非运算符将得到false。</td>
+<td>！（A &amp;&amp; B）为真。</td>
+</tr>
+</tbody></table>
+<h3 id="条件运算符（-）"><a href="#条件运算符（-）" class="headerlink" title="条件运算符（?:）"></a>条件运算符（?:）</h3><p>条件运算符也被称为三元运算符。该运算符有3个操作数，并且需要判断布尔表达式的值。该运算符的主要是决定哪个值应该赋值给变量。</p>
+<h3 id="instanceof-运算符"><a href="#instanceof-运算符" class="headerlink" title="instanceof 运算符"></a>instanceof 运算符</h3><p>该运算符用于操作对象实例，检查该对象是否是一个特定类型（类类型或接口类型）。instanceof运算符使用格式如下：( Object reference variable ) instanceof  (class/interface type)</p>
+<h2 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h2><p>Java中主要的循环结构：</p>
+<ul>
+<li>while 循环</li>
+<li>do…while 循环</li>
+<li>for 循环</li>
+<li>forEach 循环</li>
+</ul>
+<h3 id="break-关键字"><a href="#break-关键字" class="headerlink" title="break 关键字"></a>break 关键字</h3><ul>
+<li>break 主要用在循环语句或者 switch 语句中，用来跳出整个语句块。</li>
+<li>break 跳出最里层的循环，并且继续执行该循环下面的语句。</li>
+</ul>
+<h3 id="continue-关键字"><a href="#continue-关键字" class="headerlink" title="continue 关键字"></a>continue 关键字</h3><ul>
+<li>continue 适用于任何循环控制结构中。作用是让程序立刻跳转到下一次循环的迭代。</li>
+<li>在 for 循环中，continue 语句使程序立即跳转到更新语句。</li>
+<li>在 while 或者 do…while 循环中，程序立即跳转到布尔表达式的判断语句。</li>
+</ul>
+<h2 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h2><p>if 语句的语法如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(布尔表达式 <span class="number">1</span>){</span><br><span class="line">   <span class="comment">//如果布尔表达式 1的值为true执行代码</span></span><br><span class="line">}<span class="keyword">else</span> <span class="keyword">if</span>(布尔表达式 <span class="number">2</span>){</span><br><span class="line">   <span class="comment">//如果布尔表达式 2的值为true执行代码</span></span><br><span class="line">}<span class="keyword">else</span> <span class="keyword">if</span>(布尔表达式 <span class="number">3</span>){</span><br><span class="line">   <span class="comment">//如果布尔表达式 3的值为true执行代码</span></span><br><span class="line">}<span class="keyword">else</span> {</span><br><span class="line">   <span class="comment">//如果以上布尔表达式都不为true执行代码</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h2 id="switch-case-语句"><a href="#switch-case-语句" class="headerlink" title="switch case 语句"></a>switch case 语句</h2><p>Switch case 语句判断一个变量与一系列值中某个值是否相等，每个值称为一个分支。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>(expression){</span><br><span class="line">    <span class="keyword">case</span> value :</span><br><span class="line">    <span class="comment">//语句</span></span><br><span class="line">    <span class="keyword">break</span>; <span class="comment">//可选</span></span><br><span class="line">    <span class="keyword">case</span> value :</span><br><span class="line">    <span class="comment">//语句</span></span><br><span class="line">    <span class="keyword">break</span>; <span class="comment">//可选</span></span><br><span class="line">    <span class="comment">//你可以有任意数量的case语句</span></span><br><span class="line">   <span class="keyword">default</span> : <span class="comment">//可选</span></span><br><span class="line">   <span class="comment">//语句</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<ul>
+<li>switch 语句中的变量类型可以是： byte、short、int 、char、枚举（jdk1.5）、String（jdk1.7）。</li>
+<li>当变量的值与 case 语句的值相等时，那么 case 语句之后的语句开始执行，直到 break 语句出现才会跳出 switch 语句。</li>
+<li>switch 语句可以包含一个 default 分支，该分支一般是 switch 语句的最后一个分支（可以在任何位置，但建议在最后一个）。default 在没有 case 语句的值和变量值相等的时候执行。default 分支不需要 break 语句。</li>
+</ul>
+<h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><p>枚举类型本质上是作为一种类的存在。enum是定义枚举类型的关键字。对于在枚举类型中定义的常量，需要明确的是：</p>
+<ul>
+<li>这里的常量本质上是枚举类型的实例对象</li>
+<li>它们默认被final static public修饰</li>
+<li>在定义是，它们必须处于枚举类型代码块中的非注释首行</li>
+</ul>
+<p>在枚举类型中，可以定义成员变量和方法，为对象增添内容。当然，这些写法和在类中没有区别所以不需要对比区分，也就不再展示类的写法了。构造方法可以写多个，且必须是私有的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> <span class="title class_">Festival</span>{</span><br><span class="line">    CHRISTMAS(<span class="string">"圣诞节"</span>), NATIONAL_DAY(<span class="string">"国庆节"</span>), MOTHER_DAY(<span class="string">"母亲节"</span>);</span><br><span class="line">	 </span><br><span class="line">    <span class="keyword">private</span> String chineseName;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Festival</span><span class="params">(String name)</span>{</span><br><span class="line">        <span class="built_in">this</span>.chineseName = name;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">print</span><span class="params">()</span>{</span><br><span class="line">        System.out.println(<span class="string">"这个节日是："</span> + chineseName);</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>枚举类型的优点：</p>
+<ul>
+<li>类型安全</li>
+<li>紧凑有效的数据定义</li>
+<li>可以和程序其他部分完美交互</li>
+<li>运行效率高</li>
+</ul>
+<h1 id="Number-Math-类"><a href="#Number-Math-类" class="headerlink" title="Number & Math 类"></a>Number &amp; Math 类</h1><h2 id="Number类"><a href="#Number类" class="headerlink" title="Number类"></a>Number类</h2><p>Number 类是 java.lang 包下的一个抽象类，提供了将包装类型拆箱成基本类型的方法，所有基本类型（数据类型）的包装类型都继承了该抽象类，<span style="color:red">并且是final声明不可继承改变。</span><br><img src="/2025/08/28/Java%E5%9F%BA%E7%A1%80/java%20%E5%9F%BA%E7%A1%80/Number%E7%B1%BB%E5%9F%BA%E7%BB%A7%E6%89%BF%E5%85%B3%E7%B3%BB.png" alt="Number类基继承关系"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> java.lang;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">Number</span> <span class="keyword">implements</span> <span class="title class_">java</span>.io.Serializable {</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="type">int</span> <span class="title function_">intValue</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="type">long</span> <span class="title function_">longValue</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="type">float</span> <span class="title function_">floatValue</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="type">double</span> <span class="title function_">doubleValue</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">byte</span> <span class="title function_">byteValue</span><span class="params">()</span> {</span><br><span class="line">        <span class="keyword">return</span> (<span class="type">byte</span>)intValue();</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">short</span> <span class="title function_">shortValue</span><span class="params">()</span> {</span><br><span class="line">        <span class="keyword">return</span> (<span class="type">short</span>)intValue();</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">long</span> <span class="variable">serialVersionUID</span> <span class="operator">=</span> -<span class="number">8742448824652078965L</span>;</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="Math类"><a href="#Math类" class="headerlink" title="Math类"></a>Math类</h2><p>Java 的 Math 包含了用于执行基本数学运算的属性和方法，如初等指数、对数、平方根和三角函数。Math 的方法都被定义为 static 形式，通过 Math 类可以在主函数中直接调用。</p>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2025/08/28/Java%E5%9F%BA%E7%A1%80/Java%20%E4%BC%98%E5%8C%96/"
+                                   title="Java 优化"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Java 优化</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2025/08/28/AI%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"
+                                   title="深度学习基础知识"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">深度学习基础知识</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A"><span class="nav-number">1.</span> <span class="nav-text">注释</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#jdk-internal-ValueBased"><span class="nav-number">1.1.</span> <span class="nav-text">@jdk.internal.ValueBased</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Override"><span class="nav-number">1.2.</span> <span class="nav-text">@Override</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deprecated"><span class="nav-number">1.3.</span> <span class="nav-text">@Deprecated</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SuppressWarnings"><span class="nav-number">1.4.</span> <span class="nav-text">@SuppressWarnings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FunctionalInterface"><span class="nav-number">1.5.</span> <span class="nav-text">@FunctionalInterface</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SafeVarargs"><span class="nav-number">1.6.</span> <span class="nav-text">@SafeVarargs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%83%E6%B3%A8%E9%87%8A"><span class="nav-number">1.7.</span> <span class="nav-text">元注释</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Target"><span class="nav-number">1.7.1.</span> <span class="nav-text">@Target</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Retention"><span class="nav-number">1.7.2.</span> <span class="nav-text">@Retention</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Documented"><span class="nav-number">1.7.3.</span> <span class="nav-text">@Documented</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Native"><span class="nav-number">1.7.4.</span> <span class="nav-text">@Native</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Inherited"><span class="nav-number">1.7.5.</span> <span class="nav-text">@Inherited</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Repeatable"><span class="nav-number">1.7.6.</span> <span class="nav-text">@Repeatable</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="nav-number">2.1.</span> <span class="nav-text">标识符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">2.2.</span> <span class="nav-text">修饰符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E7%AC%A6"><span class="nav-number">2.2.1.</span> <span class="nav-text">访问控制符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%BB%98%E8%AE%A4%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6-default"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">默认访问修饰符- default</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A7%81%E6%9C%89%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6-private"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">私有访问修饰符-private</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%AC%E6%9C%89%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6-public"><span class="nav-number">2.2.1.3.</span> <span class="nav-text">公有访问修饰符-public</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%97%E4%BF%9D%E6%8A%A4%E7%9A%84%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6-protected"><span class="nav-number">2.2.1.4.</span> <span class="nav-text">受保护的访问修饰符-protected</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%9E%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">2.3.</span> <span class="nav-text">非访问修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">2.4.</span> <span class="nav-text">关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E9%87%8F"><span class="nav-number">2.5.</span> <span class="nav-text">常量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB"><span class="nav-number">2.6.</span> <span class="nav-text">对象和类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BA%90%E6%96%87%E4%BB%B6%E5%A3%B0%E6%98%8E%E8%A7%84%E5%88%99"><span class="nav-number">2.6.1.</span> <span class="nav-text">源文件声明规则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.7.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.7.1.</span> <span class="nav-text">基本数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Integer%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90"><span class="nav-number">2.7.1.1.</span> <span class="nav-text">Integer源码解析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Float%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90"><span class="nav-number">2.7.1.2.</span> <span class="nav-text">Float源码解析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.7.2.</span> <span class="nav-text">引用类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E8%A3%85%E7%AE%B1%E4%B8%8E%E6%8B%86%E7%AE%B1"><span class="nav-number">2.7.3.</span> <span class="nav-text">自动装箱与拆箱</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A3%85%E7%AE%B1%E5%92%8C%E6%8B%86%E7%AE%B1%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.7.3.1.</span> <span class="nav-text">装箱和拆箱的实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">2.8.</span> <span class="nav-text">自动类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%BA%E5%88%B6%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">2.8.1.</span> <span class="nav-text">强制类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%90%E5%90%AB%E5%BC%BA%E5%88%B6%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">2.8.2.</span> <span class="nav-text">隐含强制类型转换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.9.</span> <span class="nav-text">变量类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="nav-number">2.9.1.</span> <span class="nav-text">局部变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B%E5%8F%98%E9%87%8F"><span class="nav-number">2.9.2.</span> <span class="nav-text">实例变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%8F%98%E9%87%8F%EF%BC%88%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%EF%BC%89"><span class="nav-number">2.9.3.</span> <span class="nav-text">类变量（静态变量）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">2.10.</span> <span class="nav-text">运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">2.10.1.</span> <span class="nav-text">算数运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%A2%9E%E8%87%AA%E5%87%8F%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">2.10.2.</span> <span class="nav-text">自增自减运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">2.10.3.</span> <span class="nav-text">关系运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">2.10.4.</span> <span class="nav-text">位运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">2.10.5.</span> <span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%88-%EF%BC%89"><span class="nav-number">2.10.6.</span> <span class="nav-text">条件运算符（?:）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#instanceof-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">2.10.7.</span> <span class="nav-text">instanceof 运算符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84"><span class="nav-number">2.11.</span> <span class="nav-text">循环结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#break-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">2.11.1.</span> <span class="nav-text">break 关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#continue-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">2.11.2.</span> <span class="nav-text">continue 关键字</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5"><span class="nav-number">2.12.</span> <span class="nav-text">条件语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#switch-case-%E8%AF%AD%E5%8F%A5"><span class="nav-number">2.13.</span> <span class="nav-text">switch case 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%9A%E4%B8%BE"><span class="nav-number">2.14.</span> <span class="nav-text">枚举</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Number-Math-%E7%B1%BB"><span class="nav-number">3.</span> <span class="nav-text">Number &amp; Math 类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Number%E7%B1%BB"><span class="nav-number">3.1.</span> <span class="nav-text">Number类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Math%E7%B1%BB"><span class="nav-number">3.2.</span> <span class="nav-text">Math类</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+        &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2025
+        
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">ArmoredKill</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A"><span class="nav-number">1.</span> <span class="nav-text">注释</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#jdk-internal-ValueBased"><span class="nav-number">1.1.</span> <span class="nav-text">@jdk.internal.ValueBased</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Override"><span class="nav-number">1.2.</span> <span class="nav-text">@Override</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deprecated"><span class="nav-number">1.3.</span> <span class="nav-text">@Deprecated</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SuppressWarnings"><span class="nav-number">1.4.</span> <span class="nav-text">@SuppressWarnings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FunctionalInterface"><span class="nav-number">1.5.</span> <span class="nav-text">@FunctionalInterface</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SafeVarargs"><span class="nav-number">1.6.</span> <span class="nav-text">@SafeVarargs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%83%E6%B3%A8%E9%87%8A"><span class="nav-number">1.7.</span> <span class="nav-text">元注释</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Target"><span class="nav-number">1.7.1.</span> <span class="nav-text">@Target</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Retention"><span class="nav-number">1.7.2.</span> <span class="nav-text">@Retention</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Documented"><span class="nav-number">1.7.3.</span> <span class="nav-text">@Documented</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Native"><span class="nav-number">1.7.4.</span> <span class="nav-text">@Native</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Inherited"><span class="nav-number">1.7.5.</span> <span class="nav-text">@Inherited</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Repeatable"><span class="nav-number">1.7.6.</span> <span class="nav-text">@Repeatable</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="nav-number">2.1.</span> <span class="nav-text">标识符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">2.2.</span> <span class="nav-text">修饰符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E7%AC%A6"><span class="nav-number">2.2.1.</span> <span class="nav-text">访问控制符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%BB%98%E8%AE%A4%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6-default"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">默认访问修饰符- default</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A7%81%E6%9C%89%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6-private"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">私有访问修饰符-private</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%AC%E6%9C%89%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6-public"><span class="nav-number">2.2.1.3.</span> <span class="nav-text">公有访问修饰符-public</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%97%E4%BF%9D%E6%8A%A4%E7%9A%84%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6-protected"><span class="nav-number">2.2.1.4.</span> <span class="nav-text">受保护的访问修饰符-protected</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%9E%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">2.3.</span> <span class="nav-text">非访问修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">2.4.</span> <span class="nav-text">关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E9%87%8F"><span class="nav-number">2.5.</span> <span class="nav-text">常量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB"><span class="nav-number">2.6.</span> <span class="nav-text">对象和类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BA%90%E6%96%87%E4%BB%B6%E5%A3%B0%E6%98%8E%E8%A7%84%E5%88%99"><span class="nav-number">2.6.1.</span> <span class="nav-text">源文件声明规则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.7.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.7.1.</span> <span class="nav-text">基本数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Integer%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90"><span class="nav-number">2.7.1.1.</span> <span class="nav-text">Integer源码解析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Float%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90"><span class="nav-number">2.7.1.2.</span> <span class="nav-text">Float源码解析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.7.2.</span> <span class="nav-text">引用类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E8%A3%85%E7%AE%B1%E4%B8%8E%E6%8B%86%E7%AE%B1"><span class="nav-number">2.7.3.</span> <span class="nav-text">自动装箱与拆箱</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A3%85%E7%AE%B1%E5%92%8C%E6%8B%86%E7%AE%B1%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.7.3.1.</span> <span class="nav-text">装箱和拆箱的实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">2.8.</span> <span class="nav-text">自动类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%BA%E5%88%B6%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">2.8.1.</span> <span class="nav-text">强制类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%90%E5%90%AB%E5%BC%BA%E5%88%B6%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">2.8.2.</span> <span class="nav-text">隐含强制类型转换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.9.</span> <span class="nav-text">变量类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="nav-number">2.9.1.</span> <span class="nav-text">局部变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B%E5%8F%98%E9%87%8F"><span class="nav-number">2.9.2.</span> <span class="nav-text">实例变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%8F%98%E9%87%8F%EF%BC%88%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%EF%BC%89"><span class="nav-number">2.9.3.</span> <span class="nav-text">类变量（静态变量）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">2.10.</span> <span class="nav-text">运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">2.10.1.</span> <span class="nav-text">算数运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%A2%9E%E8%87%AA%E5%87%8F%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">2.10.2.</span> <span class="nav-text">自增自减运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">2.10.3.</span> <span class="nav-text">关系运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">2.10.4.</span> <span class="nav-text">位运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">2.10.5.</span> <span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%88-%EF%BC%89"><span class="nav-number">2.10.6.</span> <span class="nav-text">条件运算符（?:）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#instanceof-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">2.10.7.</span> <span class="nav-text">instanceof 运算符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84"><span class="nav-number">2.11.</span> <span class="nav-text">循环结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#break-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">2.11.1.</span> <span class="nav-text">break 关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#continue-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">2.11.2.</span> <span class="nav-text">continue 关键字</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5"><span class="nav-number">2.12.</span> <span class="nav-text">条件语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#switch-case-%E8%AF%AD%E5%8F%A5"><span class="nav-number">2.13.</span> <span class="nav-text">switch case 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%9A%E4%B8%BE"><span class="nav-number">2.14.</span> <span class="nav-text">枚举</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Number-Math-%E7%B1%BB"><span class="nav-number">3.</span> <span class="nav-text">Number &amp; Math 类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Number%E7%B1%BB"><span class="nav-number">3.1.</span> <span class="nav-text">Number类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Math%E7%B1%BB"><span class="nav-number">3.2.</span> <span class="nav-text">Math类</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+    
+<script src="//cdn.jsdelivr.net/npm/mermaid@7.1.2/dist/mermaid.min.js"></script>
+
+
+
+
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>

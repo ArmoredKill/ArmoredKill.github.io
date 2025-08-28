@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="ArmoredKill">
+    
+    <title>
+        
+            工作要点 |
+        
+        Death Note
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Death Note","author":"ArmoredKill","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"home":"/","archives":"/archives","tags":"/tags","categories":"/categories","about":"/about"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.0"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Death Note
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/tags">
+                                
+                                标签
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/categories">
+                                
+                                分类
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/about">
+                                
+                                关于
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/tags">
+                            
+                            标签
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/categories">
+                            
+                            分类
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/about">
+                            
+                            关于
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        工作要点
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">ArmoredKill</span>
+                                
+                                    <span class="author-badge">Lv3</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2025-08-28 07:32:34</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Thu Aug 28 2025 07:31:21 GMT+0000">2025-08-28 07:31:21</span>
+            </span>
+        
+
+        
+
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h1 id="消息队列架构设计"><a href="#消息队列架构设计" class="headerlink" title="消息队列架构设计"></a>消息队列架构设计</h1><h2 id="生产者模式-Producer-Pattern"><a href="#生产者模式-Producer-Pattern" class="headerlink" title="生产者模式 (Producer Pattern)"></a>生产者模式 (Producer Pattern)</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 基础生产者类，提供多种消息发送方式</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BaseMqProducer</span> {</span><br><span class="line">    <span class="comment">// 普通消息发送</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">convertAndSend</span><span class="params">(Object message, String tag, String msgKey)</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 延迟消息发送</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">convertAndSendDelay</span><span class="params">(Object message, String tag, String msgKey, <span class="type">int</span> delayLevel)</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 顺序消息发送</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">convertAndSendOrderly</span><span class="params">(Object message, String tag, String hashKey)</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 事务消息发送</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">convertAndSendInTransaction</span><span class="params">(Object message, String tag, String msgKey)</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<h2 id="消费者模式-Consumer-Pattern"><a href="#消费者模式-Consumer-Pattern" class="headerlink" title="消费者模式 (Consumer Pattern)"></a>消费者模式 (Consumer Pattern)</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 基础消费者类</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">BaseConsumer</span>&lt;T&gt; <span class="keyword">implements</span> <span class="title class_">RocketMQListener</span>&lt;MessageExt&gt;, MessageProcessor&lt;T&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 幂等性消费者类</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">BaseDedupConsumer</span>&lt;T&gt; <span class="keyword">extends</span> <span class="title class_">BaseConverter</span>&lt;T&gt; </span><br><span class="line">    <span class="keyword">implements</span> <span class="title class_">RocketMQListener</span>&lt;MessageExt&gt;, MessageProcessor&lt;T&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="环境隔离机制"><a href="#环境隔离机制" class="headerlink" title="环境隔离机制"></a>环境隔离机制</h1><h2 id="动态配置注入"><a href="#动态配置注入" class="headerlink" title="动态配置注入"></a>动态配置注入</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DynInjectIsolateEnvironmentBeforeMqStart</span> <span class="keyword">implements</span> <span class="title class_">InitializingBean</span>, ApplicationContextAware {</span><br><span class="line">    <span class="comment">// 在应用启动时动态修改所有@RocketMQMessageListener注解的配置</span></span><br><span class="line">    <span class="comment">// 为消费者组和标签添加环境前缀，实现多环境隔离</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h2 id="消息隔离策略"><a href="#消息隔离策略" class="headerlink" title="消息隔离策略"></a>消息隔离策略</h2><ul>
+<li><strong>开发环境</strong>: 消息标签添加环境前缀，避免跨环境消费</li>
+<li><strong>生产环境</strong>: 不添加前缀，使用原始配置</li>
+<li><strong>消费者组隔离</strong>: 自动添加环境后缀</li>
+</ul>
+<h1 id="消息类型支持"><a href="#消息类型支持" class="headerlink" title="消息类型支持"></a>消息类型支持</h1><h2 id="延迟消息"><a href="#延迟消息" class="headerlink" title="延迟消息"></a>延迟消息</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DelayMsgRocketMQTemplate</span> <span class="keyword">extends</span> <span class="title class_">RocketMQTemplate</span> {</span><br><span class="line">    <span class="comment">// 支持18个延迟等级：1s, 5s, 10s, 30s, 1m, 2m, 3m, 4m, 5m, 6m, 7m, 8m, 9m, 10m, 20m, 30m, 1h, 2h</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<ul>
+<li>内部主题存储：当你发送一个延迟消息时，Broker 会首先将这个消息存入一个内部的主题：SCHEDULE_TOPIC_XXXX，并根据其延迟等级放入对应的队列（每个延迟等级对应一个队列）。</li>
+<li>定时任务扫描：RocketMQ 有一个独立的定时服务（ScheduleService），它会以固定的频率（每秒一次）扫描这些延迟队列。</li>
+<li>投递就绪判断：定时任务检查消息的存储时间，如果发现某个消息已到达其预设的延迟时间，则将其从 SCHEDULE_TOPIC_XXXX 中取出，投递到真正的目标 Topic 中。此时，消费者才可以看到并消费这条消息。</li>
+<li>持久化：消息存入 SCHEDULE_TOPIC_XXXX 时就已经被持久化到磁盘，即使 Broker 重启，定时任务也会重新加载并继续执行扫描投递，保证了消息不丢失。</li>
+<li>投递保障：投递到真实 Topic 的过程与普通消息的存储过程一致，遵循 RocketMQ 的高可用机制（同步刷盘/异步刷盘、主从复制）。</li>
+</ul>
+<h2 id="顺序消息"><a href="#顺序消息" class="headerlink" title="顺序消息"></a>顺序消息</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">OrderlyMsgRocketMQTemplate</span> <span class="keyword">extends</span> <span class="title class_">RocketMQTemplate</span> {</span><br><span class="line">    <span class="comment">// 通过hashKey确保消息路由到同一队列，保证顺序消费</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<ul>
+<li>发送顺序保证：<ul>
+<li>选择队列：生产者通过自定义消息队列选择器（MessageQueueSelector），将需要保证顺序的一批消息（如同一个订单ID的所有操作：创建、付款、发货）始终发送到同一个队列中。通常做法是对业务ID（如OrderId）进行哈希取模。</li>
+<li>同步发送：必须使用同步发送，因为异步发送无法保证本地线程发送的顺序就是 Broker 接收的顺序。</li>
+</ul>
+</li>
+<li>消费顺序保证：<ul>
+<li>顺序消费模式：消费者必须使用 MessageListenerOrderly 而不是 MessageListenerConcurrently。</li>
+<li>队列锁机制：Broker 会为每个队列在消费者端维护一把锁。一个消费者实例在消费一个队列时，会先获取该队列的锁，确保在同一时间只有一个线程消费这个队列。</li>
+<li>顺序处理：MessageListenerOrderly 会顺序地、同步地处理队列中的消息。只有当前消息消费成功（或失败并重试后），才会继续处理下一条。它会自动提交消费偏移量。</li>
+</ul>
+</li>
+</ul>
+<h2 id="事务消息"><a href="#事务消息" class="headerlink" title="事务消息"></a>事务消息</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TransMsgRocketMQTemplate</span> <span class="keyword">extends</span> <span class="title class_">RocketMQTemplate</span> {</span><br><span class="line">    <span class="comment">// 支持分布式事务，确保消息发送和本地事务的一致性</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<ol>
+<li>实现机制：<br>事务消息用于解决本地事务执行与消息发送的原子性问题。其核心是 “两阶段提交（2PC）” 和 “事务状态回查” 机制。其交互流程如下图所示：<br><img src="/2025/08/28/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/RocketMQ%E8%A7%A3%E6%9E%90/2.png" alt="image"></li>
+</ol>
+<h1 id="幂等性保证"><a href="#幂等性保证" class="headerlink" title="幂等性保证"></a>幂等性保证</h1><ol>
+<li>消费记录表设计</li>
+<li>幂等性校验流程<ul>
+<li>解析消息key (格式: <code>id@prefixKey</code>)</li>
+<li>查询数据库是否已消费</li>
+<li>消费成功后记录消费状态</li>
+<li>支持RocketMQ控制台重发消息的幂等性</li>
+</ul>
+</li>
+</ol>
+<h1 id="监控和日志"><a href="#监控和日志" class="headerlink" title="监控和日志"></a>监控和日志</h1><h2 id="AOP切面日志"><a href="#AOP切面日志" class="headerlink" title="AOP切面日志"></a>AOP切面日志</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Aspect</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MqLogAspect</span> {</span><br><span class="line">    <span class="comment">// 自动记录所有消息消费的日志</span></span><br><span class="line">    <span class="comment">// 包括成功/失败状态、异常信息、消费时间等</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h2 id="消息日志表"><a href="#消息日志表" class="headerlink" title="消息日志表"></a>消息日志表</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `sys_mq_log` (</span><br><span class="line">  <span class="comment">-- 记录消息的完整生命周期信息</span></span><br><span class="line">  <span class="comment">-- 包括生产者、消费者、存储时间、消费状态等</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h1 id="核心技术难点分析"><a href="#核心技术难点分析" class="headerlink" title="核心技术难点分析"></a>核心技术难点分析</h1><h2 id="1-动态注解配置修改-反射技术的深度应用"><a href="#1-动态注解配置修改-反射技术的深度应用" class="headerlink" title="1. 动态注解配置修改 - 反射技术的深度应用"></a>1. 动态注解配置修改 - 反射技术的深度应用</h2><p><strong>技术难点</strong>：</p>
+<ul>
+<li><strong>注解实例的代理机制</strong>: 需要理解Spring注解的代理实现原理</li>
+<li><strong>私有字段访问</strong>: 通过反射访问<code>memberValues</code>私有字段</li>
+<li><strong>运行时配置修改</strong>: 在Bean初始化后动态修改注解配置</li>
+<li><strong>多环境隔离</strong>: 确保不同环境的消息不会交叉消费</li>
+</ul>
+<p><strong>解决方案亮点</strong>：</p>
+<ul>
+<li>使用<code>AopProxyUtils.ultimateTargetClass()</code>获取真实类</li>
+<li>通过<code>Proxy.getInvocationHandler()</code>获取注解代理</li>
+<li>利用反射修改私有字段值，实现配置隔离</li>
+</ul>
+<h2 id="2-消息幂等性保证-分布式一致性挑战"><a href="#2-消息幂等性保证-分布式一致性挑战" class="headerlink" title="2. 消息幂等性保证 - 分布式一致性挑战"></a>2. 消息幂等性保证 - 分布式一致性挑战</h2><p><strong>难点代码分析</strong>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// BaseDedupConsumer.java</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="meta">@Transactional(rollbackFor = {Exception.class})</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onMessage</span><span class="params">(MessageExt message)</span> {</span><br><span class="line">    <span class="comment">// 验证下是否已消费，如已消费，直接返回（幂等性校验）</span></span><br><span class="line">    <span class="keyword">if</span>(isConsumed(keyArr)){</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="type">T</span> <span class="variable">msgObj</span> <span class="operator">=</span> (T)doConvertMessage(message);</span><br><span class="line">    <span class="comment">// 消费消息</span></span><br><span class="line">    processMessage(msgObj);</span><br><span class="line">    <span class="comment">// 增加消费记录</span></span><br><span class="line">    addConsumedRec(keyArr);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="type">boolean</span> <span class="title function_">isConsumed</span><span class="params">(String[] keyArr)</span>{</span><br><span class="line">    <span class="comment">// 查询数据库的记录，如已存在，表示已消费</span></span><br><span class="line">    <span class="type">MqConsumed</span> <span class="variable">consumed</span> <span class="operator">=</span> mqConsumedMapper.selectMqConsumedByPrimaryKey(keyArr[<span class="number">0</span>], keyArr[<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">return</span> consumed != <span class="literal">null</span> ? Boolean.TRUE : Boolean.FALSE;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p><strong>技术难点</strong>：</p>
+<ul>
+<li><strong>并发安全</strong>: 多个消费者同时处理同一消息的竞态条件</li>
+<li><strong>事务一致性</strong>: 业务处理与消费记录的一致性保证</li>
+<li><strong>性能优化</strong>: 数据库查询对性能的影响</li>
+<li><strong>异常处理</strong>: 消费失败时的状态回滚<br><strong>解决方案亮点</strong>：</li>
+<li>使用复合主键设计：<code>(id, prefix_key)</code></li>
+<li>在业务处理前进行幂等性校验</li>
+<li>使用<code>@Transactional</code>确保原子性操作</li>
+</ul>
+<h2 id="3-多种消息类型的统一抽象设计"><a href="#3-多种消息类型的统一抽象设计" class="headerlink" title="3. 多种消息类型的统一抽象设计"></a>3. 多种消息类型的统一抽象设计</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequiredArgsConstructor</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BaseMqProducer</span> {</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> RocketMQTemplate rocketMQTemplate;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String topic;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 普通消息</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">convertAndSend</span><span class="params">(Object message, String tag, String msgKey)</span>{</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 延迟消息</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">convertAndSendDelay</span><span class="params">(Object message, String tag, String msgKey, <span class="type">int</span> delayLevel)</span>{</span><br><span class="line">        </span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 顺序消息</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">convertAndSendOrderly</span><span class="params">(Object message, String tag, String hashKey, String msgKey)</span> {</span><br><span class="line">        </span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 事务消息</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">convertAndSendInTransaction</span><span class="params">(Object message, String tag, String msgKey)</span>{</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p><strong>技术难点</strong>：</p>
+<ul>
+<li><strong>类型安全</strong>: 不同消息类型需要不同的模板类</li>
+<li><strong>接口统一</strong>: 提供一致的API接口</li>
+<li><strong>配置复杂</strong>: 每种消息类型有不同的配置参数</li>
+<li><strong>扩展性</strong>: 新增消息类型的扩展机制<br><strong>解决方案亮点</strong>：</li>
+<li>使用模板方法模式统一接口</li>
+<li>通过继承和多态实现类型安全</li>
+<li>使用<code>@RequiredArgsConstructor</code>简化依赖注入</li>
+</ul>
+<h2 id="4-环境隔离的复杂配置管理"><a href="#4-环境隔离的复杂配置管理" class="headerlink" title="4. 环境隔离的复杂配置管理"></a>4. 环境隔离的复杂配置管理</h2><p><strong>技术难点</strong>：</p>
+<ul>
+<li><strong>多环境配置</strong>: 开发、测试、生产环境的配置差异</li>
+<li><strong>标签隔离</strong>: 消息标签的动态生成和管理</li>
+<li><strong>配置验证</strong>: 确保配置的正确性和完整性</li>
+<li><strong>向后兼容</strong>: 保持与现有系统的兼容性<br><strong>解决方案亮点</strong>：</li>
+<li>使用环境变量控制隔离策略</li>
+<li>通过字符串格式化动态生成标签</li>
+<li>添加配置验证确保安全性</li>
+</ul>
+<h2 id="5-AOP切面的消息监控设计"><a href="#5-AOP切面的消息监控设计" class="headerlink" title="5. AOP切面的消息监控设计"></a>5. AOP切面的消息监控设计</h2><p><strong>技术难点</strong>：</p>
+<ul>
+<li><strong>切点设计</strong>: 精确捕获所有消息消费方法</li>
+<li><strong>异常处理</strong>: 区分业务异常和系统异常</li>
+<li><strong>性能影响</strong>: AOP对消息处理性能的影响</li>
+<li><strong>日志管理</strong>: 大量日志数据的存储和查询<br><strong>解决方案亮点</strong>：</li>
+<li>使用精确的切点表达式</li>
+<li>通过<code>@AfterReturning</code>和<code>@AfterThrowing</code>区分成功和失败</li>
+<li>限制错误信息长度，避免数据库字段溢出</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这个项目的技术难点主要集中在：</p>
+<ol>
+<li><strong>反射技术的深度应用</strong> - 动态修改注解配置</li>
+<li><strong>分布式一致性保证</strong> - 消息幂等性和事务处理</li>
+<li><strong>设计模式的灵活运用</strong> - 模板方法、策略模式等</li>
+<li><strong>多环境配置管理</strong> - 环境隔离和配置验证</li>
+<li><strong>性能与可靠性的平衡</strong> - AOP监控和异常处理</li>
+</ol>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2025/08/28/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/Quartz%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/"
+                                   title=""
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis"></span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2025/08/28/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3/nacos%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/"
+                                   title=""
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis"></span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.</span> <span class="nav-text">消息队列架构设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E4%BA%A7%E8%80%85%E6%A8%A1%E5%BC%8F-Producer-Pattern"><span class="nav-number">1.1.</span> <span class="nav-text">生产者模式 (Producer Pattern)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B6%88%E8%B4%B9%E8%80%85%E6%A8%A1%E5%BC%8F-Consumer-Pattern"><span class="nav-number">1.2.</span> <span class="nav-text">消费者模式 (Consumer Pattern)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E9%9A%94%E7%A6%BB%E6%9C%BA%E5%88%B6"><span class="nav-number">2.</span> <span class="nav-text">环境隔离机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E9%85%8D%E7%BD%AE%E6%B3%A8%E5%85%A5"><span class="nav-number">2.1.</span> <span class="nav-text">动态配置注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B6%88%E6%81%AF%E9%9A%94%E7%A6%BB%E7%AD%96%E7%95%A5"><span class="nav-number">2.2.</span> <span class="nav-text">消息隔离策略</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B6%88%E6%81%AF%E7%B1%BB%E5%9E%8B%E6%94%AF%E6%8C%81"><span class="nav-number">3.</span> <span class="nav-text">消息类型支持</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%B6%E8%BF%9F%E6%B6%88%E6%81%AF"><span class="nav-number">3.1.</span> <span class="nav-text">延迟消息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E6%B6%88%E6%81%AF"><span class="nav-number">3.2.</span> <span class="nav-text">顺序消息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1%E6%B6%88%E6%81%AF"><span class="nav-number">3.3.</span> <span class="nav-text">事务消息</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B9%82%E7%AD%89%E6%80%A7%E4%BF%9D%E8%AF%81"><span class="nav-number">4.</span> <span class="nav-text">幂等性保证</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%91%E6%8E%A7%E5%92%8C%E6%97%A5%E5%BF%97"><span class="nav-number">5.</span> <span class="nav-text">监控和日志</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AOP%E5%88%87%E9%9D%A2%E6%97%A5%E5%BF%97"><span class="nav-number">5.1.</span> <span class="nav-text">AOP切面日志</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B6%88%E6%81%AF%E6%97%A5%E5%BF%97%E8%A1%A8"><span class="nav-number">5.2.</span> <span class="nav-text">消息日志表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E9%9A%BE%E7%82%B9%E5%88%86%E6%9E%90"><span class="nav-number">6.</span> <span class="nav-text">核心技术难点分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%8A%A8%E6%80%81%E6%B3%A8%E8%A7%A3%E9%85%8D%E7%BD%AE%E4%BF%AE%E6%94%B9-%E5%8F%8D%E5%B0%84%E6%8A%80%E6%9C%AF%E7%9A%84%E6%B7%B1%E5%BA%A6%E5%BA%94%E7%94%A8"><span class="nav-number">6.1.</span> <span class="nav-text">1. 动态注解配置修改 - 反射技术的深度应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%B6%88%E6%81%AF%E5%B9%82%E7%AD%89%E6%80%A7%E4%BF%9D%E8%AF%81-%E5%88%86%E5%B8%83%E5%BC%8F%E4%B8%80%E8%87%B4%E6%80%A7%E6%8C%91%E6%88%98"><span class="nav-number">6.2.</span> <span class="nav-text">2. 消息幂等性保证 - 分布式一致性挑战</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%A4%9A%E7%A7%8D%E6%B6%88%E6%81%AF%E7%B1%BB%E5%9E%8B%E7%9A%84%E7%BB%9F%E4%B8%80%E6%8A%BD%E8%B1%A1%E8%AE%BE%E8%AE%A1"><span class="nav-number">6.3.</span> <span class="nav-text">3. 多种消息类型的统一抽象设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E7%8E%AF%E5%A2%83%E9%9A%94%E7%A6%BB%E7%9A%84%E5%A4%8D%E6%9D%82%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86"><span class="nav-number">6.4.</span> <span class="nav-text">4. 环境隔离的复杂配置管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-AOP%E5%88%87%E9%9D%A2%E7%9A%84%E6%B6%88%E6%81%AF%E7%9B%91%E6%8E%A7%E8%AE%BE%E8%AE%A1"><span class="nav-number">6.5.</span> <span class="nav-text">5. AOP切面的消息监控设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">6.6.</span> <span class="nav-text">总结</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+        &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2025
+        
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">ArmoredKill</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.</span> <span class="nav-text">消息队列架构设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E4%BA%A7%E8%80%85%E6%A8%A1%E5%BC%8F-Producer-Pattern"><span class="nav-number">1.1.</span> <span class="nav-text">生产者模式 (Producer Pattern)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B6%88%E8%B4%B9%E8%80%85%E6%A8%A1%E5%BC%8F-Consumer-Pattern"><span class="nav-number">1.2.</span> <span class="nav-text">消费者模式 (Consumer Pattern)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E9%9A%94%E7%A6%BB%E6%9C%BA%E5%88%B6"><span class="nav-number">2.</span> <span class="nav-text">环境隔离机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E9%85%8D%E7%BD%AE%E6%B3%A8%E5%85%A5"><span class="nav-number">2.1.</span> <span class="nav-text">动态配置注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B6%88%E6%81%AF%E9%9A%94%E7%A6%BB%E7%AD%96%E7%95%A5"><span class="nav-number">2.2.</span> <span class="nav-text">消息隔离策略</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B6%88%E6%81%AF%E7%B1%BB%E5%9E%8B%E6%94%AF%E6%8C%81"><span class="nav-number">3.</span> <span class="nav-text">消息类型支持</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%B6%E8%BF%9F%E6%B6%88%E6%81%AF"><span class="nav-number">3.1.</span> <span class="nav-text">延迟消息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E6%B6%88%E6%81%AF"><span class="nav-number">3.2.</span> <span class="nav-text">顺序消息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1%E6%B6%88%E6%81%AF"><span class="nav-number">3.3.</span> <span class="nav-text">事务消息</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B9%82%E7%AD%89%E6%80%A7%E4%BF%9D%E8%AF%81"><span class="nav-number">4.</span> <span class="nav-text">幂等性保证</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%91%E6%8E%A7%E5%92%8C%E6%97%A5%E5%BF%97"><span class="nav-number">5.</span> <span class="nav-text">监控和日志</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AOP%E5%88%87%E9%9D%A2%E6%97%A5%E5%BF%97"><span class="nav-number">5.1.</span> <span class="nav-text">AOP切面日志</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B6%88%E6%81%AF%E6%97%A5%E5%BF%97%E8%A1%A8"><span class="nav-number">5.2.</span> <span class="nav-text">消息日志表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E9%9A%BE%E7%82%B9%E5%88%86%E6%9E%90"><span class="nav-number">6.</span> <span class="nav-text">核心技术难点分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%8A%A8%E6%80%81%E6%B3%A8%E8%A7%A3%E9%85%8D%E7%BD%AE%E4%BF%AE%E6%94%B9-%E5%8F%8D%E5%B0%84%E6%8A%80%E6%9C%AF%E7%9A%84%E6%B7%B1%E5%BA%A6%E5%BA%94%E7%94%A8"><span class="nav-number">6.1.</span> <span class="nav-text">1. 动态注解配置修改 - 反射技术的深度应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%B6%88%E6%81%AF%E5%B9%82%E7%AD%89%E6%80%A7%E4%BF%9D%E8%AF%81-%E5%88%86%E5%B8%83%E5%BC%8F%E4%B8%80%E8%87%B4%E6%80%A7%E6%8C%91%E6%88%98"><span class="nav-number">6.2.</span> <span class="nav-text">2. 消息幂等性保证 - 分布式一致性挑战</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%A4%9A%E7%A7%8D%E6%B6%88%E6%81%AF%E7%B1%BB%E5%9E%8B%E7%9A%84%E7%BB%9F%E4%B8%80%E6%8A%BD%E8%B1%A1%E8%AE%BE%E8%AE%A1"><span class="nav-number">6.3.</span> <span class="nav-text">3. 多种消息类型的统一抽象设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E7%8E%AF%E5%A2%83%E9%9A%94%E7%A6%BB%E7%9A%84%E5%A4%8D%E6%9D%82%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86"><span class="nav-number">6.4.</span> <span class="nav-text">4. 环境隔离的复杂配置管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-AOP%E5%88%87%E9%9D%A2%E7%9A%84%E6%B6%88%E6%81%AF%E7%9B%91%E6%8E%A7%E8%AE%BE%E8%AE%A1"><span class="nav-number">6.5.</span> <span class="nav-text">5. AOP切面的消息监控设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">6.6.</span> <span class="nav-text">总结</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+    
+<script src="//cdn.jsdelivr.net/npm/mermaid@7.1.2/dist/mermaid.min.js"></script>
+
+
+
+
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>
